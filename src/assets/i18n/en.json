@@ -1,0 +1,231 @@
+{
+  "COMMON": {
+    "LANGUAGE": "Language",
+    "SPANISH": "Spanish",
+    "ENGLISH": "English",
+    "ERROR": {
+      "LOAD": "Error loading data",
+      "SAVE": "Error saving changes",
+      "UPLOAD": "Error uploading image"
+    },
+    "SUCCESS": {
+      "SAVE": "Changes saved successfully"
+    },
+    "UPDATE": "Update",
+    "CREATE": "Create",
+    "SECURITY": "Security",
+    "CANCEL": "Cancel", 
+    "DELETE": "Delete",
+    "CLOSE": "Close",
+    "LOADING": "Loading..."
+  },
+  "MENU": {
+    "TITLE": "Menu",
+    "HOME": "Home",
+    "SONGS": "Songs",
+    "PROFILE": "Profile",
+    "PLAYLISTS": "Playlists",
+    "LOGOUT": "Logout"
+  },
+  "SONG": {
+    "TITLE": "Songs",
+    "SELECT": "Select song",
+    "ADD_BUTTON": "Add song",
+    "EDIT": "Edit song",
+    "NEW": "New song",
+    "NAME": "Name",
+    "AUTHOR": "Author",
+    "ALBUM": "Album",
+    "DURATION": "Duration",
+    "SEARCH_PLACEHOLDER": "Search song",
+    "NO_SONGS": "No songs found",
+    "ADD_FIRST_SONG": "Add your first song!",
+    "REORDERING": "Reordering songs...",
+    "ERRORS": {
+      "NAME_REQUIRED": "Name is required",
+      "AUTHOR_REQUIRED": "Author is required",
+      "DURATION_REQUIRED": "Duration is required",
+      "DURATION_FORMAT": "Invalid format. Use mm:ss (e.g. 03:45)",
+      "REORDER": "Error reordering songs"
+    },
+    "SUCCESS": {
+      "CREATE": "Song created successfully",
+      "UPDATE": "Song updated successfully",
+      "DELETE": "Song deleted successfully",
+      "REORDERED": "Songs reordered successfully"
+    },
+    "MESSAGES": {
+      "DELETE_CONFIRM": "Are you sure you want to delete this song?"
+    }
+  },
+  "PLAYLIST": {
+    "TITLE": "Playlists",
+    "ADD_BUTTON": "Add playlist",
+    "EDIT": "Edit playlist",
+    "NEW": "New playlist",
+    "NAME": "Name",
+    "AUTHOR": "Author", 
+    "DURATION": "Duration",
+    "PUBLIC_LIST": "Public playlist",
+    "SONGS": "songs",
+    "ADD_SONGS": "Add songs",
+    "EMPTY": "This playlist is empty",
+    "ALBUM": "Album",
+    "SHARE": {
+      "HEADER": "Share playlist",
+      "MESSAGE": "Copy the link to share this playlist",
+      "COPY": "Copy"
+    },
+    "REMOVE_SONG": {
+      "HEADER": "Remove song?",
+      "MESSAGE": "Are you sure you want to remove this song from the playlist?"
+    },
+    "MESSAGESS": {
+      "DELETE_CONFIRM": "Delete playlist",
+      "DELETE_CONFIRM_MESSAGE": "Are you sure you want to delete {name}?"
+    },
+    "SUCCESS": {
+      "SONG_ADDED": "Song added successfully",
+      "SONG_UPDATED": "Song updated successfully",
+      "SONG_REMOVED": "Song removed successfully",
+      "LINK_COPIED": "Link copied to clipboard",
+      "DELETE": "Playlist deleted successfully",
+      "CREATE": "Playlist created successfully",
+      "UPDATE": "Playlist updated successfully",
+      "REORDERED": "Playlist reordered successfully"
+    },
+    "ERRORS": {
+      "LOAD": "Error loading playlist",
+      "SONG_ADD": "Error adding song",
+      "SONG_REMOVE": "Error removing song",
+      "NAME_REQUIRED": "Name is required",
+      "AUTHOR_REQUIRED": "Author is required",
+      "DURATION_REQUIRED": "Duration is required",
+      "DELETE": "Error deleting playlist",
+      "CREATE": "Error creating playlist",
+      "UPDATE": "Error updating playlist",
+      "REORDER": "Error reordering playlist"
+    },
+    "MESSAGES": {
+      "DELETE_CONFIRM": "Delete playlist"
+    }
+  },
+  "PROFILE": {
+    "TITLE": "Profile",
+    "SUBTITLE": "Manage your personal information here",
+    "UPDATE": "Update profile",
+    "CHANGE_PASSWORD": "Change password",
+    "MY_PLAYLISTS": "My playlists",
+    "NO_PLAYLISTS": "You don't have any playlists yet",
+    "SONGS": "songs",
+    "SECURITY": "Security Settings",
+    "TITLES": "My Profile",
+    "TEXT": "public playlists",
+    "USER": "artists",
+    "FOLLOWING": "Following",
+    "FOLLOWING_ARTISTS": "Artists you follow",
+    "EDIT": "Edit Profile",
+    "PLAYLISTS": "My Playlists",
+    "DETAILS_TITLE": "Profile details",
+    "USERNAME": "Username",
+    "EMAIL": "Email",
+    "SAVE": "Save",
+    "CREATE_PLAYLIST": "Create playlist",
+    "PHOTO_UPDATED": "Profile photo updated successfully",
+    "EXPORT": {
+      "TITLE": "Export API Data",
+      "MESSAGE": "This will export ALL public API data (playlists, songs and artists) in separate CSV files:",
+      "ALL_DATA": "Export All",
+      "LOADING_ALL": "Downloading all API data...",
+      "SUCCESS_ALL": "All data exported successfully (playlists.csv, songs.csv, artists.csv)",
+      "NO_DATA": "No data found to export",
+      "ERROR": "Error exporting data",
+      "PROFILE.EXPORT.ALL_DATA": "Export All Data",
+      "PROFILE.EXPORT.LOADING_ALL": "Downloading all API data...",
+      "PROFILE.EXPORT.SUCCESS_ALL": "All data exported successfully (playlists.csv, songs.csv, artists.csv)",
+      "PROFILE.EXPORT.NO_DATA": "No data found to export",
+      "PROFILE.EXPORT.ERROR": "Error exporting data"
+    }
+  },
+  "USER": {
+    "NAME": "First Name",
+    "SURNAME": "Last Name",
+    "EMAIL": "Email",
+    "MY_PLAYLISTS": "My Playlists",
+    "USERNAME": "Username",
+    "PICTURE": "Profile Picture",
+    "ERRORS": {
+      "SURNAME_REQUIRED": "Last name is required",
+      "NAME_REQUIRED": "First name is required",
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Invalid email address",
+      "USERNAME_REQUIRED": "Username is required",
+      "PICTURE_REQUIRED": "Profile picture is required"
+    }
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Change password",
+    "OLD_PASSWORD": "Current password",
+    "NEW_PASSWORD": "New password",
+    "CONFIRM_PASSWORD": "Confirm new password",
+    "SUBMIT": "Change password",
+    "SUCCESS": "Password changed successfully",
+    "ERROR": "Error changing password",
+    "ERRORS": {
+      "OLD_PASSWORD_REQUIRED": "Current password is required",
+      "NEW_PASSWORD_REQUIRED": "New password is required",
+      "PASSWORD_STRENGTH": "Password must have at least 8 characters, one uppercase, one lowercase, one number and one special character",
+      "PASSWORDS_MISMATCH": "Passwords do not match",
+      "OLD_PASSWORD_WRONG": "Current password is incorrect"
+    }
+  },
+  "HOME": {
+    "SEARCH": "What do you want to reproduce?",
+    "ALL": "All",
+    "MUSIC": "Music",
+    "PODCATS": "Podcasts",
+    "RELEASE": "What's new today!!",
+    "RECOMMENDED": "Recommended for you",
+    "SHOW": "Shows all"
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "APP_DESCRIPTION": "UMusic is a music streaming application developed with Angular and Ionic, offering a complete experience to discover, play and manage your favorite music.",
+    "VERSION": "Version",
+    "REPOSITORY": "Project Repository",
+    "REPOSITORY_DESCRIPTION": "UMusic's source code is available on GitHub. You can explore the code, report issues or contribute to the project.",
+    "VIEW_ON_GITHUB": "View on GitHub",
+    "DEVELOPERS": "Development Team",
+    "ROLES": {
+      "FULL_STACK": "Full Stack Developer",
+      "FRONTEND": "Frontend Developer",
+      "BACKEND": "Backend Developer",
+      "UI_UX": "UI/UX Designer",
+      "PROJECT_MANAGER": "Project Manager"
+    },
+    "BIOS": {
+      "DEVELOPER_1": "Passionate developer specialized in modern web technologies and mobile applications.",
+      "DEVELOPER_2": "Frontend development expert focused on user experience and responsive design."
+    },
+    "FEATURES": {
+      "STREAMING": "Music Streaming",
+      "STREAMING_DESC": "Play high-quality music with advanced playback controls.",
+      "PLAYLISTS": "Playlist Management",
+      "PLAYLISTS_DESC": "Create, edit and organize your personalized playlists.",
+      "PROFILES": "User Profiles",
+      "PROFILES_DESC": "Customize your profile and manage your musical preferences.",
+      "SEARCH": "Advanced Search",
+      "SEARCH_DESC": "Easily find songs, artists and albums with intelligent search.",
+      "MULTILANG": "Multi-language Support",
+      "MULTILANG_DESC": "Application available in multiple languages for a global experience.",
+      "RESPONSIVE": "Responsive Design",
+      "RESPONSIVE_DESC": "Interface optimized for mobile devices, tablets and desktop."
+    },
+    "TECHNOLOGIES": "Technologies Used",
+    "CONTACT": "Contact",
+    "CONTACT_DESCRIPTION": "Have questions, suggestions or want to collaborate? Don't hesitate to contact us.",
+    "SEND_EMAIL": "Send Email",
+    "DEMO": "Demonstration",
+    "SHARE_APP": "Share App"
+  }
+}

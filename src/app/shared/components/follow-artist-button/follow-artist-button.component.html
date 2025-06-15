@@ -1,0 +1,23 @@
+<!-- src/app/shared/components/follow-artist-button/follow-artist-button.component.html -->
+<ion-button 
+    [fill]="isFollowing ? 'outline' : 'solid'"
+    [color]="isFollowing ? 'medium' : 'primary'"
+    [size]="size"
+    (click)="toggleFollow()"
+    [disabled]="loading"
+    class="follow-button">
+    
+    <ion-icon 
+        [name]="isFollowing ? 'person-remove' : 'person-add'" 
+        slot="start">
+    </ion-icon>
+    
+    {{ isFollowing ? 'Siguiendo' : 'Seguir' }}
+    
+    <ion-spinner 
+        *ngIf="loading" 
+        name="crescent" 
+        size="small"
+        slot="end">
+    </ion-spinner>
+</ion-button>

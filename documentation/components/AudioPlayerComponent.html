@@ -1,0 +1,2829 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AudioPlayerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/audio-player/audio-player.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-audio-player</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./audio-player.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./audio-player.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroy$" >destroy$</a>
+                            </li>
+                            <li>
+                                <a href="#isExpanded" >isExpanded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isMuted" >isMuted</a>
+                            </li>
+                            <li>
+                                <a href="#playerState" >playerState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#previousVolume" >previousVolume</a>
+                            </li>
+                            <li>
+                                <a href="#showQueue" >showQueue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addScrollPadding" >addScrollPadding</a>
+                            </li>
+                            <li>
+                                <a href="#getPlayingFromText" >getPlayingFromText</a>
+                            </li>
+                            <li>
+                                <a href="#getRepeatColor" >getRepeatColor</a>
+                            </li>
+                            <li>
+                                <a href="#getRepeatIcon" >getRepeatIcon</a>
+                            </li>
+                            <li>
+                                <a href="#getVolumeIcon" >getVolumeIcon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#handleScrollPadding" >handleScrollPadding</a>
+                            </li>
+                            <li>
+                                <a href="#next" >next</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onProgressChange" >onProgressChange</a>
+                            </li>
+                            <li>
+                                <a href="#onVolumeChange" >onVolumeChange</a>
+                            </li>
+                            <li>
+                                <a href="#playSongFromQueue" >playSongFromQueue</a>
+                            </li>
+                            <li>
+                                <a href="#previous" >previous</a>
+                            </li>
+                            <li>
+                                <a href="#removeFromQueue" >removeFromQueue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeScrollPadding" >removeScrollPadding</a>
+                            </li>
+                            <li>
+                                <a href="#toggleExpanded" >toggleExpanded</a>
+                            </li>
+                            <li>
+                                <a href="#toggleMute" >toggleMute</a>
+                            </li>
+                            <li>
+                                <a href="#togglePlayPause" >togglePlayPause</a>
+                            </li>
+                            <li>
+                                <a href="#toggleQueue" >toggleQueue</a>
+                            </li>
+                            <li>
+                                <a href="#toggleRepeat" >toggleRepeat</a>
+                            </li>
+                            <li>
+                                <a href="#toggleShuffle" >toggleShuffle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#currentSong" >currentSong</a>
+                                </li>
+                                <li>
+                                    <a href="#isPlaying" >isPlaying</a>
+                                </li>
+                                <li>
+                                    <a href="#progress" >progress</a>
+                                </li>
+                                <li>
+                                    <a href="#currentTime" >currentTime</a>
+                                </li>
+                                <li>
+                                    <a href="#duration" >duration</a>
+                                </li>
+                                <li>
+                                    <a href="#volume" >volume</a>
+                                </li>
+                                <li>
+                                    <a href="#isShuffled" >isShuffled</a>
+                                </li>
+                                <li>
+                                    <a href="#repeatMode" >repeatMode</a>
+                                </li>
+                                <li>
+                                    <a href="#queue" >queue</a>
+                                </li>
+                                <li>
+                                    <a href="#currentIndex" >currentIndex</a>
+                                </li>
+                                <li>
+                                    <a href="#showPlayer" >showPlayer</a>
+                                </li>
+                                <li>
+                                    <a href="#Math" >Math</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(audioPlayerService: <a href="../injectables/AudioPlayerService.html" target="_self">AudioPlayerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>audioPlayerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AudioPlayerService.html" target="_self" >AudioPlayerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addScrollPadding"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addScrollPadding</b></span>
+                        <a href="#addScrollPadding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addScrollPadding()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Agrega padding al body para evitar que el miniplayer tape contenido</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayingFromText"></a>
+                    <span class="name">
+                        <span ><b>getPlayingFromText</b></span>
+                        <a href="#getPlayingFromText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPlayingFromText()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRepeatColor"></a>
+                    <span class="name">
+                        <span ><b>getRepeatColor</b></span>
+                        <a href="#getRepeatColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRepeatColor()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="245"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:245</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRepeatIcon"></a>
+                    <span class="name">
+                        <span ><b>getRepeatIcon</b></span>
+                        <a href="#getRepeatIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRepeatIcon()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getVolumeIcon"></a>
+                    <span class="name">
+                        <span ><b>getVolumeIcon</b></span>
+                        <a href="#getVolumeIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getVolumeIcon()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleScrollPadding"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>handleScrollPadding</b></span>
+                        <a href="#handleScrollPadding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleScrollPadding()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Maneja el padding del scroll según si el player está visible</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="next"></a>
+                    <span class="name">
+                        <span ><b>next</b></span>
+                        <a href="#next"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>next()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onProgressChange"></a>
+                    <span class="name">
+                        <span ><b>onProgressChange</b></span>
+                        <a href="#onProgressChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onProgressChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="113"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onVolumeChange"></a>
+                    <span class="name">
+                        <span ><b>onVolumeChange</b></span>
+                        <a href="#onVolumeChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onVolumeChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playSongFromQueue"></a>
+                    <span class="name">
+                        <span ><b>playSongFromQueue</b></span>
+                        <a href="#playSongFromQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>playSongFromQueue(song: <a href="../interfaces/EnrichedSong.html" target="_self">EnrichedSong</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="181"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:181</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/EnrichedSong.html" target="_self" >EnrichedSong</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previous"></a>
+                    <span class="name">
+                        <span ><b>previous</b></span>
+                        <a href="#previous"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previous()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeFromQueue"></a>
+                    <span class="name">
+                        <span ><b>removeFromQueue</b></span>
+                        <a href="#removeFromQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeFromQueue(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="177"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:177</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeScrollPadding"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>removeScrollPadding</b></span>
+                        <a href="#removeScrollPadding"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeScrollPadding()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Remueve el padding del body</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleExpanded"></a>
+                    <span class="name">
+                        <span ><b>toggleExpanded</b></span>
+                        <a href="#toggleExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleExpanded()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleMute"></a>
+                    <span class="name">
+                        <span ><b>toggleMute</b></span>
+                        <a href="#toggleMute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleMute()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="togglePlayPause"></a>
+                    <span class="name">
+                        <span ><b>togglePlayPause</b></span>
+                        <a href="#togglePlayPause"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>togglePlayPause()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleQueue"></a>
+                    <span class="name">
+                        <span ><b>toggleQueue</b></span>
+                        <a href="#toggleQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleQueue()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleRepeat"></a>
+                    <span class="name">
+                        <span ><b>toggleRepeat</b></span>
+                        <a href="#toggleRepeat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleRepeat()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleShuffle"></a>
+                    <span class="name">
+                        <span ><b>toggleShuffle</b></span>
+                        <a href="#toggleShuffle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleShuffle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroy$</b></span>
+                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isExpanded"></a>
+                    <span class="name">
+                        <span ><b>isExpanded</b></span>
+                        <a href="#isExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMuted"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>isMuted</b></span>
+                        <a href="#isMuted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playerState"></a>
+                    <span class="name">
+                        <span ><b>playerState</b></span>
+                        <a href="#playerState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PlayerState.html" target="_self" >PlayerState | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousVolume"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>previousVolume</b></span>
+                        <a href="#previousVolume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0.7</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showQueue"></a>
+                    <span class="name">
+                        <span ><b>showQueue</b></span>
+                        <a href="#showQueue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentSong"></a>
+                        <span class="name"><b>currentSong</b><a href="#currentSong"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currentSong()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="189" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:189</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPlaying"></a>
+                        <span class="name"><b>isPlaying</b><a href="#isPlaying"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isPlaying()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:193</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="progress"></a>
+                        <span class="name"><b>progress</b><a href="#progress"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>progress()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="197" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:197</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentTime"></a>
+                        <span class="name"><b>currentTime</b><a href="#currentTime"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currentTime()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="201" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:201</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="duration"></a>
+                        <span class="name"><b>duration</b><a href="#duration"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>duration()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="205" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:205</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="volume"></a>
+                        <span class="name"><b>volume</b><a href="#volume"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>volume()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:209</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isShuffled"></a>
+                        <span class="name"><b>isShuffled</b><a href="#isShuffled"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isShuffled()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:213</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="repeatMode"></a>
+                        <span class="name"><b>repeatMode</b><a href="#repeatMode"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>repeatMode()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="217" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:217</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="queue"></a>
+                        <span class="name"><b>queue</b><a href="#queue"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>queue()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:221</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentIndex"></a>
+                        <span class="name"><b>currentIndex</b><a href="#currentIndex"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currentIndex()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="225" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:225</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showPlayer"></a>
+                        <span class="name"><b>showPlayer</b><a href="#showPlayer"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>showPlayer()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:229</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="Math"></a>
+                        <span class="name"><b>Math</b><a href="#Math"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>Math()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="233" class="link-to-prism">src/app/shared/components/audio-player/audio-player.component.ts:233</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Subject, takeUntil } from &#x27;rxjs&#x27;;
+import { AudioPlayerService, PlayerState } from &#x27;../../../core/services/impl/audio-player.service&#x27;;
+import { EnrichedSong } from &#x27;../../../core/models/enriched-song.interface&#x27;;
+
+@Component({
+    selector: &#x27;app-audio-player&#x27;,
+    templateUrl: &#x27;./audio-player.component.html&#x27;,
+    styleUrls: [&#x27;./audio-player.component.scss&#x27;]
+})
+export class AudioPlayerComponent implements OnInit, OnDestroy {
+    playerState: PlayerState | null &#x3D; null;
+    isExpanded &#x3D; false;
+    showQueue &#x3D; false;
+    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    
+    private previousVolume &#x3D; 0.7;
+    private isMuted &#x3D; false;
+
+    constructor(
+        private audioPlayerService: AudioPlayerService
+    ) {}
+
+    ngOnInit() {
+        this.audioPlayerService.playerState$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(state &#x3D;&gt; {
+                this.playerState &#x3D; state;
+                
+                // ✅ GESTIÓN DEL SCROLL - Cuando cambia el estado del player
+                this.handleScrollPadding();
+            });
+    }
+
+    ngOnDestroy() {
+        // ✅ LIMPIAR SCROLL al destruir el componente
+        this.removeScrollPadding();
+        
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+    // ✅ MÉTODOS PARA GESTIONAR EL SCROLL
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+
+    /**
+     * Maneja el padding del scroll según si el player está visible
+     */
+    private handleScrollPadding() {
+        if (this.showPlayer) {
+            // Mostrar miniplayer - agregar padding
+            this.addScrollPadding();
+        } else {
+            // Ocultar miniplayer - remover padding
+            this.removeScrollPadding();
+        }
+    }
+
+    /**
+     * Agrega padding al body para evitar que el miniplayer tape contenido
+     */
+    private addScrollPadding() {
+        document.body.classList.add(&#x27;has-miniplayer&#x27;);
+    }
+
+    /**
+     * Remueve el padding del body
+     */
+    private removeScrollPadding() {
+        document.body.classList.remove(&#x27;has-miniplayer&#x27;);
+    }
+
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+    // MÉTODOS EXISTENTES (manteniendo toda la funcionalidad)
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+
+    getPlayingFromText(): string {
+        if (!this.playerState?.playingFrom) {
+            return &#x27;Playing from Library&#x27;;
+        }
+        
+        const context &#x3D; this.playerState.playingFrom;
+        switch (context.type) {
+            case &#x27;playlist&#x27;: return &#x27;Playing from Playlist&#x27;;
+            case &#x27;album&#x27;: return &#x27;Playing from Album&#x27;;
+            case &#x27;artist&#x27;: return &#x27;Playing from Artist&#x27;;
+            case &#x27;liked&#x27;: return &#x27;Playing from Liked Songs&#x27;;
+            case &#x27;search&#x27;: return &#x27;Playing from Search&#x27;;
+            default: return &#x27;Playing Music&#x27;;
+        }
+    }
+
+    togglePlayPause() {
+        if (!this.playerState?.currentSong) return;
+
+        if (this.playerState.isPlaying) {
+            this.audioPlayerService.pause();
+        } else {
+            this.audioPlayerService.resume();
+        }
+    }
+
+    next() {
+        this.audioPlayerService.next();
+    }
+
+    previous() {
+        this.audioPlayerService.previous();
+    }
+
+    onProgressChange(event: any) {
+        if (!this.playerState?.duration) return;
+        
+        const value &#x3D; parseFloat(event.detail.value);
+        const time &#x3D; (value / 100) * this.playerState.duration;
+        this.audioPlayerService.seekTo(time);
+    }
+
+    onVolumeChange(event: any) {
+        const volume &#x3D; parseFloat(event.detail.value) / 100;
+        this.audioPlayerService.setVolume(volume);
+        
+        this.isMuted &#x3D; volume &#x3D;&#x3D;&#x3D; 0;
+        if (volume &gt; 0) {
+            this.previousVolume &#x3D; volume;
+        }
+    }
+
+    toggleMute() {
+        if (this.isMuted) {
+            this.audioPlayerService.setVolume(this.previousVolume);
+            this.isMuted &#x3D; false;
+        } else {
+            this.previousVolume &#x3D; this.playerState?.volume || 0.7;
+            this.audioPlayerService.setVolume(0);
+            this.isMuted &#x3D; true;
+        }
+    }
+
+    getVolumeIcon(): string {
+        const volume &#x3D; this.volume;
+        
+        if (this.isMuted || volume &#x3D;&#x3D;&#x3D; 0) {
+            return &#x27;volume-mute&#x27;;
+        } else if (volume &lt; 30) {
+            return &#x27;volume-low&#x27;;
+        } else if (volume &lt; 70) {
+            return &#x27;volume-medium&#x27;;
+        } else {
+            return &#x27;volume-high&#x27;;
+        }
+    }
+
+    toggleShuffle() {
+        this.audioPlayerService.toggleShuffle();
+    }
+
+    toggleRepeat() {
+        this.audioPlayerService.toggleRepeat();
+    }
+
+    toggleExpanded() {
+        this.isExpanded &#x3D; !this.isExpanded;
+        
+        // ✅ Recalcular padding cuando se expande/contrae
+        setTimeout(() &#x3D;&gt; {
+            this.handleScrollPadding();
+        }, 100);
+    }
+
+    toggleQueue() {
+        this.showQueue &#x3D; !this.showQueue;
+    }
+
+    removeFromQueue(index: number) {
+        this.audioPlayerService.removeFromQueue(index);
+    }
+
+    playSongFromQueue(song: EnrichedSong, index: number) {
+        this.audioPlayerService.play(song);
+    }
+
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+    // GETTERS (manteniendo todos los existentes)
+    // &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+
+    get currentSong(): EnrichedSong | null {
+        return this.playerState?.currentSong || null;
+    }
+
+    get isPlaying(): boolean {
+        return this.playerState?.isPlaying || false;
+    }
+
+    get progress(): number {
+        return this.playerState?.progress || 0;
+    }
+
+    get currentTime(): string {
+        return this.audioPlayerService.formatTime(this.playerState?.currentTime || 0);
+    }
+
+    get duration(): string {
+        return this.audioPlayerService.formatTime(this.playerState?.duration || 0);
+    }
+
+    get volume(): number {
+        return (this.playerState?.volume || 0.7) * 100;
+    }
+
+    get isShuffled(): boolean {
+        return this.playerState?.isShuffled || false;
+    }
+
+    get repeatMode(): string {
+        return this.playerState?.repeatMode || &#x27;none&#x27;;
+    }
+
+    get queue(): EnrichedSong[] {
+        return this.playerState?.queue || [];
+    }
+
+    get currentIndex(): number {
+        return this.playerState?.currentIndex || -1;
+    }
+
+    get showPlayer(): boolean {
+        return !!this.playerState?.currentSong;
+    }
+
+    get Math() {
+        return Math;
+    }
+
+    getRepeatIcon(): string {
+        switch (this.repeatMode) {
+            case &#x27;one&#x27;: return &#x27;repeat-once&#x27;;
+            case &#x27;all&#x27;: return &#x27;repeat&#x27;;
+            default: return &#x27;repeat&#x27;;
+        }
+    }
+
+    getRepeatColor(): string {
+        return this.repeatMode !&#x3D;&#x3D; &#x27;none&#x27; ? &#x27;primary&#x27; : &#x27;medium&#x27;;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;audio-player-container&quot; *ngIf&#x3D;&quot;showPlayer&quot;&gt;
+    &lt;div class&#x3D;&quot;player-header&quot; *ngIf&#x3D;&quot;!isExpanded&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mini-player&quot; *ngIf&#x3D;&quot;!isExpanded&quot;&gt;
+        &lt;div class&#x3D;&quot;song-info&quot; (click)&#x3D;&quot;toggleExpanded()&quot;&gt;
+            &lt;ion-thumbnail&gt;
+                &lt;img [src]&#x3D;&quot;currentSong?.image?.thumbnail || &#x27;assets/default-song.png&#x27;&quot; 
+                    [alt]&#x3D;&quot;currentSong?.name&quot;&gt;
+            &lt;/ion-thumbnail&gt;
+            &lt;div class&#x3D;&quot;track-details&quot;&gt;
+                &lt;div class&#x3D;&quot;track-name&quot;&gt;{{ currentSong?.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;track-artist&quot;&gt;{{ currentSong?.artistNames?.join(&#x27;, &#x27;) || &#x27;Unknown Artist&#x27; }}&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;mini-controls&quot;&gt;
+            &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;previous()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;play-skip-back&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button 
+                fill&#x3D;&quot;clear&quot; 
+                size&#x3D;&quot;small&quot; 
+                class&#x3D;&quot;play-pause-btn&quot;
+                (click)&#x3D;&quot;togglePlayPause()&quot;&gt;
+                &lt;ion-icon [name]&#x3D;&quot;isPlaying ? &#x27;pause&#x27; : &#x27;play&#x27;&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;play-skip-forward&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Control de volumen en mini player --&gt;
+        &lt;div class&#x3D;&quot;mini-volume ion-hide-md-down&quot;&gt;
+            &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;toggleMute()&quot;&gt;
+                &lt;ion-icon [name]&#x3D;&quot;getVolumeIcon()&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            &lt;ion-range 
+                [value]&#x3D;&quot;volume&quot; 
+                (ionInput)&#x3D;&quot;onVolumeChange($event)&quot;
+                [pin]&#x3D;&quot;true&quot;
+                [snaps]&#x3D;&quot;true&quot;
+                [step]&#x3D;&quot;5&quot;
+                class&#x3D;&quot;volume-range-mini&quot;&gt;
+            &lt;/ion-range&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Progress Bar solo en mini player --&gt;
+        &lt;div class&#x3D;&quot;progress-container&quot;&gt;
+            &lt;ion-range 
+                [value]&#x3D;&quot;progress&quot; 
+                (ionInput)&#x3D;&quot;onProgressChange($event)&quot;
+                class&#x3D;&quot;progress-range&quot;&gt;
+            &lt;/ion-range&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Full Player (Expanded State) --&gt;
+    &lt;div class&#x3D;&quot;full-player&quot; *ngIf&#x3D;&quot;isExpanded&quot;&gt;
+        &lt;!-- Header Expanded --&gt;
+        &lt;div class&#x3D;&quot;expanded-header&quot; (click)&#x3D;&quot;$event.stopPropagation()&quot;&gt;
+            &lt;div class&#x3D;&quot;playing-from-expanded&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;musical-notes-outline&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/ion-icon&gt;
+                &lt;div&gt;
+                    &lt;div class&#x3D;&quot;context-type&quot;&gt;{{ getPlayingFromText() }}&lt;/div&gt;
+                    &lt;div class&#x3D;&quot;context-name&quot; *ngIf&#x3D;&quot;playerState?.playingFrom?.name&quot;&gt;
+                        {{ playerState?.playingFrom?.name }}
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;header-actions&quot;&gt;
+                &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;toggleQueue(); $event.stopPropagation()&quot;&gt;
+                    &lt;ion-icon name&#x3D;&quot;list&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/ion-button&gt;
+                &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;toggleExpanded(); $event.stopPropagation()&quot;&gt;
+                    &lt;ion-icon name&#x3D;&quot;chevron-down&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/ion-button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Album Art &amp; Info --&gt;
+        &lt;div class&#x3D;&quot;track-display&quot;&gt;
+            &lt;div class&#x3D;&quot;album-art&quot;&gt;
+                &lt;img [src]&#x3D;&quot;currentSong?.image?.url || currentSong?.image?.large || &#x27;assets/default-song.png&#x27;&quot; 
+                    [alt]&#x3D;&quot;currentSong?.name&quot;&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;track-info-expanded&quot;&gt;
+                &lt;h2&gt;{{ currentSong?.name }}&lt;/h2&gt;
+                &lt;h3&gt;{{ currentSong?.artistNames?.join(&#x27;, &#x27;) || &#x27;Unknown Artist&#x27; }}&lt;/h3&gt;
+                &lt;p *ngIf&#x3D;&quot;currentSong?.album&quot;&gt;{{ currentSong?.album }}&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Progress with Time (solo en expanded) --&gt;
+        &lt;div class&#x3D;&quot;progress-section&quot;&gt;
+            &lt;div class&#x3D;&quot;time-display&quot;&gt;
+                &lt;span class&#x3D;&quot;current-time&quot;&gt;{{ currentTime }}&lt;/span&gt;
+                &lt;span class&#x3D;&quot;duration&quot;&gt;{{ duration }}&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;ion-range 
+                [value]&#x3D;&quot;progress&quot; 
+                (ionInput)&#x3D;&quot;onProgressChange($event)&quot;
+                class&#x3D;&quot;progress-range-expanded&quot;&gt;
+            &lt;/ion-range&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Main Controls --&gt;
+        &lt;div class&#x3D;&quot;main-controls&quot;&gt;
+            &lt;ion-button 
+                fill&#x3D;&quot;clear&quot; 
+                [color]&#x3D;&quot;isShuffled ? &#x27;primary&#x27; : &#x27;medium&#x27;&quot;
+                (click)&#x3D;&quot;toggleShuffle()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;shuffle&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;large&quot; (click)&#x3D;&quot;previous()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;play-skip-back&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button 
+                fill&#x3D;&quot;solid&quot; 
+                shape&#x3D;&quot;round&quot; 
+                size&#x3D;&quot;large&quot; 
+                class&#x3D;&quot;main-play-btn&quot;
+                (click)&#x3D;&quot;togglePlayPause()&quot;&gt;
+                &lt;ion-icon [name]&#x3D;&quot;isPlaying ? &#x27;pause&#x27; : &#x27;play&#x27;&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;large&quot; (click)&#x3D;&quot;next()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;play-skip-forward&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            
+            &lt;ion-button 
+                fill&#x3D;&quot;clear&quot; 
+                [color]&#x3D;&quot;getRepeatColor()&quot;
+                (click)&#x3D;&quot;toggleRepeat()&quot;&gt;
+                &lt;ion-icon [name]&#x3D;&quot;getRepeatIcon()&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Volume Control --&gt;
+        &lt;div class&#x3D;&quot;volume-control&quot;&gt;
+            &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;toggleMute()&quot;&gt;
+                &lt;ion-icon [name]&#x3D;&quot;getVolumeIcon()&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+            &lt;ion-range 
+                [value]&#x3D;&quot;volume&quot; 
+                (ionInput)&#x3D;&quot;onVolumeChange($event)&quot;
+                [pin]&#x3D;&quot;true&quot;
+                [snaps]&#x3D;&quot;true&quot;
+                [step]&#x3D;&quot;1&quot;
+                class&#x3D;&quot;volume-range&quot;&gt;
+                &lt;ion-label slot&#x3D;&quot;start&quot;&gt;0&lt;/ion-label&gt;
+                &lt;ion-label slot&#x3D;&quot;end&quot;&gt;100&lt;/ion-label&gt;
+            &lt;/ion-range&gt;
+            &lt;div class&#x3D;&quot;volume-percentage&quot;&gt;{{ Math.round(volume) }}%&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Queue Modal --&gt;
+    &lt;ion-modal [isOpen]&#x3D;&quot;showQueue&quot; (ionModalDidDismiss)&#x3D;&quot;showQueue &#x3D; false&quot;&gt;
+        &lt;ng-template&gt;
+        &lt;ion-header&gt;
+            &lt;ion-toolbar&gt;
+            &lt;ion-title&gt;Cola de reproducción&lt;/ion-title&gt;
+            &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
+                &lt;ion-button (click)&#x3D;&quot;toggleQueue()&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;close&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/ion-button&gt;
+            &lt;/ion-buttons&gt;
+            &lt;/ion-toolbar&gt;
+        &lt;/ion-header&gt;
+        
+        &lt;ion-content&gt;
+            &lt;div class&#x3D;&quot;queue-container&quot;&gt;
+            &lt;div class&#x3D;&quot;queue-header&quot;&gt;
+                &lt;h3&gt;Reproduciendo ahora&lt;/h3&gt;
+            &lt;/div&gt;
+            
+            &lt;div class&#x3D;&quot;queue-item current-item&quot; *ngIf&#x3D;&quot;currentSong&quot;&gt;
+                &lt;ion-thumbnail&gt;
+                &lt;img [src]&#x3D;&quot;currentSong.image?.thumbnail || &#x27;assets/default-song.png&#x27;&quot; 
+                    [alt]&#x3D;&quot;currentSong.name&quot;&gt;
+                &lt;/ion-thumbnail&gt;
+                &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                &lt;div class&#x3D;&quot;item-title&quot;&gt;{{ currentSong.name }}&lt;/div&gt;
+                &lt;div class&#x3D;&quot;item-artist&quot;&gt;{{ currentSong.artistNames?.join(&#x27;, &#x27;) || &#x27;Unknown Artist&#x27; }}&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;playing-indicator&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;musical-notes&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;queue-header&quot; *ngIf&#x3D;&quot;queue.length &gt; 1&quot;&gt;
+                &lt;h3&gt;Próximo en la cola&lt;/h3&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;queue-list&quot;&gt;
+                &lt;div 
+                class&#x3D;&quot;queue-item&quot; 
+                *ngFor&#x3D;&quot;let song of queue; let i &#x3D; index&quot;
+                [class.current]&#x3D;&quot;i &#x3D;&#x3D;&#x3D; currentIndex&quot;
+                (click)&#x3D;&quot;playSongFromQueue(song, i)&quot;&gt;
+                &lt;ion-thumbnail&gt;
+                    &lt;img [src]&#x3D;&quot;song.image?.thumbnail || &#x27;assets/default-song.png&#x27;&quot; 
+                        [alt]&#x3D;&quot;song.name&quot;&gt;
+                &lt;/ion-thumbnail&gt;
+                &lt;div class&#x3D;&quot;item-info&quot;&gt;
+                    &lt;div class&#x3D;&quot;item-title&quot;&gt;{{ song.name }}&lt;/div&gt;
+                    &lt;div class&#x3D;&quot;item-artist&quot;&gt;{{ song.artistNames?.join(&#x27;, &#x27;) || &#x27;Unknown Artist&#x27; }}&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;ion-button 
+                    fill&#x3D;&quot;clear&quot; 
+                    size&#x3D;&quot;small&quot; 
+                    (click)&#x3D;&quot;removeFromQueue(i); $event.stopPropagation()&quot;&gt;
+                    &lt;ion-icon name&#x3D;&quot;close&quot;&gt;&lt;/ion-icon&gt;
+                &lt;/ion-button&gt;   
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/ion-content&gt;
+        &lt;/ng-template&gt;
+    &lt;/ion-modal&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./audio-player.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// src/app/shared/components/audio-player/audio-player.component.scss - REEMPLAZAR COMPLETAMENTE
+
+.audio-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, #181818 100%);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+// Header con información de contexto
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(29, 185, 84, 0.1);
+  border-bottom: 1px solid rgba(29, 185, 84, 0.2);
+
+  .playing-from {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #1db954;
+    font-weight: 500;
+
+    ion-icon {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Mini Player
+.mini-player {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+
+  .song-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    cursor: pointer;
+    min-width: 0;
+
+    ion-thumbnail {
+      --size: 48px;
+      --border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .track-details {
+      flex: 1;
+      min-width: 0;
+
+      .track-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.2rem;
+      }
+
+      .track-artist {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .mini-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .play-pause-btn {
+      --color: white;
+      --background: rgba(255, 255, 255, 0.1);
+      --border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+
+      &amp;:hover {
+        --color: white;
+      }
+    }
+  }
+
+  // Control de volumen mini
+  .mini-volume {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+
+    .volume-range-mini {
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 12px;
+    }
+  }
+}
+
+// Progress Bar
+.progress-container {
+  padding: 0 1rem 0.5rem;
+
+  .progress-range {
+    --bar-height: 4px;
+    --bar-background: rgba(255, 255, 255, 0.3);
+    --bar-background-active: #1db954;
+    --knob-background: #1db954;
+    --knob-size: 12px;
+    margin: 0;
+    padding: 0;
+
+    &amp;:hover {
+      --knob-size: 16px;
+    }
+  }
+}
+
+// Full Player (Expanded)
+.full-player {
+  padding: 1rem;
+  background: linear-gradient(180deg, #282828 0%, #181818 100%);
+  max-height: 70vh;
+  overflow-y: auto;
+
+  .expanded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .playing-from-expanded {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .context-type {
+        font-size: 0.8rem;
+        color: #1db954;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .context-name {
+        font-size: 1rem;
+        color: white;
+        font-weight: 500;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+
+      ion-button {
+        --color: #b3b3b3;
+        
+        &amp;:hover {
+          --color: white;
+        }
+      }
+    }
+  }
+
+  .track-display {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .album-art {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .track-info-expanded {
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: white;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.25rem 0;
+        color: #b3b3b3;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+        color: #666;
+      }
+    }
+  }
+
+  .progress-section {
+    margin-bottom: 2rem;
+
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      color: #b3b3b3;
+    }
+
+    .progress-range-expanded {
+      --bar-height: 6px;
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 16px;
+    }
+  }
+
+  .main-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .main-play-btn {
+      --background: #1db954;
+      --background-hover: #1ed760;
+      --color: white;
+      width: 64px;
+      height: 64px;
+
+      ion-icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+
+      &amp;:hover {
+        --color: white;
+      }
+
+      &amp;[color&#x3D;&quot;primary&quot;] {
+        --color: #1db954;
+      }
+    }
+  }
+
+  // Control de volumen
+  .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+
+      &amp;:hover {
+        --color: white;
+      }
+    }
+
+    .volume-range {
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 16px;
+      min-width: 200px;
+      margin: 0 0.5rem;
+
+      ion-label {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+      }
+    }
+
+    .volume-percentage {
+      font-size: 0.8rem;
+      color: #b3b3b3;
+      min-width: 35px;
+      text-align: right;
+    }
+  }
+}
+
+// Queue Modal
+.queue-container {
+  padding: 1rem;
+
+  .queue-header {
+    margin-bottom: 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .queue-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &amp;:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &amp;.current-item {
+      background-color: rgba(29, 185, 84, 0.2);
+      border: 1px solid rgba(29, 185, 84, 0.4);
+    }
+
+    &amp;.current {
+      background-color: rgba(29, 185, 84, 0.1);
+    }
+
+    ion-thumbnail {
+      --size: 48px;
+      --border-radius: 4px;
+    }
+
+    .item-info {
+      flex: 1;
+      min-width: 0;
+
+      .item-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.2rem;
+      }
+
+      .item-artist {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .playing-indicator {
+      ion-icon {
+        font-size: 1.2rem;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 8px;
+      --padding-end: 8px;
+
+      &amp;:hover {
+        --color: white;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .mini-volume {
+    display: none !important;
+  }
+
+  .full-player {
+    .track-display .album-art {
+      width: 150px;
+      height: 150px;
+    }
+
+    .volume-control .volume-range {
+      min-width: 150px;
+    }
+
+    .main-controls {
+      gap: 1rem;
+
+      .main-play-btn {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+// Animaciones
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.6; 
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="audio-player-container" *ngIf="showPlayer">    <div class="player-header" *ngIf="!isExpanded">    </div>    <div class="mini-player" *ngIf="!isExpanded">        <div class="song-info" (click)="toggleExpanded()">            <ion-thumbnail>                <img [src]="currentSong?.image?.thumbnail || \'assets/default-song.png\'"                     [alt]="currentSong?.name">            </ion-thumbnail>            <div class="track-details">                <div class="track-name">{{ currentSong?.name }}</div>                <div class="track-artist">{{ currentSong?.artistNames?.join(\', \') || \'Unknown Artist\' }}</div>            </div>        </div>        <div class="mini-controls">            <ion-button fill="clear" size="small" (click)="previous()">                <ion-icon name="play-skip-back"></ion-icon>            </ion-button>                        <ion-button                 fill="clear"                 size="small"                 class="play-pause-btn"                (click)="togglePlayPause()">                <ion-icon [name]="isPlaying ? \'pause\' : \'play\'"></ion-icon>            </ion-button>                        <ion-button fill="clear" size="small" (click)="next()">                <ion-icon name="play-skip-forward"></ion-icon>            </ion-button>        </div>        <!-- Control de volumen en mini player -->        <div class="mini-volume ion-hide-md-down">            <ion-button fill="clear" size="small" (click)="toggleMute()">                <ion-icon [name]="getVolumeIcon()"></ion-icon>            </ion-button>            <ion-range                 [value]="volume"                 (ionInput)="onVolumeChange($event)"                [pin]="true"                [snaps]="true"                [step]="5"                class="volume-range-mini">            </ion-range>        </div>        <!-- Progress Bar solo en mini player -->        <div class="progress-container">            <ion-range                 [value]="progress"                 (ionInput)="onProgressChange($event)"                class="progress-range">            </ion-range>        </div>    </div>    <!-- Full Player (Expanded State) -->    <div class="full-player" *ngIf="isExpanded">        <!-- Header Expanded -->        <div class="expanded-header" (click)="$event.stopPropagation()">            <div class="playing-from-expanded">                <ion-icon name="musical-notes-outline" color="primary"></ion-icon>                <div>                    <div class="context-type">{{ getPlayingFromText() }}</div>                    <div class="context-name" *ngIf="playerState?.playingFrom?.name">                        {{ playerState?.playingFrom?.name }}                    </div>                </div>            </div>            <div class="header-actions">                <ion-button fill="clear" (click)="toggleQueue(); $event.stopPropagation()">                    <ion-icon name="list"></ion-icon>                </ion-button>                <ion-button fill="clear" (click)="toggleExpanded(); $event.stopPropagation()">                    <ion-icon name="chevron-down"></ion-icon>                </ion-button>            </div>        </div>        <!-- Album Art & Info -->        <div class="track-display">            <div class="album-art">                <img [src]="currentSong?.image?.url || currentSong?.image?.large || \'assets/default-song.png\'"                     [alt]="currentSong?.name">            </div>            <div class="track-info-expanded">                <h2>{{ currentSong?.name }}</h2>                <h3>{{ currentSong?.artistNames?.join(\', \') || \'Unknown Artist\' }}</h3>                <p *ngIf="currentSong?.album">{{ currentSong?.album }}</p>            </div>        </div>        <!-- Progress with Time (solo en expanded) -->        <div class="progress-section">            <div class="time-display">                <span class="current-time">{{ currentTime }}</span>                <span class="duration">{{ duration }}</span>            </div>            <ion-range                 [value]="progress"                 (ionInput)="onProgressChange($event)"                class="progress-range-expanded">            </ion-range>        </div>        <!-- Main Controls -->        <div class="main-controls">            <ion-button                 fill="clear"                 [color]="isShuffled ? \'primary\' : \'medium\'"                (click)="toggleShuffle()">                <ion-icon name="shuffle"></ion-icon>            </ion-button>                        <ion-button fill="clear" size="large" (click)="previous()">                <ion-icon name="play-skip-back"></ion-icon>            </ion-button>                        <ion-button                 fill="solid"                 shape="round"                 size="large"                 class="main-play-btn"                (click)="togglePlayPause()">                <ion-icon [name]="isPlaying ? \'pause\' : \'play\'"></ion-icon>            </ion-button>                        <ion-button fill="clear" size="large" (click)="next()">                <ion-icon name="play-skip-forward"></ion-icon>            </ion-button>                        <ion-button                 fill="clear"                 [color]="getRepeatColor()"                (click)="toggleRepeat()">                <ion-icon [name]="getRepeatIcon()"></ion-icon>            </ion-button>        </div>        <!-- Volume Control -->        <div class="volume-control">            <ion-button fill="clear" (click)="toggleMute()">                <ion-icon [name]="getVolumeIcon()"></ion-icon>            </ion-button>            <ion-range                 [value]="volume"                 (ionInput)="onVolumeChange($event)"                [pin]="true"                [snaps]="true"                [step]="1"                class="volume-range">                <ion-label slot="start">0</ion-label>                <ion-label slot="end">100</ion-label>            </ion-range>            <div class="volume-percentage">{{ Math.round(volume) }}%</div>        </div>    </div>    <!-- Queue Modal -->    <ion-modal [isOpen]="showQueue" (ionModalDidDismiss)="showQueue = false">        <ng-template>        <ion-header>            <ion-toolbar>            <ion-title>Cola de reproducción</ion-title>            <ion-buttons slot="end">                <ion-button (click)="toggleQueue()">                <ion-icon name="close"></ion-icon>                </ion-button>            </ion-buttons>            </ion-toolbar>        </ion-header>                <ion-content>            <div class="queue-container">            <div class="queue-header">                <h3>Reproduciendo ahora</h3>            </div>                        <div class="queue-item current-item" *ngIf="currentSong">                <ion-thumbnail>                <img [src]="currentSong.image?.thumbnail || \'assets/default-song.png\'"                     [alt]="currentSong.name">                </ion-thumbnail>                <div class="item-info">                <div class="item-title">{{ currentSong.name }}</div>                <div class="item-artist">{{ currentSong.artistNames?.join(\', \') || \'Unknown Artist\' }}</div>                </div>                <div class="playing-indicator">                <ion-icon name="musical-notes" color="primary"></ion-icon>                </div>            </div>            <div class="queue-header" *ngIf="queue.length > 1">                <h3>Próximo en la cola</h3>            </div>            <div class="queue-list">                <div                 class="queue-item"                 *ngFor="let song of queue; let i = index"                [class.current]="i === currentIndex"                (click)="playSongFromQueue(song, i)">                <ion-thumbnail>                    <img [src]="song.image?.thumbnail || \'assets/default-song.png\'"                         [alt]="song.name">                </ion-thumbnail>                <div class="item-info">                    <div class="item-title">{{ song.name }}</div>                    <div class="item-artist">{{ song.artistNames?.join(\', \') || \'Unknown Artist\' }}</div>                </div>                <ion-button                     fill="clear"                     size="small"                     (click)="removeFromQueue(i); $event.stopPropagation()">                    <ion-icon name="close"></ion-icon>                </ion-button>                   </div>            </div>            </div>        </ion-content>        </ng-template>    </ion-modal></div></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistGridCardComponent', 'selector': 'app-artist-grid-card'},{'name': 'ArtistModalComponent', 'selector': 'app-artist-modal'},{'name': 'ArtistProfilePage', 'selector': 'app-artist-profile'},{'name': 'ArtistsPage', 'selector': 'app-artists'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'ChangePasswordModalComponent', 'selector': 'app-change-password-modal'},{'name': 'ClickableArtistNamesComponent', 'selector': 'app-clickable-artist-names'},{'name': 'EditProfileModalComponent', 'selector': 'app-edit-profile-modal'},{'name': 'FollowArtistButtonComponent', 'selector': 'app-follow-artist-button'},{'name': 'GlobalSearchComponent', 'selector': 'app-global-search'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LikeButtonComponent', 'selector': 'app-like-button'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayButtonComponent', 'selector': 'app-play-button'},{'name': 'PlaylistDetailPage', 'selector': 'app-playlist-detail'},{'name': 'PlaylistLikeButtonComponent', 'selector': 'app-playlist-like-button'},{'name': 'PlaylistModalComponent', 'selector': 'app-playlist-modal'},{'name': 'PlaylistsPage', 'selector': 'app-playlists'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SongDetailModalComponent', 'selector': 'app-song-detail-modal'},{'name': 'SongGridCardComponent', 'selector': 'app-song-grid-card'},{'name': 'SongModalComponent', 'selector': 'app-song-modal'},{'name': 'SongsPage', 'selector': 'app-songs'},{'name': 'SplashPage', 'selector': 'app-splash'}];
+    var DIRECTIVES = [{'name': 'DragDropDirective', 'selector': '[appDragDrop]'}];
+    var ACTUAL_COMPONENT = {'name': 'AudioPlayerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AudioPlayerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

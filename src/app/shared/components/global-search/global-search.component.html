@@ -1,0 +1,35 @@
+<!-- src/app/shared/components/global-search/global-search.component.html -->
+
+<!-- ✅ SOLO LA BARRA DE BÚSQUEDA - EL OVERLAY SE CREA PROGRAMÁTICAMENTE -->
+<div class="global-search-container" [class.active]="isSearchActive">
+    
+    <!-- Barra de búsqueda -->
+    <div class="search-bar" (click)="activateSearch()">
+        <div class="search-input-container">
+            <ion-icon name="search" class="search-icon"></ion-icon>
+            
+            <input 
+                #searchInput
+                type="text" 
+                class="search-input"
+                placeholder="¿Qué quieres reproducir?"
+                [(ngModel)]="searchQuery"
+                (input)="onSearchChange($event)"
+                (blur)="deactivateSearch()"
+                [class.active]="isSearchActive">
+            
+            <div class="search-shortcut" *ngIf="!isSearchActive">
+            </div>
+            
+            <ion-button 
+                fill="clear" 
+                size="small" 
+                class="clear-button"
+                *ngIf="isSearchActive && searchQuery"
+                (click)="searchQuery = ''; searchResults = []; $event.stopPropagation();">
+                <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-button>
+        </div>
+    </div>
+</div>
+

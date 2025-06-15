@@ -1,0 +1,1470 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SongGridCardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/song-grid-card/song-grid-card.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-song-grid-card</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./song-grid-card.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./song-grid-card.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_artistNames" >_artistNames</a>
+                            </li>
+                            <li>
+                                <a href="#artistNames$" >artistNames$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroy$" >destroy$</a>
+                            </li>
+                            <li>
+                                <a href="#isCurrentSongPlaying" >isCurrentSongPlaying</a>
+                            </li>
+                            <li>
+                                <a href="#isHovered" >isHovered</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadArtists" >loadArtists</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDelete" >onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit" >onEdit</a>
+                            </li>
+                            <li>
+                                <a href="#onMouseEnter" >onMouseEnter</a>
+                            </li>
+                            <li>
+                                <a href="#onMouseLeave" >onMouseLeave</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onPlay" >onPlay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscribeToPlayerState" >subscribeToPlayerState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#playlist" >playlist</a>
+                            </li>
+                            <li>
+                                <a href="#song" >song</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#edit" >edit</a>
+                            </li>
+                            <li>
+                                <a href="#playSong" >playSong</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(artistsService: <a href="../injectables/ArtistsService.html" target="_self">ArtistsService</a>, audioPlayerService: <a href="../injectables/AudioPlayerService.html" target="_self">AudioPlayerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>artistsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArtistsService.html" target="_self" >ArtistsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>audioPlayerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AudioPlayerService.html" target="_self" >AudioPlayerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="playlist"></a>
+                        <b>playlist</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>(Song | EnrichedSong)[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:17</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="song"></a>
+                        <b>song</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Song | EnrichedSong</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delete"></a>
+                        <b>delete</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <b>edit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="playSong"></a>
+                        <b>playSong</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadArtists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadArtists</b></span>
+                        <a href="#loadArtists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadArtists()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDelete"></a>
+                    <span class="name">
+                        <span ><b>onDelete</b></span>
+                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDelete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdit"></a>
+                    <span class="name">
+                        <span ><b>onEdit</b></span>
+                        <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onEdit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMouseEnter"></a>
+                    <span class="name">
+                        <span ><b>onMouseEnter</b></span>
+                        <a href="#onMouseEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMouseEnter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMouseLeave"></a>
+                    <span class="name">
+                        <span ><b>onMouseLeave</b></span>
+                        <a href="#onMouseLeave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMouseLeave()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlay"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onPlay</b></span>
+                        <a href="#onPlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPlay()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscribeToPlayerState"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>subscribeToPlayerState</b></span>
+                        <a href="#subscribeToPlayerState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>subscribeToPlayerState()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_artistNames"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_artistNames</b></span>
+                        <a href="#_artistNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;string[]&gt;([&#x27;Unknown Artist&#x27;])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="artistNames$"></a>
+                    <span class="name">
+                        <span ><b>artistNames$</b></span>
+                        <a href="#artistNames$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this._artistNames.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroy$</b></span>
+                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCurrentSongPlaying"></a>
+                    <span class="name">
+                        <span ><b>isCurrentSongPlaying</b></span>
+                        <a href="#isCurrentSongPlaying"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHovered"></a>
+                    <span class="name">
+                        <span ><b>isHovered</b></span>
+                        <a href="#isHovered"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/shared/components/song-grid-card/song-grid-card.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Song } from &#x27;src/app/core/models/song.model&#x27;;
+import { EnrichedSong } from &#x27;src/app/core/models/enriched-song.interface&#x27;;
+import { Artist } from &#x27;src/app/core/models/artist.model&#x27;;
+import { ArtistsService } from &#x27;src/app/core/services/impl/artists.service&#x27;;
+import { AudioPlayerService } from &#x27;src/app/core/services/impl/audio-player.service&#x27;;
+import { BehaviorSubject, takeUntil, Subject } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-song-grid-card&#x27;,
+  templateUrl: &#x27;./song-grid-card.component.html&#x27;,
+  styleUrls: [&#x27;./song-grid-card.component.scss&#x27;]
+})
+export class SongGridCardComponent implements OnInit, OnDestroy {
+  @Input() song!: Song | EnrichedSong;
+  @Input() playlist: (Song | EnrichedSong)[] &#x3D; []; // ✅ NUEVO: Lista completa para el reproductor
+  @Output() edit &#x3D; new EventEmitter&lt;Song | EnrichedSong&gt;();
+  @Output() delete &#x3D; new EventEmitter&lt;Song | EnrichedSong&gt;();
+  @Output() playSong &#x3D; new EventEmitter&lt;Song | EnrichedSong&gt;(); // Mantener compatibilidad
+
+  private _artistNames &#x3D; new BehaviorSubject&lt;string[]&gt;([&#x27;Unknown Artist&#x27;]);
+  artistNames$ &#x3D; this._artistNames.asObservable();
+  
+  isCurrentSongPlaying &#x3D; false;
+  isHovered &#x3D; false;
+  private destroy$ &#x3D; new Subject&lt;void&gt;();
+
+  constructor(
+    private artistsService: ArtistsService,
+    private audioPlayerService: AudioPlayerService // ✅ NUEVO
+  ) {}
+
+  ngOnInit() {
+    this.loadArtists();
+    this.subscribeToPlayerState(); // ✅ NUEVO
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  // ✅ NUEVO: Suscribirse al estado del reproductor
+  private subscribeToPlayerState() {
+    this.audioPlayerService.playerState$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(state &#x3D;&gt; {
+        this.isCurrentSongPlaying &#x3D; 
+          state.currentSong?.id &#x3D;&#x3D;&#x3D; this.song?.id &amp;&amp; state.isPlaying;
+      });
+  }
+
+  private loadArtists() {
+    if (this.song.artists_IDS?.length) {
+      this.artistsService.getByIds(this.song.artists_IDS).subscribe({
+        next: (artists) &#x3D;&gt; {
+          this._artistNames.next(artists.map(artist &#x3D;&gt; artist.name));
+        },
+        error: (error) &#x3D;&gt; {
+          console.error(&#x27;Error loading artists:&#x27;, error);
+          this._artistNames.next([&#x27;Unknown Artist&#x27;]);
+        }
+      });
+    } else {
+      this._artistNames.next([&#x27;Unknown Artist&#x27;]);
+    }
+  }
+
+  onEdit() {
+    this.edit.emit(this.song);
+  }
+
+  onDelete() {
+    this.delete.emit(this.song);
+  }
+
+  // ✅ ACTUALIZADO: Nuevo método de reproducción
+  async onPlay() {
+    if (!this.song) return;
+
+    const currentState &#x3D; this.audioPlayerService.getPlayerState();
+    
+    if (currentState.currentSong?.id &#x3D;&#x3D;&#x3D; this.song.id) {
+      // Es la misma canción, toggle play/pause
+      if (currentState.isPlaying) {
+        this.audioPlayerService.pause();
+      } else {
+        this.audioPlayerService.resume();
+      }
+    } else {
+      // Es una canción diferente, cargar y reproducir
+      if (this.playlist.length &gt; 0) {
+        const songIndex &#x3D; this.playlist.findIndex(s &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; this.song.id);
+        this.audioPlayerService.setQueue(this.playlist, songIndex);
+      } else {
+        this.audioPlayerService.setQueue([this.song], 0);
+      }
+      
+      await this.audioPlayerService.play(this.song);
+    }
+
+    // Emitir evento para compatibilidad hacia atrás
+    this.playSong.emit(this.song);
+  }
+
+  onMouseEnter() {
+    this.isHovered &#x3D; true;
+  }
+
+  onMouseLeave() {
+    this.isHovered &#x3D; false;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- src/app/shared/components/song-grid-card/song-grid-card.component.html - ACTUALIZADO --&gt;
+&lt;div class&#x3D;&quot;song-card&quot; 
+      (mouseenter)&#x3D;&quot;onMouseEnter()&quot; 
+      (mouseleave)&#x3D;&quot;onMouseLeave()&quot;
+      [class.playing]&#x3D;&quot;isCurrentSongPlaying&quot;&gt;
+  &lt;div class&#x3D;&quot;image-container&quot;&gt;
+    &lt;img [src]&#x3D;&quot;song.image?.url || &#x27;assets/default-song.png&#x27;&quot; 
+          [alt]&#x3D;&quot;song.name&quot;
+          class&#x3D;&quot;song-image&quot;&gt;
+    
+    &lt;!-- ✅ NUEVO: Indicador de reproducción --&gt;
+    &lt;div class&#x3D;&quot;playing-indicator&quot; *ngIf&#x3D;&quot;isCurrentSongPlaying &amp;&amp; !isHovered&quot;&gt;
+      &lt;div class&#x3D;&quot;sound-bars&quot;&gt;
+        &lt;div class&#x3D;&quot;bar bar1&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;bar bar2&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;bar bar3&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;bar bar4&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class&#x3D;&quot;overlay&quot; *ngIf&#x3D;&quot;isHovered || isCurrentSongPlaying&quot;&gt;
+      &lt;div class&#x3D;&quot;action-buttons&quot;&gt;
+        &lt;!-- ✅ ACTUALIZADO: Botón de play con estado dinámico --&gt;
+        &lt;ion-button (click)&#x3D;&quot;onPlay()&quot; fill&#x3D;&quot;clear&quot; class&#x3D;&quot;play-button&quot;&gt;
+          &lt;ion-icon [name]&#x3D;&quot;isCurrentSongPlaying ? &#x27;pause&#x27; : &#x27;play&#x27;&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+        
+        &lt;ion-button (click)&#x3D;&quot;onEdit()&quot; fill&#x3D;&quot;clear&quot; class&#x3D;&quot;edit-button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;create&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+        
+        &lt;ion-button (click)&#x3D;&quot;onDelete()&quot; fill&#x3D;&quot;clear&quot; class&#x3D;&quot;delete-button&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;trash&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Información de la canción --&gt;
+  &lt;div class&#x3D;&quot;song-info&quot;&gt;
+    &lt;h3 class&#x3D;&quot;song-title&quot; [class.playing-text]&#x3D;&quot;isCurrentSongPlaying&quot;&gt;{{song.name}}&lt;/h3&gt;
+    &lt;p class&#x3D;&quot;song-artist&quot;&gt;{{(artistNames$ | async)?.join(&#x27;, &#x27;)}}&lt;/p&gt;
+    &lt;div class&#x3D;&quot;song-details&quot;&gt;
+      &lt;span class&#x3D;&quot;duration&quot;&gt;{{song.duration | duration}}&lt;/span&gt;
+      &lt;span class&#x3D;&quot;album&quot;&gt;{{song.album}}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./song-grid-card.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* src/app/shared/components/song-grid-card/song-grid-card.component.scss - ACTUALIZADO */
+.song-card {
+  background: rgba(71, 103, 42, 0.119);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgb(255, 255, 255);
+  transition: all 0.3s ease;
+
+  &amp;:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+
+  /* ✅ NUEVO: Estado de reproducción */
+  &amp;.playing {
+    box-shadow: 0 4px 12px rgba(29, 185, 84, 0.3);
+    border: 1px solid rgba(29, 185, 84, 0.5);
+  }
+}
+
+.image-container {
+  position: relative;
+  aspect-ratio: 1;
+
+  .song-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* ✅ NUEVO: Indicador de reproducción animado */
+  .playing-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    .sound-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 20px;
+
+      .bar {
+        width: 3px;
+        background: #1db954;
+        border-radius: 1px;
+        animation: soundBars 1.2s ease-in-out infinite;
+
+        &amp;.bar1 {
+          height: 8px;
+          animation-delay: 0s;
+        }
+
+        &amp;.bar2 {
+          height: 12px;
+          animation-delay: 0.2s;
+        }
+
+        &amp;.bar3 {
+          height: 16px;
+          animation-delay: 0.4s;
+        }
+
+        &amp;.bar4 {
+          height: 10px;
+          animation-delay: 0.6s;
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+
+    ion-button {
+      --padding-start: 8px;
+      --padding-end: 8px;
+      --background: rgb(255, 255, 255);
+      --color: var(--ion-color-dark);
+      
+      &amp;.play-button {
+        --background: #1db954;
+        --color: white;
+        --border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        
+        ion-icon {
+          font-size: 20px;
+        }
+      }
+      
+      &amp;.edit-button {
+        --color: var(--ion-color-primary);
+      }
+      
+      &amp;.delete-button {
+        --color: var(--ion-color-danger);
+      }
+    }
+  }
+}
+
+.song-info {
+  padding: 1rem;
+
+  .song-title {
+    font-weight: 600;
+    color: var(--ion-color-dark);
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease;
+
+    /* ✅ NUEVO: Estado de reproducción */
+    &amp;.playing-text {
+      color: #1db954;
+    }
+  }
+
+  .song-artist {
+    font-size: 0.875rem;
+    color: var(--ion-color-medium);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .song-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: var(--ion-color-medium);
+
+    .duration {
+      font-weight: 500;
+    }
+
+    .album {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60%;
+    }
+  }
+}
+
+/* ✅ NUEVO: Animaciones */
+@keyframes soundBars {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .song-card {
+    &amp;:hover {
+      transform: none;
+    }
+  }
+
+  .image-container {
+    .action-buttons {
+      ion-button {
+        &amp;.play-button {
+          width: 40px;
+          height: 40px;
+          
+          ion-icon {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .playing-indicator {
+    .sound-bars {
+      height: 16px;
+
+      .bar {
+        width: 2px;
+
+        &amp;.bar1 { height: 6px; }
+        &amp;.bar2 { height: 10px; }
+        &amp;.bar3 { height: 14px; }
+        &amp;.bar4 { height: 8px; }
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- src/app/shared/components/song-grid-card/song-grid-card.component.html - ACTUALIZADO --><div class="song-card"       (mouseenter)="onMouseEnter()"       (mouseleave)="onMouseLeave()"      [class.playing]="isCurrentSongPlaying">  <div class="image-container">    <img [src]="song.image?.url || \'assets/default-song.png\'"           [alt]="song.name"          class="song-image">        <!-- ✅ NUEVO: Indicador de reproducción -->    <div class="playing-indicator" *ngIf="isCurrentSongPlaying && !isHovered">      <div class="sound-bars">        <div class="bar bar1"></div>        <div class="bar bar2"></div>        <div class="bar bar3"></div>        <div class="bar bar4"></div>      </div>    </div>        <div class="overlay" *ngIf="isHovered || isCurrentSongPlaying">      <div class="action-buttons">        <!-- ✅ ACTUALIZADO: Botón de play con estado dinámico -->        <ion-button (click)="onPlay()" fill="clear" class="play-button">          <ion-icon [name]="isCurrentSongPlaying ? \'pause\' : \'play\'"></ion-icon>        </ion-button>                <ion-button (click)="onEdit()" fill="clear" class="edit-button">          <ion-icon name="create"></ion-icon>        </ion-button>                <ion-button (click)="onDelete()" fill="clear" class="delete-button">          <ion-icon name="trash"></ion-icon>        </ion-button>      </div>    </div>  </div>  <!-- Información de la canción -->  <div class="song-info">    <h3 class="song-title" [class.playing-text]="isCurrentSongPlaying">{{song.name}}</h3>    <p class="song-artist">{{(artistNames$ | async)?.join(\', \')}}</p>    <div class="song-details">      <span class="duration">{{song.duration | duration}}</span>      <span class="album">{{song.album}}</span>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistGridCardComponent', 'selector': 'app-artist-grid-card'},{'name': 'ArtistModalComponent', 'selector': 'app-artist-modal'},{'name': 'ArtistProfilePage', 'selector': 'app-artist-profile'},{'name': 'ArtistsPage', 'selector': 'app-artists'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'ChangePasswordModalComponent', 'selector': 'app-change-password-modal'},{'name': 'ClickableArtistNamesComponent', 'selector': 'app-clickable-artist-names'},{'name': 'EditProfileModalComponent', 'selector': 'app-edit-profile-modal'},{'name': 'FollowArtistButtonComponent', 'selector': 'app-follow-artist-button'},{'name': 'GlobalSearchComponent', 'selector': 'app-global-search'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LikeButtonComponent', 'selector': 'app-like-button'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayButtonComponent', 'selector': 'app-play-button'},{'name': 'PlaylistDetailPage', 'selector': 'app-playlist-detail'},{'name': 'PlaylistLikeButtonComponent', 'selector': 'app-playlist-like-button'},{'name': 'PlaylistModalComponent', 'selector': 'app-playlist-modal'},{'name': 'PlaylistsPage', 'selector': 'app-playlists'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SongDetailModalComponent', 'selector': 'app-song-detail-modal'},{'name': 'SongGridCardComponent', 'selector': 'app-song-grid-card'},{'name': 'SongModalComponent', 'selector': 'app-song-modal'},{'name': 'SongsPage', 'selector': 'app-songs'},{'name': 'SplashPage', 'selector': 'app-splash'}];
+    var DIRECTIVES = [{'name': 'DragDropDirective', 'selector': '[appDragDrop]'}];
+    var ACTUAL_COMPONENT = {'name': 'SongGridCardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SongGridCardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

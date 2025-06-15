@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Artists</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onAddArtist()">
+        <ion-icon name="add-outline"></ion-icon>
+        Add Artist
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="artists-grid">
+    <div class="artist-card" *ngFor="let artist of artists$ | async">
+      <!-- ✅ ACTUALIZADO: Tarjeta de artista con botón seguir -->
+      <div class="artist-image-container">
+        <img [src]="artist.image?.url || 'assets/default-artist.png'" [alt]="artist.name">
+        <!-- ✅ NUEVO: Overlay con botón seguir -->
+        <div class="artist-overlay">
+          <app-follow-artist-button 
+            [artistId]="artist.id" 
+            [artistName]="artist.name"
+            size="small">
+          </app-follow-artist-button>
+        </div>
+      </div>
+      
+      <div class="artist-info">
+        <h3>{{ artist.name }}</h3>
+        <div class="artist-stats">
+          <!-- ✅ NUEVO: Mostrar número de seguidores -->
+          <div class="followers-count">
+            <ion-icon name="people-outline"></ion-icon>
+            <span>{{ artist.followers_count || 0 }} seguidores</span>
+          </div>
+          <div class="listeners-count">
+            <ion-icon name="headset-outline"></ion-icon>
+            <span>{{ artist.listeners | number }} oyentes</span>
+          </div>
+        </div>
+        
+        <!-- ✅ ACCIONES DE ARTISTA -->
+        <div class="artist-actions">
+          <ion-button 
+            fill="clear" 
+            color="primary" 
+            (click)="onSelectArtist(artist)">
+            <ion-icon name="play-circle" slot="start"></ion-icon>
+            Ver canciones
+          </ion-button>
+          
+          <ion-button 
+            fill="clear" 
+            color="medium" 
+            (click)="onUpdateArtist(artist)">
+            <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+          
+          <ion-button 
+            fill="clear" 
+            color="danger" 
+            (click)="onDeleteArtist(artist)">
+            <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <div class="empty-state" *ngIf="(artists$ | async)?.length === 0">
+    <ion-icon name="mic-outline" size="large"></ion-icon>
+    <h2>No hay artistas</h2>
+    <p>Añade el primer artista para empezar</p>
+    <ion-button (click)="onAddArtist()">
+      <ion-icon name="add-outline" slot="start"></ion-icon>
+      Añadir Artista
+    </ion-button>
+  </div>
+</ion-content>

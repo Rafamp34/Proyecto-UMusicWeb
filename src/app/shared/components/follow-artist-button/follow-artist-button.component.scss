@@ -1,0 +1,19 @@
+/* src/app/shared/components/follow-artist-button/follow-artist-button.component.scss */
+.follow-button {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    ion-icon {
+        margin-right: 8px;
+    }
+
+    ion-spinner {
+        margin-left: 8px;
+    }
+}

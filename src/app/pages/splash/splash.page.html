@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <div class="splash-container">
+    
+    <!-- Logo/Animación Lottie -->
+    <div class="lottie-container">
+      <ng-lottie 
+        [options]="lottieOptions" 
+        (animationCreated)="animationCreated($event)">
+      </ng-lottie>
+    </div>
+    
+    <!-- Título y subtítulo -->
+    <h1 class="app-title">UMusic</h1>
+    <p class="app-subtitle">Tu música, tu mundo</p>
+    
+    <!-- Indicador de carga -->
+    <div class="loading-indicator">
+      <span class="loading-text">Cargando...</span>
+      
+      <!-- Opción 1: Barra de progreso -->
+      <div class="progress-bar"></div>
+    </div>
+    
+    <!-- Versión de la app -->
+    <div class="app-version">v1.0.0</div>
+    
+  </div>
+</ion-content>

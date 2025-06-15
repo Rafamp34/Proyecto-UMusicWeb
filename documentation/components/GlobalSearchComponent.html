@@ -1,0 +1,3512 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  GlobalSearchComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/global-search/global-search.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-global-search</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./global-search.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./global-search.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#allArtists" >allArtists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#allPlaylists" >allPlaylists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#allSongs" >allSongs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cacheLoaded" >cacheLoaded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroy$" >destroy$</a>
+                            </li>
+                            <li>
+                                <a href="#isSearchActive" >isSearchActive</a>
+                            </li>
+                            <li>
+                                <a href="#isSearching" >isSearching</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#overlayElement" >overlayElement</a>
+                            </li>
+                            <li>
+                                <a href="#recentSearches" >recentSearches</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#searchInput" >searchInput</a>
+                            </li>
+                            <li>
+                                <a href="#searchQuery" >searchQuery</a>
+                            </li>
+                            <li>
+                                <a href="#searchResults" >searchResults</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#searchSubject" >searchSubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activateSearch" >activateSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addLoadingState" >addLoadingState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addNoResults" >addNoResults</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addRecentSearches" >addRecentSearches</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addSearchResults" >addSearchResults</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addSearchTips" >addSearchTips</a>
+                            </li>
+                            <li>
+                                <a href="#clearRecentSearches" >clearRecentSearches</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createOverlay" >createOverlay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createResultItem" >createResultItem</a>
+                            </li>
+                            <li>
+                                <a href="#deactivateSearch" >deactivateSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRecentItemType" >getRecentItemType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getTypeEmoji" >getTypeEmoji</a>
+                            </li>
+                            <li>
+                                <a href="#goToFullSearch" >goToFullSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#loadRecentSearches" >loadRecentSearches</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchChange" >onSearchChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#performSearch" >performSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#playSong" >playSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#preloadData" >preloadData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#removeOverlay" >removeOverlay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#saveToRecentSearches" >saveToRecentSearches</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchArtistsLocal" >searchArtistsLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchPlaylistsLocal" >searchPlaylistsLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchSongsLocal" >searchSongsLocal</a>
+                            </li>
+                            <li>
+                                <a href="#selectResult" >selectResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setupSearchObservable" >setupSearchObservable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateOverlayContent" >updateOverlayContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updatePanelContent" >updatePanelContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#waitForCache" >waitForCache</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, renderer: Renderer2, document: Document, songsService: <a href="../injectables/SongsService.html" target="_self">SongsService</a>, playlistsService: <a href="../injectables/PlaylistsService.html" target="_self">PlaylistsService</a>, artistsService: <a href="../injectables/ArtistsService.html" target="_self">ArtistsService</a>, songEnrichmentService: <a href="../injectables/SongEnrichmentService.html" target="_self">SongEnrichmentService</a>, enhancedAudioPlayer: <a href="../injectables/EnhancedAudioPlayerService.html" target="_self">EnhancedAudioPlayerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code>Renderer2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>document</td>
+                                                  
+                                                        <td>
+                                                                    <code>Document</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>songsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SongsService.html" target="_self" >SongsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>playlistsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlaylistsService.html" target="_self" >PlaylistsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>artistsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArtistsService.html" target="_self" >ArtistsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>songEnrichmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SongEnrichmentService.html" target="_self" >SongEnrichmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>enhancedAudioPlayer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnhancedAudioPlayerService.html" target="_self" >EnhancedAudioPlayerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activateSearch"></a>
+                    <span class="name">
+                        <span ><b>activateSearch</b></span>
+                        <a href="#activateSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>activateSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="505"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:505</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addLoadingState"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addLoadingState</b></span>
+                        <a href="#addLoadingState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addLoadingState(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="469"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:469</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNoResults"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addNoResults</b></span>
+                        <a href="#addNoResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addNoResults(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="478"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:478</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addRecentSearches"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addRecentSearches</b></span>
+                        <a href="#addRecentSearches"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addRecentSearches(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="340"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:340</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSearchResults"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addSearchResults</b></span>
+                        <a href="#addSearchResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addSearchResults(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="365"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:365</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSearchTips"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>addSearchTips</b></span>
+                        <a href="#addSearchTips"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addSearchTips(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="488"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:488</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearRecentSearches"></a>
+                    <span class="name">
+                        <span ><b>clearRecentSearches</b></span>
+                        <a href="#clearRecentSearches"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearRecentSearches()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="599"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:599</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createOverlay"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>createOverlay</b></span>
+                        <a href="#createOverlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createOverlay()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="274"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:274</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createResultItem"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>createResultItem</b></span>
+                        <a href="#createResultItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createResultItem(result: <a href="../interfaces/SearchResult.html" target="_self">SearchResult</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="401"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:401</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>result</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SearchResult.html" target="_self" >SearchResult</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>HTMLElement</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deactivateSearch"></a>
+                    <span class="name">
+                        <span ><b>deactivateSearch</b></span>
+                        <a href="#deactivateSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deactivateSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="515"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:515</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRecentItemType"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRecentItemType</b></span>
+                        <a href="#getRecentItemType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRecentItemType(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="448"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:448</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>&quot;song&quot; | &quot;playlist&quot; | &quot;artist&quot;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTypeEmoji"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getTypeEmoji</b></span>
+                        <a href="#getTypeEmoji"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTypeEmoji(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="437"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:437</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToFullSearch"></a>
+                    <span class="name">
+                        <span ><b>goToFullSearch</b></span>
+                        <a href="#goToFullSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goToFullSearch()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="605"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:605</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadRecentSearches"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>loadRecentSearches</b></span>
+                        <a href="#loadRecentSearches"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadRecentSearches()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="587"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:587</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearchChange"></a>
+                    <span class="name">
+                        <span ><b>onSearchChange</b></span>
+                        <a href="#onSearchChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearchChange(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="524"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:524</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="performSearch"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>performSearch</b></span>
+                        <a href="#performSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>performSearch(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="132"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:132</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SearchResult[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playSong"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>playSong</b></span>
+                        <a href="#playSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>playSong(song: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="550"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:550</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preloadData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>preloadData</b></span>
+                        <a href="#preloadData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>preloadData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeOverlay"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>removeOverlay</b></span>
+                        <a href="#removeOverlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeOverlay()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="498"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:498</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveToRecentSearches"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>saveToRecentSearches</b></span>
+                        <a href="#saveToRecentSearches"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>saveToRecentSearches(result: <a href="../interfaces/SearchResult.html" target="_self">SearchResult</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="571"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:571</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>result</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SearchResult.html" target="_self" >SearchResult</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchArtistsLocal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>searchArtistsLocal</b></span>
+                        <a href="#searchArtistsLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchArtistsLocal(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="243"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:243</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Artist.html" target="_self" >Promise&lt;Artist[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchPlaylistsLocal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>searchPlaylistsLocal</b></span>
+                        <a href="#searchPlaylistsLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchPlaylistsLocal(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Playlist.html" target="_self" >Promise&lt;Playlist[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchSongsLocal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>searchSongsLocal</b></span>
+                        <a href="#searchSongsLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchSongsLocal(query: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:199</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>query</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;any[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectResult"></a>
+                    <span class="name">
+                        <span ><b>selectResult</b></span>
+                        <a href="#selectResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectResult(result: <a href="../interfaces/SearchResult.html" target="_self">SearchResult</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="531"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:531</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>result</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SearchResult.html" target="_self" >SearchResult</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setupSearchObservable"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>setupSearchObservable</b></span>
+                        <a href="#setupSearchObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setupSearchObservable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOverlayContent"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>updateOverlayContent</b></span>
+                        <a href="#updateOverlayContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateOverlayContent()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="315"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:315</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePanelContent"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>updatePanelContent</b></span>
+                        <a href="#updatePanelContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePanelContent(panel: HTMLElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="324"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:324</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>panel</td>
+                                            <td>
+                                                        <code>HTMLElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="waitForCache"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>waitForCache</b></span>
+                        <a href="#waitForCache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>waitForCache()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:258</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allArtists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>allArtists</b></span>
+                        <a href="#allArtists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Artist.html" target="_self" >Artist[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allPlaylists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>allPlaylists</b></span>
+                        <a href="#allPlaylists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Playlist.html" target="_self" >Playlist[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allSongs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>allSongs</b></span>
+                        <a href="#allSongs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cacheLoaded"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cacheLoaded</b></span>
+                        <a href="#cacheLoaded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroy$</b></span>
+                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSearchActive"></a>
+                    <span class="name">
+                        <span ><b>isSearchActive</b></span>
+                        <a href="#isSearchActive"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSearching"></a>
+                    <span class="name">
+                        <span ><b>isSearching</b></span>
+                        <a href="#isSearching"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlayElement"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>overlayElement</b></span>
+                        <a href="#overlayElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HTMLElement | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="recentSearches"></a>
+                    <span class="name">
+                        <span ><b>recentSearches</b></span>
+                        <a href="#recentSearches"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SearchResult[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchInput"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>searchInput</b></span>
+                        <a href="#searchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;searchInput&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchQuery"></a>
+                    <span class="name">
+                        <span ><b>searchQuery</b></span>
+                        <a href="#searchQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchResults"></a>
+                    <span class="name">
+                        <span ><b>searchResults</b></span>
+                        <a href="#searchResults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>SearchResult[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchSubject"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>searchSubject</b></span>
+                        <a href="#searchSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;string&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/shared/components/global-search/global-search.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2, Inject } from &#x27;@angular/core&#x27;;
+import { DOCUMENT } from &#x27;@angular/common&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Subject, debounceTime, distinctUntilChanged, switchMap, takeUntil, of, from } from &#x27;rxjs&#x27;;
+import { SongsService } from &#x27;../../../core/services/impl/songs.service&#x27;;
+import { PlaylistsService } from &#x27;../../../core/services/impl/playlists.service&#x27;;
+import { ArtistsService } from &#x27;../../../core/services/impl/artists.service&#x27;;
+import { SongEnrichmentService } from &#x27;../../../core/services/impl/song-enrichment.service&#x27;;
+import { EnhancedAudioPlayerService } from &#x27;../../../core/services/impl/enhanced-audio-player.service&#x27;;
+import { Song } from &#x27;../../../core/models/song.model&#x27;;
+import { Playlist } from &#x27;../../../core/models/playlist.model&#x27;;
+import { Artist } from &#x27;../../../core/models/artist.model&#x27;;
+
+interface SearchResult {
+    type: &#x27;song&#x27; | &#x27;playlist&#x27; | &#x27;artist&#x27; | &#x27;recent&#x27;;
+    id: string;
+    title: string;
+    subtitle: string;
+    image: string;
+    data: any;
+}
+
+@Component({
+    selector: &#x27;app-global-search&#x27;,
+    templateUrl: &#x27;./global-search.component.html&#x27;,
+    styleUrls: [&#x27;./global-search.component.scss&#x27;]
+})
+export class GlobalSearchComponent implements OnInit, OnDestroy {
+    @ViewChild(&#x27;searchInput&#x27;, { static: false }) searchInput!: ElementRef;
+
+    searchQuery &#x3D; &#x27;&#x27;;
+    isSearchActive &#x3D; false;
+    isSearching &#x3D; false;
+    searchResults: SearchResult[] &#x3D; [];
+    recentSearches: SearchResult[] &#x3D; [];
+    
+    // Cache para evitar múltiples llamadas
+    private allSongs: any[] &#x3D; [];
+    private allPlaylists: Playlist[] &#x3D; [];
+    private allArtists: Artist[] &#x3D; [];
+    private cacheLoaded &#x3D; false;
+    
+    private searchSubject &#x3D; new Subject&lt;string&gt;();
+    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private overlayElement: HTMLElement | null &#x3D; null;
+
+    constructor(
+        private router: Router,
+        private renderer: Renderer2,
+        @Inject(DOCUMENT) private document: Document,
+        private songsService: SongsService,
+        private playlistsService: PlaylistsService,
+        private artistsService: ArtistsService,
+        private songEnrichmentService: SongEnrichmentService,
+        private enhancedAudioPlayer: EnhancedAudioPlayerService // ✅ Inyectar el reproductor
+    ) {}
+
+    ngOnInit() {
+        this.loadRecentSearches();
+        this.setupSearchObservable();
+        this.preloadData();
+    }
+
+    ngOnDestroy() {
+        this.removeOverlay();
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    // Precargar datos una sola vez
+    private async preloadData() {
+        try {
+            console.log(&#x27;🔄 Preloading search data...&#x27;);
+            
+            const [songsResponse, playlistsResponse, artistsResponse] &#x3D; await Promise.all([
+                this.songsService.getAll(1, 200, {}).toPromise().catch(() &#x3D;&gt; ({ data: [] })),
+                this.playlistsService.getAll(1, 100, {}).toPromise().catch(() &#x3D;&gt; ({ data: [] })),
+                this.artistsService.getAll(1, 100, {}).toPromise().catch(() &#x3D;&gt; ({ data: [] }))
+            ]);
+
+            this.allSongs &#x3D; Array.isArray(songsResponse) ? songsResponse : (songsResponse?.data || []);
+            this.allPlaylists &#x3D; Array.isArray(playlistsResponse) ? playlistsResponse : (playlistsResponse?.data || []);
+            this.allArtists &#x3D; Array.isArray(artistsResponse) ? artistsResponse : (artistsResponse?.data || []);
+
+            this.allSongs &#x3D; await this.songEnrichmentService.enrichSongsAsync(this.allSongs);
+
+            this.cacheLoaded &#x3D; true;
+            
+            console.log(&#x27;✅ Data preloaded:&#x27;, {
+                songs: this.allSongs.length,
+                playlists: this.allPlaylists.length,
+                artists: this.allArtists.length
+            });
+        } catch (error) {
+            console.error(&#x27;❌ Error preloading data:&#x27;, error);
+            this.cacheLoaded &#x3D; true;
+        }
+    }
+
+    private setupSearchObservable() {
+        this.searchSubject.pipe(
+            debounceTime(200),
+            distinctUntilChanged(),
+            switchMap(query &#x3D;&gt; {
+                if (!query || query.length &lt; 2) {
+                    this.searchResults &#x3D; [];
+                    this.isSearching &#x3D; false;
+                    return of(null);
+                }
+
+                this.isSearching &#x3D; true;
+                return from(this.performSearch(query));
+            }),
+            takeUntil(this.destroy$)
+        ).subscribe({
+            next: (results) &#x3D;&gt; {
+                this.isSearching &#x3D; false;
+                if (results) {
+                    this.searchResults &#x3D; results;
+                }
+                this.updateOverlayContent();
+            },
+            error: (error) &#x3D;&gt; {
+                console.error(&#x27;Search error:&#x27;, error);
+                this.isSearching &#x3D; false;
+                this.searchResults &#x3D; [];
+                this.updateOverlayContent();
+            }
+        });
+    }
+
+    private async performSearch(query: string): Promise&lt;SearchResult[]&gt; {
+        console.log(&#x27;🔍 Searching for:&#x27;, query);
+        
+        if (!this.cacheLoaded) {
+            console.log(&#x27;⏳ Waiting for data to load...&#x27;);
+            await this.waitForCache();
+        }
+        
+        try {
+            const [songs, playlists, artists] &#x3D; await Promise.all([
+                this.searchSongsLocal(query),
+                this.searchPlaylistsLocal(query),
+                this.searchArtistsLocal(query)
+            ]);
+            
+            console.log(&#x27;📊 Local search results:&#x27;, {
+                songs: songs.length,
+                playlists: playlists.length,
+                artists: artists.length
+            });
+
+            const results: SearchResult[] &#x3D; [];
+
+            // Agregar artistas primero
+            artists.slice(0, 4).forEach(artist &#x3D;&gt; {
+                results.push({
+                    type: &#x27;artist&#x27;,
+                    id: artist.id,
+                    title: artist.name,
+                    subtitle: &#x60;Artista • ${artist.followers_count || 0} seguidores&#x60;,
+                    image: artist.image?.url || &#x27;assets/default-artist.png&#x27;,
+                    data: artist
+                });
+            });
+
+            // Agregar canciones
+            songs.slice(0, 4).forEach(song &#x3D;&gt; {
+                results.push({
+                    type: &#x27;song&#x27;,
+                    id: song.id,
+                    title: song.name,
+                    subtitle: song.artistNames?.join(&#x27;, &#x27;) || &#x27;Unknown Artist&#x27;,
+                    image: song.image?.url || &#x27;assets/default-song.png&#x27;,
+                    data: song
+                });
+            });
+
+            // Agregar playlists
+            playlists.slice(0, 2).forEach(playlist &#x3D;&gt; {
+                results.push({
+                    type: &#x27;playlist&#x27;,
+                    id: playlist.id,
+                    title: playlist.name,
+                    subtitle: &#x60;Playlist • ${playlist.author || &#x27;Unknown&#x27;}&#x60;,
+                    image: playlist.image?.url || &#x27;assets/default-playlist.png&#x27;,
+                    data: playlist
+                });
+            });
+
+            console.log(&#x27;✅ Final results:&#x27;, results);
+            return results;
+        } catch (error) {
+            console.error(&#x27;❌ Error performing search:&#x27;, error);
+            return [];
+        }
+    }
+
+    private async searchSongsLocal(query: string): Promise&lt;any[]&gt; {
+        const lowerQuery &#x3D; query.toLowerCase().trim();
+        
+        const filteredSongs &#x3D; this.allSongs.filter(song &#x3D;&gt; {
+            if (song.name &amp;&amp; song.name.toLowerCase().includes(lowerQuery)) {
+                return true;
+            }
+            
+            if (song.artistNames &amp;&amp; Array.isArray(song.artistNames)) {
+                return song.artistNames.some((artistName: string) &#x3D;&gt; 
+                    artistName.toLowerCase().includes(lowerQuery)
+                );
+            }
+            
+            if (song.album &amp;&amp; song.album.toLowerCase().includes(lowerQuery)) {
+                return true;
+            }
+            
+            return false;
+        });
+
+        console.log(&#x60;🎵 Found ${filteredSongs.length} songs matching &quot;${query}&quot;&#x60;);
+        return filteredSongs;
+    }
+
+    private async searchPlaylistsLocal(query: string): Promise&lt;Playlist[]&gt; {
+        const lowerQuery &#x3D; query.toLowerCase().trim();
+        
+        const filteredPlaylists &#x3D; this.allPlaylists.filter(playlist &#x3D;&gt; {
+            if (playlist.name &amp;&amp; playlist.name.toLowerCase().includes(lowerQuery)) {
+                return true;
+            }
+            
+            if (playlist.author &amp;&amp; playlist.author.toLowerCase().includes(lowerQuery)) {
+                return true;
+            }
+            
+            return false;
+        });
+
+        console.log(&#x60;📝 Found ${filteredPlaylists.length} playlists matching &quot;${query}&quot;&#x60;);
+        return filteredPlaylists;
+    }
+
+    private async searchArtistsLocal(query: string): Promise&lt;Artist[]&gt; {
+        const lowerQuery &#x3D; query.toLowerCase().trim();
+        
+        const filteredArtists &#x3D; this.allArtists.filter(artist &#x3D;&gt; {
+            if (artist.name &amp;&amp; artist.name.toLowerCase().includes(lowerQuery)) {
+                return true;
+            }
+            
+            return false;
+        });
+
+        console.log(&#x60;👤 Found ${filteredArtists.length} artists matching &quot;${query}&quot;&#x60;);
+        return filteredArtists;
+    }
+
+    private async waitForCache(): Promise&lt;void&gt; {
+        const maxWait &#x3D; 10000;
+        const checkInterval &#x3D; 100;
+        let waited &#x3D; 0;
+
+        while (!this.cacheLoaded &amp;&amp; waited &lt; maxWait) {
+            await new Promise(resolve &#x3D;&gt; setTimeout(resolve, checkInterval));
+            waited +&#x3D; checkInterval;
+        }
+
+        if (!this.cacheLoaded) {
+            console.warn(&#x27;⚠️ Cache loading timeout, proceeding anyway&#x27;);
+        }
+    }
+
+    // ✅ CREAR OVERLAY SIN BLUR
+    private createOverlay() {
+        if (this.overlayElement) return;
+
+        this.overlayElement &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        this.renderer.addClass(this.overlayElement, &#x27;global-search-overlay-portal&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;position&#x27;, &#x27;fixed&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;top&#x27;, &#x27;0&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;left&#x27;, &#x27;0&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;right&#x27;, &#x27;0&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;bottom&#x27;, &#x27;0&#x27;);
+        this.renderer.setStyle(this.overlayElement, &#x27;z-index&#x27;, &#x27;10000&#x27;);
+        // ✅ SIN BLUR - Solo fondo semitransparente
+        this.renderer.setStyle(this.overlayElement, &#x27;background&#x27;, &#x27;rgba(0, 0, 0, 0.6)&#x27;);
+        // ✅ Removido backdrop-filter
+
+        const panel &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        this.renderer.addClass(panel, &#x27;search-results-panel-portal&#x27;);
+        this.renderer.setStyle(panel, &#x27;position&#x27;, &#x27;absolute&#x27;);
+        this.renderer.setStyle(panel, &#x27;top&#x27;, &#x27;80px&#x27;);
+        this.renderer.setStyle(panel, &#x27;left&#x27;, &#x27;50%&#x27;);
+        this.renderer.setStyle(panel, &#x27;transform&#x27;, &#x27;translateX(-50%)&#x27;);
+        this.renderer.setStyle(panel, &#x27;width&#x27;, &#x27;90%&#x27;);
+        this.renderer.setStyle(panel, &#x27;max-width&#x27;, &#x27;480px&#x27;);
+        this.renderer.setStyle(panel, &#x27;background&#x27;, &#x27;#282828&#x27;);
+        this.renderer.setStyle(panel, &#x27;border-radius&#x27;, &#x27;8px&#x27;);
+        this.renderer.setStyle(panel, &#x27;box-shadow&#x27;, &#x27;0 16px 40px rgba(0, 0, 0, 0.6)&#x27;);
+        this.renderer.setStyle(panel, &#x27;max-height&#x27;, &#x27;70vh&#x27;);
+        this.renderer.setStyle(panel, &#x27;overflow-y&#x27;, &#x27;auto&#x27;);
+
+        this.updatePanelContent(panel);
+
+        this.renderer.listen(this.overlayElement, &#x27;click&#x27;, (event) &#x3D;&gt; {
+            if (event.target &#x3D;&#x3D;&#x3D; this.overlayElement) {
+                this.deactivateSearch();
+            }
+        });
+
+        this.renderer.appendChild(this.overlayElement, panel);
+        this.renderer.appendChild(this.document.body, this.overlayElement);
+    }
+
+    private updateOverlayContent() {
+        if (this.overlayElement) {
+            const panel &#x3D; this.overlayElement.querySelector(&#x27;.search-results-panel-portal&#x27;) as HTMLElement;
+            if (panel) {
+                this.updatePanelContent(panel);
+            }
+        }
+    }
+
+    private updatePanelContent(panel: HTMLElement) {
+        panel.innerHTML &#x3D; &#x27;&#x27;;
+
+        if (!this.searchQuery &amp;&amp; this.recentSearches.length &gt; 0) {
+            this.addRecentSearches(panel);
+        } else if (this.isSearching) {
+            this.addLoadingState(panel);
+        } else if (this.searchQuery &amp;&amp; this.searchResults.length &gt; 0) {
+            this.addSearchResults(panel);
+        } else if (this.searchQuery &amp;&amp; this.searchResults.length &#x3D;&#x3D;&#x3D; 0) {
+            this.addNoResults(panel);
+        } else {
+            this.addSearchTips(panel);
+        }
+    }
+
+    private addRecentSearches(panel: HTMLElement) {
+        const header &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        header.innerHTML &#x3D; &#x27;&lt;h3 style&#x3D;&quot;color: white; font-size: 16px; font-weight: 700; margin: 0; padding: 16px;&quot;&gt;Búsquedas recientes&lt;/h3&gt;&#x27;;
+        this.renderer.appendChild(panel, header);
+
+        // ✅ ARREGLAR BÚSQUEDAS RECIENTES - Usar el tipo original, no &#x27;recent&#x27;
+        this.recentSearches.forEach(recent &#x3D;&gt; {
+            // Restaurar el tipo original para que funcione correctamente
+            const originalResult &#x3D; { ...recent, type: recent.data?.type || recent.type };
+            // Si el tipo es &#x27;recent&#x27;, usar el tipo del data
+            if (recent.type &#x3D;&#x3D;&#x3D; &#x27;recent&#x27; &amp;&amp; recent.data) {
+                if (recent.data.name &amp;&amp; recent.data.artistNames) {
+                    originalResult.type &#x3D; &#x27;song&#x27;;
+                } else if (recent.data.name &amp;&amp; recent.data.author) {
+                    originalResult.type &#x3D; &#x27;playlist&#x27;;
+                } else if (recent.data.name &amp;&amp; !recent.data.author) {
+                    originalResult.type &#x3D; &#x27;artist&#x27;;
+                }
+            }
+            
+            const item &#x3D; this.createResultItem(originalResult);
+            this.renderer.appendChild(panel, item);
+        });
+    }
+
+    private addSearchResults(panel: HTMLElement) {
+        const header &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        header.innerHTML &#x3D; &#x27;&lt;h3 style&#x3D;&quot;color: white; font-size: 16px; font-weight: 700; margin: 0; padding: 16px;&quot;&gt;Resultados principales&lt;/h3&gt;&#x27;;
+        this.renderer.appendChild(panel, header);
+
+        this.searchResults.forEach(result &#x3D;&gt; {
+            const item &#x3D; this.createResultItem(result);
+            this.renderer.appendChild(panel, item);
+        });
+
+        // ✅ COMENTAR EL BOTÓN &quot;VER TODOS&quot; SI NO TIENES LA RUTA /search
+        /*
+        const viewAllButton &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;display&#x27;, &#x27;flex&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;align-items&#x27;, &#x27;center&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;padding&#x27;, &#x27;12px 16px&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;border-top&#x27;, &#x27;1px solid rgba(255, 255, 255, 0.1)&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;cursor&#x27;, &#x27;pointer&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;color&#x27;, &#x27;#1db954&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;font-size&#x27;, &#x27;14px&#x27;);
+        this.renderer.setStyle(viewAllButton, &#x27;font-weight&#x27;, &#x27;600&#x27;);
+
+        viewAllButton.innerHTML &#x3D; &#x60;
+            &lt;span style&#x3D;&quot;margin-right: 8px;&quot;&gt;🔍&lt;/span&gt;
+            &lt;span style&#x3D;&quot;flex: 1;&quot;&gt;Ver todos los resultados para &quot;${this.searchQuery}&quot;&lt;/span&gt;
+            &lt;span&gt;→&lt;/span&gt;
+        &#x60;;
+
+        this.renderer.listen(viewAllButton, &#x27;click&#x27;, () &#x3D;&gt; {
+            this.goToFullSearch();
+        });
+
+        this.renderer.appendChild(panel, viewAllButton);
+        */
+    }
+
+    private createResultItem(result: SearchResult): HTMLElement {
+        const item &#x3D; this.renderer.createElement(&#x27;div&#x27;);
+        this.renderer.setStyle(item, &#x27;display&#x27;, &#x27;flex&#x27;);
+        this.renderer.setStyle(item, &#x27;align-items&#x27;, &#x27;center&#x27;);
+        this.renderer.setStyle(item, &#x27;padding&#x27;, &#x27;8px 16px&#x27;);
+        this.renderer.setStyle(item, &#x27;cursor&#x27;, &#x27;pointer&#x27;);
+        this.renderer.setStyle(item, &#x27;transition&#x27;, &#x27;background 0.2s ease&#x27;);
+
+        const typeEmoji &#x3D; this.getTypeEmoji(result.type);
+        
+        item.innerHTML &#x3D; &#x60;
+            &lt;div style&#x3D;&quot;width: 48px; height: 48px; margin-right: 12px; border-radius: 4px; overflow: hidden;&quot;&gt;
+                &lt;img src&#x3D;&quot;${result.image}&quot; alt&#x3D;&quot;${result.title}&quot; style&#x3D;&quot;width: 100%; height: 100%; object-fit: cover;&quot; onerror&#x3D;&quot;this.src&#x3D;&#x27;assets/default-song.png&#x27;&quot;&gt;
+            &lt;/div&gt;
+            &lt;div style&#x3D;&quot;flex: 1; min-width: 0;&quot;&gt;
+                &lt;div style&#x3D;&quot;color: white; font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;&quot;&gt;${result.title}&lt;/div&gt;
+                &lt;div style&#x3D;&quot;color: #b3b3b3; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;&quot;&gt;${result.subtitle}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div style&#x3D;&quot;margin-left: 8px; font-size: 18px;&quot;&gt;${typeEmoji}&lt;/div&gt;
+        &#x60;;
+
+        this.renderer.listen(item, &#x27;mouseenter&#x27;, () &#x3D;&gt; {
+            this.renderer.setStyle(item, &#x27;background&#x27;, &#x27;rgba(255, 255, 255, 0.1)&#x27;);
+        });
+
+        this.renderer.listen(item, &#x27;mouseleave&#x27;, () &#x3D;&gt; {
+            this.renderer.setStyle(item, &#x27;background&#x27;, &#x27;transparent&#x27;);
+        });
+
+        this.renderer.listen(item, &#x27;click&#x27;, () &#x3D;&gt; {
+            this.selectResult(result);
+        });
+
+        return item;
+    }
+
+    private getTypeEmoji(type: string): string {
+        switch (type) {
+            case &#x27;song&#x27;: return &#x27;🎵&#x27;;
+            case &#x27;playlist&#x27;: return &#x27;📝&#x27;;
+            case &#x27;artist&#x27;: return &#x27;👤&#x27;;
+            case &#x27;recent&#x27;: return &#x27;🕒&#x27;;
+            default: return &#x27;🔍&#x27;;
+        }
+    }
+
+    // ✅ FUNCIÓN AUXILIAR PARA DETECTAR TIPO DE BÚSQUEDA RECIENTE
+    private getRecentItemType(item: any): &#x27;song&#x27; | &#x27;playlist&#x27; | &#x27;artist&#x27; {
+        // Si tiene originalType, usarlo
+        if (item.originalType) {
+            return item.originalType;
+        }
+        
+        // Si no, detectar por las propiedades del data
+        if (item.data) {
+            if (item.data.artistNames || (item.data.name &amp;&amp; item.data.duration)) {
+                return &#x27;song&#x27;;
+            } else if (item.data.author !&#x3D;&#x3D; undefined) {
+                return &#x27;playlist&#x27;;
+            } else {
+                return &#x27;artist&#x27;;
+            }
+        }
+        
+        // Fallback
+        return item.type &#x3D;&#x3D;&#x3D; &#x27;recent&#x27; ? &#x27;song&#x27; : item.type;
+    }
+
+    private addLoadingState(panel: HTMLElement) {
+        panel.innerHTML &#x3D; &#x60;
+            &lt;div style&#x3D;&quot;display: flex; flex-direction: column; align-items: center; padding: 32px; color: #b3b3b3;&quot;&gt;
+                &lt;div style&#x3D;&quot;margin-bottom: 12px; font-size: 24px;&quot;&gt;⏳&lt;/div&gt;
+                &lt;span style&#x3D;&quot;font-size: 14px;&quot;&gt;Buscando...&lt;/span&gt;
+            &lt;/div&gt;
+        &#x60;;
+    }
+
+    private addNoResults(panel: HTMLElement) {
+        panel.innerHTML &#x3D; &#x60;
+            &lt;div style&#x3D;&quot;text-align: center; padding: 32px;&quot;&gt;
+                &lt;div style&#x3D;&quot;font-size: 48px; color: #b3b3b3; margin-bottom: 16px;&quot;&gt;😔&lt;/div&gt;
+                &lt;h3 style&#x3D;&quot;color: white; font-size: 18px; font-weight: 700; margin: 0 0 8px 0;&quot;&gt;No hay resultados para &quot;${this.searchQuery}&quot;&lt;/h3&gt;
+                &lt;p style&#x3D;&quot;color: #b3b3b3; font-size: 14px; margin: 0;&quot;&gt;Intenta con otros términos de búsqueda.&lt;/p&gt;
+            &lt;/div&gt;
+        &#x60;;
+    }
+
+    private addSearchTips(panel: HTMLElement) {
+        panel.innerHTML &#x3D; &#x60;
+            &lt;div style&#x3D;&quot;text-align: center; padding: 32px;&quot;&gt;
+                &lt;div style&#x3D;&quot;font-size: 48px; color: #b3b3b3; margin-bottom: 16px;&quot;&gt;🔍&lt;/div&gt;
+                &lt;h3 style&#x3D;&quot;color: white; font-size: 18px; font-weight: 700; margin: 0 0 8px 0;&quot;&gt;Comienza a escribir para buscar&lt;/h3&gt;
+                &lt;p style&#x3D;&quot;color: #b3b3b3; font-size: 14px; margin: 0;&quot;&gt;Encuentra canciones, artistas y playlists&lt;/p&gt;
+            &lt;/div&gt;
+        &#x60;;
+    }
+
+    private removeOverlay() {
+        if (this.overlayElement) {
+            this.renderer.removeChild(this.document.body, this.overlayElement);
+            this.overlayElement &#x3D; null;
+        }
+    }
+
+    activateSearch() {
+        this.isSearchActive &#x3D; true;
+        this.createOverlay();
+        setTimeout(() &#x3D;&gt; {
+            if (this.searchInput) {
+                this.searchInput.nativeElement.focus();
+            }
+        }, 100);
+    }
+
+    deactivateSearch() {
+        setTimeout(() &#x3D;&gt; {
+            this.isSearchActive &#x3D; false;
+            this.searchQuery &#x3D; &#x27;&#x27;;
+            this.searchResults &#x3D; [];
+            this.removeOverlay();
+        }, 200);
+    }
+
+    onSearchChange(event: any) {
+        const query &#x3D; event.target.value;
+        this.searchQuery &#x3D; query;
+        this.searchSubject.next(query);
+    }
+
+    // ✅ MEJORAR LA SELECCIÓN DE RESULTADOS
+    selectResult(result: SearchResult) {
+        this.saveToRecentSearches(result);
+        
+        switch (result.type) {
+            case &#x27;song&#x27;:
+                this.playSong(result.data);
+                break;
+            case &#x27;playlist&#x27;:
+                this.router.navigate([&#x27;/playlist&#x27;, result.id]);
+                break;
+            case &#x27;artist&#x27;:
+                this.router.navigate([&#x27;/artist&#x27;, result.id]);
+                break;
+        }
+        
+        this.deactivateSearch();
+    }
+
+    // ✅ IMPLEMENTAR REPRODUCCIÓN DE CANCIONES
+    private async playSong(song: any) {
+        try {
+            console.log(&#x27;🎵 Playing song:&#x27;, song.name);
+            
+            // Usar el servicio de audio mejorado
+            await this.enhancedAudioPlayer.playEnrichedSong(song);
+            
+            // Mostrar mensaje de éxito (opcional)
+            console.log(&#x60;✅ Reproduciendo: ${song.name}&#x60;);
+            
+            // Aquí podrías agregar un toast de confirmación
+            // await this.showToast(&#x60;Reproduciendo: ${song.name}&#x60;, &#x27;success&#x27;);
+            
+        } catch (error) {
+            console.error(&#x27;❌ Error playing song:&#x27;, error);
+            
+            // Mostrar mensaje de error (opcional)
+            // await this.showToast(&#x27;Error al reproducir la canción&#x27;, &#x27;danger&#x27;);
+        }
+    }
+
+    private saveToRecentSearches(result: SearchResult) {
+        // ✅ GUARDAR CON EL TIPO ORIGINAL, NO COMO &#x27;recent&#x27;
+        const recent &#x3D; { 
+            ...result, 
+            // Mantener el tipo original para que funcione al hacer click
+            originalType: result.type, 
+            // Guardar toda la información necesaria
+            data: result.data
+        };
+        
+        this.recentSearches &#x3D; this.recentSearches.filter(r &#x3D;&gt; r.id !&#x3D;&#x3D; result.id);
+        this.recentSearches.unshift(recent);
+        this.recentSearches &#x3D; this.recentSearches.slice(0, 6);
+        localStorage.setItem(&#x27;recentSearches&#x27;, JSON.stringify(this.recentSearches));
+    }
+
+    private loadRecentSearches() {
+        try {
+            const saved &#x3D; localStorage.getItem(&#x27;recentSearches&#x27;);
+            if (saved) {
+                this.recentSearches &#x3D; JSON.parse(saved);
+            }
+        } catch (error) {
+            console.error(&#x27;Error loading recent searches:&#x27;, error);
+            this.recentSearches &#x3D; [];
+        }
+    }
+
+    clearRecentSearches() {
+        this.recentSearches &#x3D; [];
+        localStorage.removeItem(&#x27;recentSearches&#x27;);
+        this.updateOverlayContent();
+    }
+
+    goToFullSearch() {
+        if (this.searchQuery.trim()) {
+            this.router.navigate([&#x27;/search&#x27;], { 
+                queryParams: { q: this.searchQuery.trim() } 
+            });
+            this.deactivateSearch();
+        }
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- src/app/shared/components/global-search/global-search.component.html --&gt;
+
+&lt;!-- ✅ SOLO LA BARRA DE BÚSQUEDA - EL OVERLAY SE CREA PROGRAMÁTICAMENTE --&gt;
+&lt;div class&#x3D;&quot;global-search-container&quot; [class.active]&#x3D;&quot;isSearchActive&quot;&gt;
+    
+    &lt;!-- Barra de búsqueda --&gt;
+    &lt;div class&#x3D;&quot;search-bar&quot; (click)&#x3D;&quot;activateSearch()&quot;&gt;
+        &lt;div class&#x3D;&quot;search-input-container&quot;&gt;
+            &lt;ion-icon name&#x3D;&quot;search&quot; class&#x3D;&quot;search-icon&quot;&gt;&lt;/ion-icon&gt;
+            
+            &lt;input 
+                #searchInput
+                type&#x3D;&quot;text&quot; 
+                class&#x3D;&quot;search-input&quot;
+                placeholder&#x3D;&quot;¿Qué quieres reproducir?&quot;
+                [(ngModel)]&#x3D;&quot;searchQuery&quot;
+                (input)&#x3D;&quot;onSearchChange($event)&quot;
+                (blur)&#x3D;&quot;deactivateSearch()&quot;
+                [class.active]&#x3D;&quot;isSearchActive&quot;&gt;
+            
+            &lt;div class&#x3D;&quot;search-shortcut&quot; *ngIf&#x3D;&quot;!isSearchActive&quot;&gt;
+                &lt;span&gt;Ctrl&lt;/span&gt;
+                &lt;span&gt;K&lt;/span&gt;
+            &lt;/div&gt;
+            
+            &lt;ion-button 
+                fill&#x3D;&quot;clear&quot; 
+                size&#x3D;&quot;small&quot; 
+                class&#x3D;&quot;clear-button&quot;
+                *ngIf&#x3D;&quot;isSearchActive &amp;&amp; searchQuery&quot;
+                (click)&#x3D;&quot;searchQuery &#x3D; &#x27;&#x27;; searchResults &#x3D; []; $event.stopPropagation();&quot;&gt;
+                &lt;ion-icon name&#x3D;&quot;close&quot; slot&#x3D;&quot;icon-only&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./global-search.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* src/app/shared/components/global-search/global-search.component.scss */
+
+.global-search-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+
+  // Barra de búsqueda
+  .search-bar {
+    position: relative;
+    cursor: pointer;
+    
+    .search-input-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: #242424;
+      border-radius: 500px;
+      padding: 0 16px;
+      height: 48px;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+
+      &amp;:hover {
+        background: #2a2a2a;
+      }
+
+      .search-icon {
+        font-size: 20px;
+        color: #b3b3b3;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .search-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+
+        &amp;::placeholder {
+          color: #b3b3b3;
+        }
+
+        &amp;.active {
+          cursor: text;
+        }
+      }
+
+      .search-shortcut {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: auto;
+
+        span {
+          background: #404040;
+          color: #b3b3b3;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-size: 11px;
+          font-weight: 600;
+          min-width: 20px;
+          text-align: center;
+        }
+      }
+
+      .clear-button {
+        --color: #b3b3b3;
+        margin-left: 8px;
+      }
+    }
+  }
+
+  // Cuando está activa
+  &amp;.active {
+    .search-bar .search-input-container {
+      background: #2a2a2a;
+      border-color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// ✅ ESTILOS GLOBALES PARA EL PORTAL (se aplicarán al elemento creado dinámicamente)
+:global(.global-search-overlay-portal) {
+  animation: fadeIn 0.2s ease-out;
+}
+
+:global(.search-results-panel-portal) {
+  animation: slideDown 0.3s ease-out;
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .global-search-container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar .search-input-container {
+    height: 44px;
+    padding: 0 12px;
+
+    .search-shortcut {
+      display: none;
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- src/app/shared/components/global-search/global-search.component.html --><!-- ✅ SOLO LA BARRA DE BÚSQUEDA - EL OVERLAY SE CREA PROGRAMÁTICAMENTE --><div class="global-search-container" [class.active]="isSearchActive">        <!-- Barra de búsqueda -->    <div class="search-bar" (click)="activateSearch()">        <div class="search-input-container">            <ion-icon name="search" class="search-icon"></ion-icon>                        <input                 #searchInput                type="text"                 class="search-input"                placeholder="¿Qué quieres reproducir?"                [(ngModel)]="searchQuery"                (input)="onSearchChange($event)"                (blur)="deactivateSearch()"                [class.active]="isSearchActive">                        <div class="search-shortcut" *ngIf="!isSearchActive">                <span>Ctrl</span>                <span>K</span>            </div>                        <ion-button                 fill="clear"                 size="small"                 class="clear-button"                *ngIf="isSearchActive && searchQuery"                (click)="searchQuery = \'\'; searchResults = []; $event.stopPropagation();">                <ion-icon name="close" slot="icon-only"></ion-icon>            </ion-button>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistGridCardComponent', 'selector': 'app-artist-grid-card'},{'name': 'ArtistModalComponent', 'selector': 'app-artist-modal'},{'name': 'ArtistProfilePage', 'selector': 'app-artist-profile'},{'name': 'ArtistsPage', 'selector': 'app-artists'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'ChangePasswordModalComponent', 'selector': 'app-change-password-modal'},{'name': 'ClickableArtistNamesComponent', 'selector': 'app-clickable-artist-names'},{'name': 'EditProfileModalComponent', 'selector': 'app-edit-profile-modal'},{'name': 'FollowArtistButtonComponent', 'selector': 'app-follow-artist-button'},{'name': 'GlobalSearchComponent', 'selector': 'app-global-search'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LikeButtonComponent', 'selector': 'app-like-button'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayButtonComponent', 'selector': 'app-play-button'},{'name': 'PlaylistDetailPage', 'selector': 'app-playlist-detail'},{'name': 'PlaylistLikeButtonComponent', 'selector': 'app-playlist-like-button'},{'name': 'PlaylistModalComponent', 'selector': 'app-playlist-modal'},{'name': 'PlaylistsPage', 'selector': 'app-playlists'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SongDetailModalComponent', 'selector': 'app-song-detail-modal'},{'name': 'SongGridCardComponent', 'selector': 'app-song-grid-card'},{'name': 'SongModalComponent', 'selector': 'app-song-modal'},{'name': 'SongsPage', 'selector': 'app-songs'},{'name': 'SplashPage', 'selector': 'app-splash'}];
+    var DIRECTIVES = [{'name': 'DragDropDirective', 'selector': '[appDragDrop]'}];
+    var ACTUAL_COMPONENT = {'name': 'GlobalSearchComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GlobalSearchComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

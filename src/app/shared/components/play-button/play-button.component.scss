@@ -1,0 +1,8 @@
+.play-button {
+    --ripple-color: rgba(29, 185, 84, 0.3);
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}

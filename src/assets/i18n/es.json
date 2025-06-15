@@ -1,0 +1,230 @@
+{
+  "COMMON": {
+    "LANGUAGE": "Idioma",
+    "SPANISH": "Español",
+    "ENGLISH": "Inglés",
+    "ERROR": {
+      "LOAD": "Error al cargar los datos",
+      "SAVE": "Error al guardar los cambios",
+      "UPLOAD": "Error al subir la imagen"
+    },
+    "SUCCESS": {
+      "SAVE": "Cambios guardados correctamente"
+    },
+    "UPDATE": "Actualizar",
+    "CREATE": "Crear",
+    "SECURITY": "Seguridad",
+    "CANCEL": "Cancelar",
+    "DELETE": "Eliminar",
+    "CLOSE": "Cerrar",
+    "LOADING": "Cargando..."
+  },
+  "MENU": {
+    "TITLE": "Menú",
+    "HOME": "Inicio",
+    "SONGS": "Canciones",
+    "PROFILE": "Perfil",
+    "PLAYLISTS": "Listas de reproducción",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "SONG": {
+    "TITLE": "Canciones",
+    "SELECT": "Seleccionar canción",
+    "ADD_BUTTON": "Añadir canción",
+    "EDIT": "Editar canción",
+    "NEW": "Nueva canción",
+    "NAME": "Nombre",
+    "AUTHOR": "Autor",
+    "ALBUM": "Álbum",
+    "DURATION": "Duración",
+    "SEARCH_PLACEHOLDER": "Buscar canción",
+    "NO_SONGS": "No se encontraron canciones",
+    "ADD_FIRST_SONG": "¡Añade tu primera canción!",
+    "REORDERING": "Reordenando canciones...",
+    "ERRORS": {
+      "NAME_REQUIRED": "El nombre es obligatorio",
+      "AUTHOR_REQUIRED": "El autor es obligatorio",
+      "DURATION_REQUIRED": "La duración es obligatoria",
+      "DURATION_FORMAT": "Formato inválido. Use mm:ss (ej: 03:45)",
+      "REORDER": "Error al reordenar canciones"
+    },
+    "SUCCESS": {
+      "CREATE": "Canción creada correctamente",
+      "UPDATE": "Canción actualizada correctamente",
+      "DELETE": "Canción eliminada correctamente",
+      "REORDERED": "Canciones reordenadas correctamente"
+    },
+    "MESSAGES": {
+      "DELETE_CONFIRM": "¿Está seguro que desea eliminar esta canción?"
+    }
+  },
+  "PLAYLIST": {
+    "TITLE": "Listas de reproducción",
+    "ADD_BUTTON": "Añadir lista",
+    "EDIT": "Editar lista",
+    "NEW": "Nueva lista",
+    "NAME": "Nombre",
+    "AUTHOR": "Autor",
+    "DURATION": "Duración",
+    "PUBLIC_LIST": "Lista pública",
+    "SONGS": "canciones",
+    "ADD_SONGS": "Añadir canciones",
+    "EMPTY": "Esta playlist está vacía",
+    "ALBUM": "Álbum",
+    "SHARE": {
+      "HEADER": "Compartir playlist",
+      "MESSAGE": "Copia el enlace para compartir esta playlist",
+      "COPY": "Copiar"
+    },
+    "MESSAGESS": {
+      "DELETE_CONFIRM": "Eliminar playlist",
+      "DELETE_CONFIRM_MESSAGE": "¿Estás seguro de que quieres eliminar {name}?"
+    },
+    "REMOVE_SONG": {
+      "HEADER": "¿Eliminar canción?",
+      "MESSAGE": "¿Estás seguro de que quieres eliminar esta canción de la playlist?"
+    },
+    "SUCCESS": {
+      "SONG_ADDED": "Canción añadida correctamente",
+      "SONG_UPDATED": "Canción actualizada correctamente",
+      "SONG_REMOVED": "Canción eliminada correctamente",
+      "LINK_COPIED": "Enlace copiado al portapapeles",
+      "DELETE": "Playlist eliminada correctamente",
+      "CREATE": "Playlist creada correctamente",
+      "UPDATE": "Playlist actualizada correctamente",
+      "REORDERED": "Playlist reordenada correctamente"
+    },
+    "ERRORS": {
+      "LOAD": "Error al cargar la playlist",
+      "SONG_ADD": "Error al añadir la canción",
+      "SONG_REMOVE": "Error al eliminar la canción",
+      "NAME_REQUIRED": "El nombre es obligatorio",
+      "AUTHOR_REQUIRED": "El autor es obligatorio",
+      "DURATION_REQUIRED": "La duración es obligatoria",
+      "DELETE": "Error al eliminar la playlist",
+      "CREATE": "Error al crear la playlist",
+      "UPDATE": "Error al actualizar la playlist",
+      "REORDER": "Error al reordenar la playlist"
+    },
+    "MESSAGES": {
+      "DELETE_CONFIRM": "Eliminar playlist"
+    }
+  },
+  "PROFILE": {
+    "TITLE": "Perfil",
+    "SUBTITLE": "Gestiona tu información personal aquí",
+    "UPDATE": "Actualizar perfil",
+    "CHANGE_PASSWORD": "Cambiar contraseña",
+    "MY_PLAYLISTS": "Mis listas de reproducción",
+    "NO_PLAYLISTS": "No tienes ninguna lista de reproducción",
+    "SONGS": "canciones",
+    "SECURITY": "Configuración de Seguridad",
+    "TITLES": "Mi Perfil",
+    "TEXT": "listas públicas",
+    "USER": "artistas",
+    "FOLLOWING": "Siguiendo a",
+    "FOLLOWING_ARTISTS": "Artistas que sigues",
+    "EDIT": "Editar Perfil",
+    "PLAYLISTS": "Mis Playlists",
+    "DETAILS_TITLE": "Detalles del perfil",
+    "USERNAME": "Nombre de usuario",
+    "EMAIL": "Correo electrónico",
+    "SAVE": "Guardar",
+    "CREATE_PLAYLIST": "Crear lista de reproducción",
+    "PHOTO_UPDATED": "Foto de perfil actualizada correctamente",
+    "EXPORT": {
+      "TITLE": "Exportar Datos de la API",
+      "MESSAGE": "Esto exportará TODOS los datos públicos de la API (playlists, canciones y artistas) en archivos CSV separados:",
+      "ALL_DATA": "Exportar Todo",
+      "LOADING_ALL": "Descargando todos los datos de la API...",
+      "SUCCESS_ALL": "Todos los datos exportados correctamente (playlists.csv, songs.csv, artists.csv)",
+      "NO_DATA": "No se encontraron datos para exportar",
+      "ERROR": "Error al exportar los datos",
+      "PROFILE.EXPORT.ALL_DATA": "Exportar Todos los Datos",
+      "PROFILE.EXPORT.LOADING_ALL": "Descargando todos los datos de la API...",
+      "PROFILE.EXPORT.SUCCESS_ALL": "Todos los datos exportados correctamente (playlists.csv, songs.csv, artists.csv)",
+      "PROFILE.EXPORT.ERROR": "Error al exportar los datos"
+    }
+  },
+  "USER": {
+    "NAME": "Nombre",
+    "SURNAME": "Apellidos",
+    "EMAIL": "Correo electrónico",
+    "MY_PLAYLISTS": "Mis listas de reproducción",
+    "USERNAME": "Nombre de usuario",
+    "PICTURE": "Foto de perfil",
+    "ERRORS": {
+      "SURNAME_REQUIRED": "Los apellidos son obligatorios",
+      "NAME_REQUIRED": "El nombre es obligatorio",
+      "EMAIL_REQUIRED": "El correo electrónico es obligatorio",
+      "EMAIL_INVALID": "El correo electrónico no es válido",
+      "USERNAME_REQUIRED": "El nombre de usuario es obligatorio",
+      "PICTURE_REQUIRED": "La foto de perfil es obligatoria"
+    }
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Cambiar contraseña",
+    "OLD_PASSWORD": "Contraseña actual",
+    "NEW_PASSWORD": "Nueva contraseña",
+    "CONFIRM_PASSWORD": "Confirmar nueva contraseña",
+    "SUBMIT": "Cambiar contraseña",
+    "SUCCESS": "Contraseña cambiada correctamente",
+    "ERROR": "Error al cambiar la contraseña",
+    "ERRORS": {
+      "OLD_PASSWORD_REQUIRED": "La contraseña actual es obligatoria",
+      "NEW_PASSWORD_REQUIRED": "La nueva contraseña es obligatoria",
+      "PASSWORD_STRENGTH": "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial",
+      "PASSWORDS_MISMATCH": "Las contraseñas no coinciden",
+      "OLD_PASSWORD_WRONG": "La contraseña actual es incorrecta"
+    }
+  },
+  "HOME": {
+    "SEARCH": "¿Qué quieres reproducir?",
+    "ALL": "Todo",
+    "MUSIC": "Música",
+    "PODCATS": "Pódcasts",
+    "RELEASE": "Lo nuevo hoy!!",
+    "RECOMMENDED": "Recomendado para ti",
+    "SHOW": "Mostrar Todo"
+  },
+  "ABOUT": {
+    "TITLE": "Acerca de",
+    "APP_DESCRIPTION": "UMusic es una aplicación de streaming de música desarrollada con Angular y Ionic, que ofrece una experiencia completa para descubrir, reproducir y gestionar tu música favorita.",
+    "VERSION": "Versión",
+    "REPOSITORY": "Repositorio del Proyecto",
+    "REPOSITORY_DESCRIPTION": "El código fuente de UMusic está disponible en GitHub. Puedes explorar el código, reportar issues o contribuir al proyecto.",
+    "VIEW_ON_GITHUB": "Ver en GitHub",
+    "DEVELOPERS": "Equipo de Desarrollo",
+    "ROLES": {
+      "FULL_STACK": "Desarrollador Full Stack",
+      "FRONTEND": "Desarrollador Frontend",
+      "BACKEND": "Desarrollador Backend",
+      "UI_UX": "Diseñador UI/UX",
+      "PROJECT_MANAGER": "Project Manager"
+    },
+    "BIOS": {
+      "DEVELOPER_1": "Apasionado desarrollador especializado en tecnologías web modernas y aplicaciones móviles.",
+      "DEVELOPER_2": "Experto en desarrollo frontend con enfoque en experiencia de usuario y diseño responsivo."
+    },
+    "FEATURES": {
+      "STREAMING": "Streaming de Música",
+      "STREAMING_DESC": "Reproduce música de alta calidad con controles avanzados de reproducción.",
+      "PLAYLISTS": "Gestión de Playlists",
+      "PLAYLISTS_DESC": "Crea, edita y organiza tus listas de reproducción personalizadas.",
+      "PROFILES": "Perfiles de Usuario",
+      "PROFILES_DESC": "Personaliza tu perfil y gestiona tus preferencias musicales.",
+      "SEARCH": "Búsqueda Avanzada",
+      "SEARCH_DESC": "Encuentra fácilmente canciones, artistas y álbumes con búsqueda inteligente.",
+      "MULTILANG": "Soporte Multiidioma",
+      "MULTILANG_DESC": "Aplicación disponible en múltiples idiomas para una experiencia global.",
+      "RESPONSIVE": "Diseño Responsivo",
+      "RESPONSIVE_DESC": "Interfaz optimizada para dispositivos móviles, tablets y escritorio."
+    },
+    "TECHNOLOGIES": "Tecnologías Utilizadas",
+    "CONTACT": "Contacto",
+    "CONTACT_DESCRIPTION": "¿Tienes preguntas, sugerencias o quieres colaborar? No dudes en contactarnos.",
+    "SEND_EMAIL": "Enviar Email",
+    "DEMO": "Demostración",
+    "SHARE_APP": "Compartir App"
+  }
+}

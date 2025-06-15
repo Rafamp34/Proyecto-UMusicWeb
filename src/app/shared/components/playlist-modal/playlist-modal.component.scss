@@ -1,0 +1,407 @@
+:host {
+  --modal-bg: #121212;
+  --gradient-start: #1e3a5f;
+  --gradient-end: #0f1419;
+  --spotify-green: #1db954;
+  --spotify-green-hover: #1ed760;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --error-color: #ff6b6b;
+  --border-color: #333;
+}
+
+.custom-modal {
+  --width: 540px;
+  --height: 480px;
+  --border-radius: 16px;
+}
+
+// ✅ HEADER MEJORADO
+ion-header {
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: var(--text-primary);
+  --border-color: transparent;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1rem;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .playlist-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--spotify-green), var(--spotify-green-hover));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(29, 185, 84, 0.3);
+
+      ion-icon {
+        font-size: 20px;
+        color: white;
+      }
+    }
+
+    h1 {
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .close-button {
+    --color: var(--text-secondary);
+    --border-radius: 50%;
+    --background-hover: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      --color: var(--text-primary);
+      transform: scale(1.1);
+    }
+  }
+}
+
+// ✅ CONTENIDO PRINCIPAL CON GRADIENTE
+.playlist-content {
+  --background: transparent;
+}
+
+.visual-header {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+
+  .background-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      #1a1a1a 0%,
+      #2d2d2d 25%,
+      #1e1e1e 50%,
+      #0a0a0a 100%
+    );
+    opacity: 0.95;
+  }
+
+  .content-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem 2rem;
+  }
+}
+
+// ✅ SECCIÓN PRINCIPAL DEL PLAYLIST
+.playlist-visual {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Cambio: centrar verticalmente */
+  margin-bottom: 1.5rem;
+  min-height: 200px; /* Altura mínima para centrado */
+
+  .image-section {
+    flex-shrink: 0;
+
+    .playlist-image-upload {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        border-color: var(--spotify-green);
+        transform: scale(1.02);
+        box-shadow: 0 8px 32px rgba(29, 185, 84, 0.2);
+      }
+
+      .upload-placeholder {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
+
+        ion-icon {
+          font-size: 2.5rem;
+          opacity: 0.7;
+        }
+
+        span {
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+
+        &:hover {
+          background: rgba(29, 185, 84, 0.1);
+          color: var(--spotify-green);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .playlist-form-section {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar el contenido del formulario */
+  }
+}
+
+// ✅ INPUTS PERSONALIZADOS
+.input-container {
+  margin-bottom: 1.5rem;
+
+  .input-label {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .custom-input-wrapper {
+    position: relative;
+    background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro */
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    &:focus-within {
+      border-color: var(--spotify-green);
+      box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.2);
+    }
+
+    &.readonly {
+      background: rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .custom-input {
+      --background: transparent;
+      --color: var(--text-primary);
+      --placeholder-color: var(--text-secondary);
+      --padding-start: 1rem;
+      --padding-end: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      min-height: 48px;
+
+      &.readonly {
+        --color: var(--text-secondary);
+      }
+
+      &.error {
+        --color: var(--error-color);
+      }
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+  }
+
+  .error-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    color: var(--error-color);
+    font-size: 0.85rem;
+    animation: slideIn 0.3s ease;
+
+    ion-icon {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ✅ BOTONES DE ACCIÓN
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  .cancel-btn {
+    --background: transparent;
+    --color: var(--text-secondary);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --border-width: 2px;
+    --border-radius: 24px;
+    flex: 1;
+    height: 48px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      --background: rgba(255, 255, 255, 0.05);
+      --color: var(--text-primary);
+      --border-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .create-btn {
+    --background: linear-gradient(135deg, var(--spotify-green), var(--spotify-green-hover));
+    --color: white;
+    --border-radius: 24px;
+    flex: 2;
+    height: 48px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(29, 185, 84, 0.4);
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      --background: linear-gradient(135deg, var(--spotify-green-hover), #17c653);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(29, 185, 84, 0.5);
+    }
+
+    &:disabled {
+      --background: rgba(255, 255, 255, 0.1);
+      --color: var(--text-secondary);
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}
+
+// ✅ TIP INFORMATIVO
+.info-tip {
+  background: rgba(29, 185, 84, 0.1);
+  border: 1px solid rgba(29, 185, 84, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+
+  .tip-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+
+    ion-icon {
+      color: var(--spotify-green);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+// ✅ ANIMACIONES
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ✅ RESPONSIVE
+@media (max-width: 768px) {
+  .custom-modal {
+    --width: 95vw;
+    --height: 90vh;
+  }
+
+  .header-content {
+    padding: 1rem;
+
+    .header-left {
+      gap: 0.75rem;
+
+      .playlist-icon {
+        width: 32px;
+        height: 32px;
+
+        ion-icon {
+          font-size: 16px;
+        }
+      }
+
+      h1 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .content-overlay {
+    padding: 0 1rem 1rem;
+  }
+
+  .playlist-visual {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    .image-section .playlist-image-upload {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  .action-buttons {
+    flex-direction: column;
+
+    .cancel-btn,
+    .create-btn {
+      flex: 1;
+    }
+  }
+}

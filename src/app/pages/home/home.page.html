@@ -1,0 +1,198 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <div slot="start" class="logo-container">
+      <img src="/assets/logo.png" alt="App Logo" height="60" width="60">
+    </div>
+
+    <app-global-search></app-global-search>
+
+    <ion-buttons slot="end">      
+      <ion-fab>
+        <ion-fab-button class="language-btn" size="small">
+          <ion-icon name="language-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="start" class="language-list">
+          <ion-fab-button 
+            (click)="changeLanguage('es')" 
+            [ngClass]="{'active-language': currentLang === 'es'}">
+            <ion-text>ES</ion-text>
+          </ion-fab-button>
+          <ion-fab-button 
+            (click)="changeLanguage('en')" 
+            [ngClass]="{'active-language': currentLang === 'en'}">
+            <ion-text>EN</ion-text>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+      
+      <div class="user-profile" routerLink="/profile">
+        <ion-avatar class="profile-avatar">
+          <img [src]="(currentUser$ | async)?.image?.url || 'assets/default-avatar.png'" alt="Avatar">
+        </ion-avatar>
+        <span class="username">{{ (currentUser$ | async)?.username || '&nbsp;' }}</span>
+      </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="umusic-theme">
+  <div class="main-content">
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+      <button class="tab-button" [class.active]="selectedTab === 'all'" (click)="selectTab('all')">{{ 'HOME.ALL' | translate }}</button>
+      <button class="tab-button" [class.active]="selectedTab === 'music'" (click)="selectTab('music')">{{ 'HOME.MUSIC' | translate }}</button>
+      <button class="tab-button" [class.active]="selectedTab === 'podcasts'" (click)="selectTab('podcasts')">{{ 'HOME.PODCATS' | translate }}</button>
+    </div>
+
+    <!-- Playlists Grid -->
+    <div class="playlist-grid">
+      <div class="playlist-card" *ngFor="let playlist of quickAccess$ | async" (click)="openPlaylist(playlist)">
+        <div class="card-content">
+          <ion-thumbnail>
+            <img [src]="playlist.image?.url || 'assets/default-playlist.png'" [alt]="playlist.name">
+          </ion-thumbnail>
+          <div class="playlist-info">
+            <h2>{{playlist.name}}</h2>
+            <p>{{playlist.author}}</p>
+            <div class="playlist-stats" *ngIf="playlist.likes_count > 0">
+              <ion-icon name="heart" color="danger"></ion-icon>
+              <span>{{ playlist.likes_count }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="play-button">
+          <ion-icon name="play-circle"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Releases Section - Estructura actualizada -->
+    <section class="releases-section">
+      <div class="section-header">
+        <h2>{{ 'HOME.RELEASE' | translate }}</h2>
+        <button class="show-all" (click)="showAllSongs()">{{ 'HOME.SHOW' | translate }}</button>
+      </div>
+      
+      <div class="releases-grid">
+        <div class="release-card" *ngFor="let song of newReleases$ | async; trackBy: trackBySongId" (click)="openSong(song)">
+          <div class="image-container">
+            <img [src]="song.image?.url || 'assets/default-song.png'" [alt]="song.name">
+            <div class="play-button">
+              <ion-icon name="play-circle"></ion-icon>
+            </div>
+            <div class="like-overlay">
+              <app-like-button 
+                [songId]="song.id" 
+                size="small"
+                (click)="$event.stopPropagation()">
+              </app-like-button>
+            </div>
+          </div>
+          <div class="song-info">
+            <h3>{{song.name}}</h3>
+            <p>
+              <app-clickable-artist-names 
+                [artistNames]="song.artistNames || []"
+                *ngIf="song.artistNames && song.artistNames.length > 0; else unknownArtist">
+              </app-clickable-artist-names>
+              <ng-template #unknownArtist>Unknown Artist</ng-template>
+            </p>
+            <div class="song-stats">
+              <span class="likes-info">
+                <ion-icon 
+                  [name]="song.isLikedByCurrentUser ? 'heart' : 'heart-outline'" 
+                  [color]="song.isLikedByCurrentUser ? 'danger' : 'medium'">
+                </ion-icon>
+                <span [class.liked]="song.isLikedByCurrentUser">{{ song.likes_count || 0 }}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommended Section - Estructura idéntica -->
+    <section class="releases-section">
+      <div class="section-header">
+        <h2>{{ 'HOME.RECOMMENDED' | translate }}</h2>
+        <button class="show-all" (click)="showAllRecommended()">{{ 'HOME.SHOW' | translate }}</button>
+      </div>
+      
+      <div class="releases-grid">
+        <div class="release-card" *ngFor="let song of recommendedSongs$ | async; trackBy: trackBySongId" (click)="openSong(song)">
+          <div class="image-container">
+            <img [src]="song.image?.url || 'assets/default-song.png'" [alt]="song.name">
+            <div class="play-button">
+              <ion-icon name="play-circle"></ion-icon>
+            </div>
+            <div class="like-overlay">
+              <app-like-button 
+                [songId]="song.id" 
+                size="small"
+                (click)="$event.stopPropagation()">
+              </app-like-button>
+            </div>
+          </div>
+          <div class="song-info">
+            <h3>{{song.name}}</h3>
+            <p>
+              <app-clickable-artist-names 
+                [artistNames]="song.artistNames || []"
+                *ngIf="song.artistNames && song.artistNames.length > 0; else unknownArtist2">
+              </app-clickable-artist-names>
+              <ng-template #unknownArtist2>Unknown Artist</ng-template>
+            </p>
+            <div class="song-stats">
+              <span class="likes-info">
+                <ion-icon 
+                  [name]="song.isLikedByCurrentUser ? 'heart' : 'heart-outline'" 
+                  [color]="song.isLikedByCurrentUser ? 'danger' : 'medium'">
+                </ion-icon>
+                <span [class.liked]="song.isLikedByCurrentUser">{{ song.likes_count || 0 }}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer Compacto -->
+  <div class="app-footer-compact">
+    <div class="footer-content-compact">
+      <div class="footer-brand-compact">
+        <img src="/assets/logo.png" alt="UMusic" class="footer-logo-small">
+        <span class="brand-name-small">UMusic</span>
+      </div>
+      
+      <div class="footer-info-compact">
+        <span class="footer-text-small">La mejor experiencia de streaming musical</span>
+        <span class="footer-version-small">Versión 1.0.0</span>
+      </div>
+      
+      <div class="footer-actions-compact">
+        <ion-button 
+          fill="clear" 
+          size="small"
+          (click)="goToAbout()"
+          class="about-btn-compact">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          Acerca de
+        </ion-button>
+        
+        <ion-button 
+          fill="clear" 
+          size="small"
+          (click)="openRepository()"
+          class="github-btn-compact">
+          <ion-icon name="logo-github" slot="start"></ion-icon>
+          GitHub
+        </ion-button>
+      </div>
+      
+      <div class="footer-copyright-compact">
+        <span>© 2025 UMusic. Hecho con ❤️ usando Angular & Ionic</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

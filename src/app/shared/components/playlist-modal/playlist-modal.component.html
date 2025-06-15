@@ -1,0 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="header-content">
+      <div class="header-left">
+        <div class="playlist-icon">
+          <ion-icon name="library-outline"></ion-icon>
+        </div>
+        <h1>{{ (mode === 'edit' ? 'Editar playlist' : 'Nueva playlist') }}</h1>
+      </div>
+      <ion-button fill="clear" (click)="dismiss()" class="close-button">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="playlist-content">
+  <!-- Visual Header con gradiente -->
+  <div class="visual-header">
+    <div class="background-gradient"></div>
+    <div class="content-overlay">
+      <div class="playlist-visual">
+        <div class="image-section">
+          <form [formGroup]="formGroup">
+            <app-picture-selectable formControlName="image" class="playlist-image-upload">
+              <div class="upload-placeholder" *ngIf="!formGroup.get('image')?.value">
+                <ion-icon name="images-outline"></ion-icon>
+                <span>Seleccionar imagen</span>
+              </div>
+            </app-picture-selectable>
+          </form>
+        </div>
+        
+        <div class="playlist-form-section">
+          <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <!-- Input de nombre más atractivo -->
+            <div class="input-container">
+              <label class="input-label">Nombre de la playlist</label>
+              <div class="custom-input-wrapper">
+                <ion-input
+                  type="text"
+                  placeholder="Mi nueva playlist"
+                  formControlName="name"
+                  class="custom-input"
+                  [class.error]="formGroup.get('name')?.invalid && formGroup.get('name')?.touched">
+                </ion-input>
+              </div>
+              <div class="error-text" *ngIf="formGroup.get('name')?.invalid && formGroup.get('name')?.touched">
+                <ion-icon name="warning-outline"></ion-icon>
+                <span>El nombre es obligatorio</span>
+              </div>
+            </div>
+
+            <!-- Campo de duración para edición (opcional) -->
+            <div class="input-container" *ngIf="mode === 'edit'">
+              <label class="input-label">Duración</label>
+              <div class="custom-input-wrapper readonly">
+                <ion-input
+                  type="text"
+                  formControlName="duration"
+                  readonly="true"
+                  class="custom-input readonly">
+                </ion-input>
+                <ion-icon name="time-outline" class="input-icon"></ion-icon>
+              </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+              <ion-button 
+                fill="outline" 
+                (click)="dismiss()"
+                class="cancel-btn">
+                Cancelar
+              </ion-button>
+              
+              <ion-button 
+                type="submit"
+                [disabled]="!formGroup.valid"
+                class="create-btn">
+                <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+                {{ mode === 'edit' ? 'Actualizar' : 'Crear' }}
+              </ion-button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Tip informativo -->
+      <div class="info-tip" *ngIf="mode === 'new'">
+        <div class="tip-content">
+          <ion-icon name="bulb-outline"></ion-icon>
+          <span>Podrás agregar canciones después de crear la playlist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

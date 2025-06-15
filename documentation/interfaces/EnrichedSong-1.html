@@ -1,0 +1,570 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  EnrichedSong</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/artist-profile/artist-profile.page.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+            </p>
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#artistNames" 
+>
+                                            artistNames
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="artistNames"></a>
+                                        <span class="name "><b>artistNames</b>
+                                            <a href="#artistNames">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>artistNames:     <code>string[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string[]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Location } from &#x27;@angular/common&#x27;;
+import { BehaviorSubject, Subject, switchMap, takeUntil, of } from &#x27;rxjs&#x27;;
+import { LoadingController, ToastController } from &#x27;@ionic/angular&#x27;;
+import { Artist } from &#x27;src/app/core/models/artist.model&#x27;;
+import { Song } from &#x27;src/app/core/models/song.model&#x27;;
+import { ArtistsService } from &#x27;src/app/core/services/impl/artists.service&#x27;;
+import { SongsService } from &#x27;src/app/core/services/impl/songs.service&#x27;;
+import { AudioPlayerService } from &#x27;src/app/core/services/impl/audio-player.service&#x27;;
+import { SocialService } from &#x27;src/app/core/services/impl/social.service&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+
+interface EnrichedSong extends Song {
+  artistNames?: string[];
+}
+
+@Component({
+  selector: &#x27;app-artist-profile&#x27;,
+  templateUrl: &#x27;./artist-profile.page.html&#x27;,
+  styleUrls: [&#x27;./artist-profile.page.scss&#x27;]
+})
+export class ArtistProfilePage implements OnInit, OnDestroy {
+  private destroy$ &#x3D; new Subject&lt;void&gt;();
+  
+  artist: Artist | null &#x3D; null;
+  artistSongs: EnrichedSong[] &#x3D; [];
+  relatedArtists: Artist[] &#x3D; [];
+  isFollowing &#x3D; false;
+  isLoading &#x3D; true;
+  selectedTab &#x3D; &#x27;songs&#x27;;
+  followLoading &#x3D; false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private location: Location,
+    private artistsService: ArtistsService,
+    private songsService: SongsService,
+    private audioPlayerService: AudioPlayerService,
+    private socialService: SocialService,
+    private loadingController: LoadingController,
+    private toastController: ToastController,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit() {
+    this.route.params.pipe(
+      switchMap(params &#x3D;&gt; {
+        const artistId &#x3D; params[&#x27;id&#x27;];
+        if (artistId) {
+          this.loadFollowStatus(artistId);
+          return this.loadArtistData(artistId);
+        }
+        return of(null);
+      }),
+      takeUntil(this.destroy$)
+    ).subscribe();
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  private loadFollowStatus(artistId: string) {
+    console.log(&#x27;🔍 Loading follow status for artist:&#x27;, artistId);
+    
+    this.socialService.isArtistFollowed(artistId)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(isFollowing &#x3D;&gt; {
+        console.log(&#x27;✅ Follow status loaded:&#x27;, { artistId, isFollowing });
+        this.isFollowing &#x3D; isFollowing;
+      });
+  }
+
+  private async loadArtistData(artistId: string) {
+    const loading &#x3D; await this.loadingController.create({
+      message: this.translate.instant(&#x27;COMMON.LOADING&#x27;)
+    });
+    await loading.present();
+
+    try {
+      console.log(&#x27;🔍 Loading artist data for ID:&#x27;, artistId);
+      const artist &#x3D; await this.artistsService.getById(artistId).toPromise();
+      
+      if (artist) {
+        console.log(&#x27;✅ Artist loaded:&#x27;, artist);
+        this.artist &#x3D; artist;
+        
+        if (artist.songs_IDS &amp;&amp; artist.songs_IDS.length &gt; 0) {
+          console.log(&#x27;🎵 Loading artist songs:&#x27;, artist.songs_IDS);
+          await this.loadArtistSongs(artist.songs_IDS);
+        }
+        
+        await this.loadRelatedArtists();
+      } else {
+        console.error(&#x27;❌ Artist not found for ID:&#x27;, artistId);
+      }
+    } catch (error) {
+      console.error(&#x27;❌ Error loading artist data:&#x27;, error);
+      this.showError(&#x27;Error al cargar el perfil del artista&#x27;);
+    } finally {
+      this.isLoading &#x3D; false;
+      await loading.dismiss();
+    }
+  }
+
+  private async loadArtistSongs(songIds: string[]) {
+    try {
+      const songPromises &#x3D; songIds.map(id &#x3D;&gt; 
+        this.songsService.getById(id).toPromise()
+      );
+      
+      const songs &#x3D; await Promise.all(songPromises);
+      const validSongs &#x3D; songs.filter((song): song is Song &#x3D;&gt; song !&#x3D;&#x3D; null);
+      
+      console.log(&#x27;🎵 Songs loaded:&#x27;, validSongs.length);
+      this.artistSongs &#x3D; await this.enrichSongsWithArtists(validSongs);
+      
+    } catch (error) {
+      console.error(&#x27;❌ Error loading artist songs:&#x27;, error);
+    }
+  }
+
+  private async enrichSongsWithArtists(songs: Song[]): Promise&lt;EnrichedSong[]&gt; {
+    const enrichedSongs: EnrichedSong[] &#x3D; [];
+    
+    for (const song of songs) {
+      if (song.artists_IDS &amp;&amp; song.artists_IDS.length &gt; 0) {
+        try {
+          const artists &#x3D; await this.artistsService.getByIds(song.artists_IDS).toPromise();
+          if (artists) {
+            const enrichedSong: EnrichedSong &#x3D; {
+              ...song,
+              artistNames: artists.map(artist &#x3D;&gt; artist.name)
+            };
+            enrichedSongs.push(enrichedSong);
+          }
+        } catch (error) {
+          console.error(&#x27;❌ Error loading artists for song:&#x27;, song.id, error);
+          enrichedSongs.push({ ...song, artistNames: [] });
+        }
+      } else {
+        enrichedSongs.push({ ...song, artistNames: [] });
+      }
+    }
+    
+    return enrichedSongs;
+  }
+
+  private async loadRelatedArtists() {
+    try {
+      const allArtists &#x3D; await this.artistsService.getAll(1, 10).toPromise();
+      if (allArtists) {
+        this.relatedArtists &#x3D; allArtists.data.filter(a &#x3D;&gt; a.id !&#x3D;&#x3D; this.artist?.id);
+      }
+    } catch (error) {
+      console.error(&#x27;❌ Error loading related artists:&#x27;, error);
+    }
+  }
+
+  async toggleFollow() {
+    if (!this.artist || this.followLoading) return;
+
+    console.log(&#x27;🔄 Toggling follow for artist:&#x27;, this.artist.id, &#x27;Current state:&#x27;, this.isFollowing);
+    this.followLoading &#x3D; true;
+
+    try {
+      if (this.isFollowing) {
+        console.log(&#x27;➖ Unfollowing artist...&#x27;);
+        const success &#x3D; await this.socialService.unfollowArtist(this.artist.id).toPromise();
+        if (success) {
+          console.log(&#x27;✅ Successfully unfollowed&#x27;);
+          this.showToast(&#x60;Ya no sigues a ${this.artist.name}&#x60;);
+        } else {
+          console.error(&#x27;❌ Failed to unfollow&#x27;);
+          this.showError(&#x27;Error al dejar de seguir al artista&#x27;);
+        }
+      } else {
+        console.log(&#x27;➕ Following artist...&#x27;);
+        const success &#x3D; await this.socialService.followArtist(this.artist.id).toPromise();
+        if (success) {
+          console.log(&#x27;✅ Successfully followed&#x27;);
+          this.showToast(&#x60;Ahora sigues a ${this.artist.name}&#x60;);
+        } else {
+          console.error(&#x27;❌ Failed to follow&#x27;);
+          this.showError(&#x27;Error al seguir al artista&#x27;);
+        }
+      }
+    } catch (error) {
+      console.error(&#x27;❌ Error in toggleFollow:&#x27;, error);
+      this.showError(&#x27;Error al actualizar el seguimiento&#x27;);
+    } finally {
+      this.followLoading &#x3D; false;
+    }
+  }
+
+  async onPlayAll() {
+    if (!this.artistSongs || this.artistSongs.length &#x3D;&#x3D;&#x3D; 0) {
+      this.showError(&#x27;No hay canciones disponibles para reproducir&#x27;);
+      return;
+    }
+
+    try {
+      console.log(&#x27;🎵 Playing all songs for artist:&#x27;, this.artist?.name);
+      
+      if (typeof this.audioPlayerService.setQueue &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+        this.audioPlayerService.setQueue(this.artistSongs, 0);
+      }
+
+      if (typeof this.audioPlayerService.play &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+        await this.audioPlayerService.play(this.artistSongs[0]);
+      }
+
+      this.showToast(&#x60;Reproduciendo ${this.artistSongs.length} canciones de ${this.artist?.name}&#x60;);
+      
+    } catch (error) {
+      console.error(&#x27;❌ Error playing songs:&#x27;, error);
+      this.showError(&#x27;Error al reproducir las canciones&#x27;);
+    }
+  }
+
+  async onPlaySong(song: EnrichedSong, index: number) {
+    if (!song) return;
+
+    try {
+      console.log(&#x27;🎵 Playing song:&#x27;, song.name, &#x27;at index:&#x27;, index);
+      
+      if (typeof this.audioPlayerService.setQueue &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+        this.audioPlayerService.setQueue(this.artistSongs, index);
+      }
+
+      if (typeof this.audioPlayerService.play &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+        await this.audioPlayerService.play(song);
+      }
+
+      this.showToast(&#x60;Reproduciendo: ${song.name}&#x60;);
+      
+    } catch (error) {
+      console.error(&#x27;❌ Error playing song:&#x27;, error);
+      this.showError(&#x27;Error al reproducir la canción&#x27;);
+    }
+  }
+
+  onRelatedArtistClick(artist: Artist) {
+    this.router.navigate([&#x27;/artist&#x27;, artist.id]);
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  formatNumber(num: number): string {
+    if (num &gt;&#x3D; 1000000) {
+      return (num / 1000000).toFixed(1) + &#x27;M&#x27;;
+    } else if (num &gt;&#x3D; 1000) {
+      return (num / 1000).toFixed(1) + &#x27;K&#x27;;
+    }
+    return num.toString();
+  }
+
+  private async showError(message: string) {
+    const toast &#x3D; await this.toastController.create({
+      message,
+      duration: 3000,
+      color: &#x27;danger&#x27;
+    });
+    toast.present();
+  }
+
+  private async showToast(message: string) {
+    const toast &#x3D; await this.toastController.create({
+      message,
+      duration: 2000,
+      color: &#x27;success&#x27;
+    });
+    toast.present();
+  }
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'EnrichedSong-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

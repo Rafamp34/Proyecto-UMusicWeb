@@ -1,0 +1,106 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="header-content">
+      <div class="header-title">
+        <ion-icon name="musical-notes" style="margin-right: 8px; font-size: 1.2rem;"></ion-icon>
+        <h1>{{ (mode === 'edit' ? 'SONG.EDIT' : 'SONG.NEW') | translate }}</h1>
+      </div>
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close" style="font-size: 1.5rem;"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-align-items-stretch">
+        <!-- Columna para la imagen -->
+        <ion-col size="4" class="song-image">
+          <app-picture-selectable formControlName="image"></app-picture-selectable>
+        </ion-col>
+
+        <!-- Columna para los campos de la canción -->
+        <ion-col size="8">
+          <div class="song-fields">
+            <ion-list>
+              <!-- Nombre -->
+              <ion-item>
+                <ion-input [label]="'SONG.NAME' | translate"
+                           label-placement="stacked"
+                           formControlName="name"
+                           [class.ion-invalid]="name.invalid && name.touched"
+                           [class.ion-touched]="name.touched">
+                </ion-input>
+              </ion-item>
+              <div *ngIf="name.invalid && name.touched" class="error-message">
+                <ion-note color="danger">{{ 'SONG.ERRORS.NAME_REQUIRED' | translate }}</ion-note>
+              </div>
+
+              <!-- Artistas -->
+              <ion-item>
+                <ion-select [label]="'SONG.ARTISTS' | translate"
+                            label-placement="stacked"
+                            formControlName="artists_IDS"
+                            [multiple]="true"
+                            [compareWith]="compareWith"
+                            [class.ion-invalid]="artists_IDS.invalid && artists_IDS.touched"
+                            [class.ion-touched]="artists_IDS.touched">
+                  <ion-select-option *ngFor="let artist of availableArtists$ | async" [value]="artist.id">
+                    {{artist.name}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+              <div *ngIf="artists_IDS.invalid && artists_IDS.touched" class="error-message">
+                <ion-note color="danger">{{ 'SONG.ERRORS.ARTISTS_REQUIRED' | translate }}</ion-note>
+              </div>
+
+              <!-- Álbum -->
+              <ion-item>
+                <ion-input [label]="'SONG.ALBUM' | translate"
+                           label-placement="stacked"
+                           formControlName="album">
+                </ion-input>
+              </ion-item>
+
+              <!-- Duración -->
+              <ion-item>
+                <ion-input [label]="'SONG.DURATION' | translate"
+                           label-placement="stacked"
+                           placeholder="3:45"
+                           formControlName="duration"
+                           [class.ion-invalid]="duration.invalid && duration.touched"
+                           [class.ion-touched]="duration.touched">
+                </ion-input>
+                <ion-note slot="end" *ngIf="duration.value" class="duration-display">
+                  {{ getDurationDisplay(duration.value) }}
+                </ion-note>
+              </ion-item>
+              <div *ngIf="duration.invalid && duration.touched" class="error-message">
+                <ion-note color="danger" *ngIf="duration.errors?.['required']">
+                  {{ 'SONG.ERRORS.DURATION_REQUIRED' | translate }}
+                </ion-note>
+                <ion-note color="danger" *ngIf="duration.errors?.['pattern']">
+                  {{ 'SONG.ERRORS.DURATION_FORMAT' | translate }}
+                </ion-note>
+              </div>
+            </ion-list>
+
+            <!-- Botón de guardar -->
+            <div class="save-button-container">
+              <ion-button 
+                [disabled]="!formGroup.valid" 
+                type="submit"
+                expand="block"
+                class="save-button">
+                <ion-icon slot="start" name="save-outline"></ion-icon>
+                {{ (mode === 'edit' ? 'COMMON.UPDATE' : 'COMMON.CREATE') | translate }}
+              </ion-button>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,30 @@
+<div class="artist-card" 
+      (mouseenter)="onMouseEnter()" 
+      (mouseleave)="onMouseLeave()">
+  <div class="image-container">
+    <img [src]="artist.image?.url || 'assets/default-artist.png'" 
+      [alt]="artist.name"
+      class="artist-image">
+    
+    <div class="overlay" *ngIf="isHovered">
+      <div class="action-buttons">
+        <ion-button (click)="onPlay()" fill="clear" class="play-button">
+          <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+        </ion-button>
+        
+        <ion-button (click)="onEdit()" fill="clear" class="edit-button">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+        
+        <ion-button (click)="onDelete()" fill="clear" class="delete-button">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="artist-info">
+    <h3 class="artist-name">{{artist.name}}</h3>
+    <p class="artist-listeners">{{artist.listeners | number}} oyentes</p>
+  </div>
+</div>

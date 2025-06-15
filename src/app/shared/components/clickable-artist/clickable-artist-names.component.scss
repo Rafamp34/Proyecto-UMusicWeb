@@ -1,0 +1,135 @@
+/* src/app/shared/components/clickable-artist/clickable-artist-names.component.scss - MEJORADO */
+
+.artists-container {
+  display: inline;
+  line-height: 1.4;
+
+  .clickable-artist {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    position: relative;
+    
+    &:hover {
+      color: #1DB954;
+      text-decoration: underline; /* ✅ Subrayado visible */
+      text-decoration-color: #1DB954; /* ✅ Color del subrayado */
+      text-decoration-thickness: 1px; /* ✅ Grosor del subrayado */
+      text-underline-offset: 2px; /* ✅ Separación del texto */
+      text-shadow: 0 0 4px rgba(29, 185, 84, 0.3);
+      cursor: pointer;
+    }
+    
+    &:active {
+      color: #1ed760;
+      transform: scale(0.98);
+    }
+
+    // Para pantallas táctiles
+    &:focus {
+      outline: none;
+      color: #1DB954;
+      text-decoration: underline;
+      text-decoration-color: #1DB954;
+    }
+
+    // ✅ NUEVO: Efecto de subrayado animado (opcional)
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #1DB954;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .separator {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 2px;
+    user-select: none;
+  }
+
+  .remaining-count {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    cursor: help;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .artists-container {
+    .clickable-artist {
+      font-size: 0.85rem;
+      
+      // Área de toque más grande en móviles
+      padding: 2px 0;
+      margin: -2px 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-container {
+    .clickable-artist {
+      font-size: 0.8rem;
+    }
+    
+    .separator {
+      margin: 0 1px;
+    }
+  }
+}
+
+// Variantes de tema
+.artists-container {
+  // En tarjetas oscuras
+  &.on-dark {
+    .clickable-artist {
+      color: rgba(255, 255, 255, 0.8);
+      
+      &:hover {
+        color: #1DB954;
+      }
+    }
+  }
+  
+  // En tarjetas de colores
+  &.on-colored {
+    .clickable-artist {
+      color: rgba(255, 255, 255, 0.9);
+      
+      &:hover {
+        color: #ffffff;
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+  
+  // Para subtítulos más pequeños
+  &.subtitle {
+    .clickable-artist {
+      font-size: 0.8rem;
+      font-weight: 300;
+      opacity: 0.8;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

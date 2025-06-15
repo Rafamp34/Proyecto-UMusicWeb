@@ -1,0 +1,448 @@
+// src/app/shared/components/audio-player/audio-player.component.scss - REEMPLAZAR COMPLETAMENTE
+
+.audio-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, #181818 100%);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+// Header con información de contexto
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(29, 185, 84, 0.1);
+  border-bottom: 1px solid rgba(29, 185, 84, 0.2);
+
+  .playing-from {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #1db954;
+    font-weight: 500;
+
+    ion-icon {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Mini Player
+.mini-player {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+
+  .song-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    cursor: pointer;
+    min-width: 0;
+
+    ion-thumbnail {
+      --size: 48px;
+      --border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .track-details {
+      flex: 1;
+      min-width: 0;
+
+      .track-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.2rem;
+      }
+
+      .track-artist {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .mini-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .play-pause-btn {
+      --color: white;
+      --background: rgba(255, 255, 255, 0.1);
+      --border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+
+      &:hover {
+        --color: white;
+      }
+    }
+  }
+
+  // Control de volumen mini
+  .mini-volume {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+
+    .volume-range-mini {
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 12px;
+    }
+  }
+}
+
+// Progress Bar
+.progress-container {
+  padding: 0 1rem 0.5rem;
+
+  .progress-range {
+    --bar-height: 4px;
+    --bar-background: rgba(255, 255, 255, 0.3);
+    --bar-background-active: #1db954;
+    --knob-background: #1db954;
+    --knob-size: 12px;
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+      --knob-size: 16px;
+    }
+  }
+}
+
+// Full Player (Expanded)
+.full-player {
+  padding: 1rem;
+  background: linear-gradient(180deg, #282828 0%, #181818 100%);
+  max-height: 70vh;
+  overflow-y: auto;
+
+  .expanded-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .playing-from-expanded {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .context-type {
+        font-size: 0.8rem;
+        color: #1db954;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .context-name {
+        font-size: 1rem;
+        color: white;
+        font-weight: 500;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.5rem;
+
+      ion-button {
+        --color: #b3b3b3;
+        
+        &:hover {
+          --color: white;
+        }
+      }
+    }
+  }
+
+  .track-display {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .album-art {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .track-info-expanded {
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        color: white;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.25rem 0;
+        color: #b3b3b3;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+        color: #666;
+      }
+    }
+  }
+
+  .progress-section {
+    margin-bottom: 2rem;
+
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      color: #b3b3b3;
+    }
+
+    .progress-range-expanded {
+      --bar-height: 6px;
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 16px;
+    }
+  }
+
+  .main-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .main-play-btn {
+      --background: #1db954;
+      --background-hover: #1ed760;
+      --color: white;
+      width: 64px;
+      height: 64px;
+
+      ion-icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+
+      &:hover {
+        --color: white;
+      }
+
+      &[color="primary"] {
+        --color: #1db954;
+      }
+    }
+  }
+
+  // Control de volumen
+  .volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 0;
+      --padding-end: 0;
+
+      &:hover {
+        --color: white;
+      }
+    }
+
+    .volume-range {
+      --bar-background: rgba(255, 255, 255, 0.3);
+      --bar-background-active: #1db954;
+      --knob-background: #1db954;
+      --knob-size: 16px;
+      min-width: 200px;
+      margin: 0 0.5rem;
+
+      ion-label {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+      }
+    }
+
+    .volume-percentage {
+      font-size: 0.8rem;
+      color: #b3b3b3;
+      min-width: 35px;
+      text-align: right;
+    }
+  }
+}
+
+// Queue Modal
+.queue-container {
+  padding: 1rem;
+
+  .queue-header {
+    margin-bottom: 1rem;
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  .queue-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.current-item {
+      background-color: rgba(29, 185, 84, 0.2);
+      border: 1px solid rgba(29, 185, 84, 0.4);
+    }
+
+    &.current {
+      background-color: rgba(29, 185, 84, 0.1);
+    }
+
+    ion-thumbnail {
+      --size: 48px;
+      --border-radius: 4px;
+    }
+
+    .item-info {
+      flex: 1;
+      min-width: 0;
+
+      .item-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0.2rem;
+      }
+
+      .item-artist {
+        font-size: 0.8rem;
+        color: #b3b3b3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .playing-indicator {
+      ion-icon {
+        font-size: 1.2rem;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+    }
+
+    ion-button {
+      --color: #b3b3b3;
+      --padding-start: 8px;
+      --padding-end: 8px;
+
+      &:hover {
+        --color: white;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .mini-volume {
+    display: none !important;
+  }
+
+  .full-player {
+    .track-display .album-art {
+      width: 150px;
+      height: 150px;
+    }
+
+    .volume-control .volume-range {
+      min-width: 150px;
+    }
+
+    .main-controls {
+      gap: 1rem;
+
+      .main-play-btn {
+        width: 56px;
+        height: 56px;
+      }
+    }
+  }
+}
+
+// Animaciones
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.6; 
+  }
+}

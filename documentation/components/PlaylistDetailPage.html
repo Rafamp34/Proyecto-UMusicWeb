@@ -1,0 +1,3101 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PlaylistDetailPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/playlist-detail/playlist-detail.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-playlist-detail</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./playlist-detail.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./playlist-detail.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_currentUser" >_currentUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_playlist" >_playlist</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_songs" >_songs</a>
+                            </li>
+                            <li>
+                                <a href="#currentUser$" >currentUser$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroy$" >destroy$</a>
+                            </li>
+                            <li>
+                                <a href="#isOwner" >isOwner</a>
+                            </li>
+                            <li>
+                                <a href="#playerState$" >playerState$</a>
+                            </li>
+                            <li>
+                                <a href="#playlist$" >playlist$</a>
+                            </li>
+                            <li>
+                                <a href="#songs$" >songs$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addSong" >addSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#convertToEnrichedSongs" >convertToEnrichedSongs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#editSong" >editSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#enrichSongWithArtists" >enrichSongWithArtists</a>
+                            </li>
+                            <li>
+                                <a href="#formatDuration" >formatDuration</a>
+                            </li>
+                            <li>
+                                <a href="#isCurrentlyPlaying" >isCurrentlyPlaying</a>
+                            </li>
+                            <li>
+                                <a href="#isCurrentSong" >isCurrentSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#loadSongs" >loadSongs</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBack" >onBack</a>
+                            </li>
+                            <li>
+                                <a href="#onImageError" >onImageError</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onPlay" >onPlay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onShuffle" >onShuffle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#playSong" >playSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#removeSong" >removeSong</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sharePlaylist" >sharePlaylist</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#showConfirmRemoveDialog" >showConfirmRemoveDialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#showToast" >showToast</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#isPlaying$" >isPlaying$</a>
+                                </li>
+                                <li>
+                                    <a href="#currentSong" >currentSong</a>
+                                </li>
+                                <li>
+                                    <a href="#shouldShowPause$" >shouldShowPause$</a>
+                                </li>
+                                <li>
+                                    <a href="#isShuffleActive$" >isShuffleActive$</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: ActivatedRoute, router: Router, playlistsSvc: <a href="../injectables/PlaylistsService.html" target="_self">PlaylistsService</a>, songsSvc: <a href="../injectables/SongsService.html" target="_self">SongsService</a>, authSvc: <a href="../injectables/BaseAuthenticationService.html" target="_self">BaseAuthenticationService</a>, audioPlayerService: <a href="../injectables/AudioPlayerService.html" target="_self">AudioPlayerService</a>, modalCtrl: ModalController, alertCtrl: AlertController, toastCtrl: ToastController, translate: TranslateService, artistsSvc: <a href="../injectables/ArtistsService.html" target="_self">ArtistsService</a>, userService: <a href="../injectables/UserService.html" target="_self">UserService</a>, shareService: <a href="../injectables/ShareService.html" target="_self">ShareService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>playlistsSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PlaylistsService.html" target="_self" >PlaylistsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>songsSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SongsService.html" target="_self" >SongsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BaseAuthenticationService.html" target="_self" >BaseAuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>audioPlayerService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AudioPlayerService.html" target="_self" >AudioPlayerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>artistsSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArtistsService.html" target="_self" >ArtistsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>shareService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ShareService.html" target="_self" >ShareService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSong"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addSong</b></span>
+                        <a href="#addSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addSong()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="375"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:375</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertToEnrichedSongs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>convertToEnrichedSongs</b></span>
+                        <a href="#convertToEnrichedSongs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertToEnrichedSongs(songs: SongWithArtists[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="265"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:265</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte SongWithArtists[] a EnrichedSong[]</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>songs</td>
+                                            <td>
+                                                        <code>SongWithArtists[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>EnrichedSong[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editSong"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>editSong</b></span>
+                        <a href="#editSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>editSong(song: <a href="../interfaces/Song.html" target="_self">Song</a>, event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="414"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:414</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enrichSongWithArtists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>enrichSongWithArtists</b></span>
+                        <a href="#enrichSongWithArtists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enrichSongWithArtists(songs: <a href="../interfaces/Song.html" target="_self">Song[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="341"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:341</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>songs</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;SongWithArtists[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatDuration"></a>
+                    <span class="name">
+                        <span ><b>formatDuration</b></span>
+                        <a href="#formatDuration"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>formatDuration(seconds: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="524"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:524</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>seconds</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCurrentlyPlaying"></a>
+                    <span class="name">
+                        <span ><b>isCurrentlyPlaying</b></span>
+                        <a href="#isCurrentlyPlaying"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isCurrentlyPlaying(song: <a href="../interfaces/Song.html" target="_self">Song</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="249"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:249</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Verifica si una canción está reproduciéndose actualmente</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCurrentSong"></a>
+                    <span class="name">
+                        <span ><b>isCurrentSong</b></span>
+                        <a href="#isCurrentSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isCurrentSong(song: <a href="../interfaces/Song.html" target="_self">Song</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="257"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Verifica si una canción es la actual (reproduciendo o pausada)</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadSongs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>loadSongs</b></span>
+                        <a href="#loadSongs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>loadSongs(playlist: <a href="../interfaces/Playlist.html" target="_self">Playlist</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="303"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:303</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>playlist</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Playlist.html" target="_self" >Playlist</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBack"></a>
+                    <span class="name">
+                        <span ><b>onBack</b></span>
+                        <a href="#onBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBack()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="479"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:479</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onImageError"></a>
+                    <span class="name">
+                        <span ><b>onImageError</b></span>
+                        <a href="#onImageError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onImageError(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="536"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:536</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlay"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onPlay</b></span>
+                        <a href="#onPlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPlay()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="158"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggle play/pause o reproduce toda la playlist si no hay nada reproduciéndose</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShuffle"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onShuffle</b></span>
+                        <a href="#onShuffle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onShuffle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="195"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:195</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Activa shuffle y reproduce la playlist mezclada</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playSong"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>playSong</b></span>
+                        <a href="#playSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>playSong(song: <a href="../interfaces/SongWithArtists.html" target="_self">SongWithArtists</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="235"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:235</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Reproduce una canción específica (reemplaza tu método playSong)</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SongWithArtists.html" target="_self" >SongWithArtists</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeSong"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>removeSong</b></span>
+                        <a href="#removeSong"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeSong(song: <a href="../interfaces/Song.html" target="_self">Song</a>, event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="455"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:455</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>song</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sharePlaylist"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sharePlaylist</b></span>
+                        <a href="#sharePlaylist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sharePlaylist()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="497"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:497</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showConfirmRemoveDialog"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>showConfirmRemoveDialog</b></span>
+                        <a href="#showConfirmRemoveDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showConfirmRemoveDialog()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="434"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:434</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showToast"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>showToast</b></span>
+                        <a href="#showToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showToast(translationKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="483"
+                                    class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:483</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>translationKey</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_currentUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_currentUser</b></span>
+                        <a href="#_currentUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;User | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_playlist"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_playlist</b></span>
+                        <a href="#_playlist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;Playlist | null&gt;(null)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_songs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_songs</b></span>
+                        <a href="#_songs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;SongWithArtists[]&gt;([])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentUser$"></a>
+                    <span class="name">
+                        <span ><b>currentUser$</b></span>
+                        <a href="#currentUser$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this._currentUser.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroy$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>destroy$</b></span>
+                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOwner"></a>
+                    <span class="name">
+                        <span ><b>isOwner</b></span>
+                        <a href="#isOwner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playerState$"></a>
+                    <span class="name">
+                        <span ><b>playerState$</b></span>
+                        <a href="#playerState$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.audioPlayerService.playerState$</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playlist$"></a>
+                    <span class="name">
+                        <span ><b>playlist$</b></span>
+                        <a href="#playlist$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this._playlist.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="songs$"></a>
+                    <span class="name">
+                        <span ><b>songs$</b></span>
+                        <a href="#songs$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this._songs.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPlaying$"></a>
+                        <span class="name"><b>isPlaying$</b><a href="#isPlaying$"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isPlaying$()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:275</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentSong"></a>
+                        <span class="name"><b>currentSong</b><a href="#currentSong"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>currentSong()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="279" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:279</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shouldShowPause$"></a>
+                        <span class="name"><b>shouldShowPause$</b><a href="#shouldShowPause$"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>shouldShowPause$()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:286</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Verifica si el botón debe mostrar &quot;pause&quot; (hay música reproduciéndose)</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isShuffleActive$"></a>
+                        <span class="name"><b>isShuffleActive$</b><a href="#isShuffleActive$"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isShuffleActive$()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="295" class="link-to-prism">src/app/pages/playlist-detail/playlist-detail.page.ts:295</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Verifica si el shuffle está activo</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { BehaviorSubject, catchError, of, switchMap, Subject } from &#x27;rxjs&#x27;;
+import { AlertController, ModalController, ToastController } from &#x27;@ionic/angular&#x27;;
+import { Playlist } from &#x27;src/app/core/models/playlist.model&#x27;;
+import { Song } from &#x27;src/app/core/models/song.model&#x27;;
+import { EnrichedSong } from &#x27;src/app/core/models/enriched-song.interface&#x27;;
+import { PlaylistsService } from &#x27;src/app/core/services/impl/playlists.service&#x27;;
+import { SongsService } from &#x27;src/app/core/services/impl/songs.service&#x27;;
+import { BaseAuthenticationService } from &#x27;src/app/core/services/impl/base-authentication.service&#x27;;
+import { AudioPlayerService } from &#x27;src/app/core/services/impl/audio-player.service&#x27;;
+import { SongModalComponent } from &#x27;src/app/shared/components/song-modal/song-modal.component&#x27;;
+import { filter, map, tap, takeUntil } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+import { SongDetailModalComponent } from &#x27;src/app/shared/components/song-detail-modal/song-detail-modal.component&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { ArtistsService } from &#x27;src/app/core/services/impl/artists.service&#x27;;
+import { User } from &#x27;src/app/core/models/user.model&#x27;;
+import { UserService } from &#x27;src/app/core/services/impl/user.service&#x27;;
+import { ShareService } from &#x27;src/app/core/services/impl/share.service&#x27;;
+
+interface SongWithArtists extends Song {
+  artistNames?: string[];
+}
+
+@Component({
+  selector: &#x27;app-playlist-detail&#x27;,
+  templateUrl: &#x27;./playlist-detail.page.html&#x27;,
+  styleUrls: [&#x27;./playlist-detail.page.scss&#x27;],
+})
+export class PlaylistDetailPage implements OnInit, OnDestroy {
+  private destroy$ &#x3D; new Subject&lt;void&gt;();
+  
+  private _playlist &#x3D; new BehaviorSubject&lt;Playlist | null&gt;(null);
+  playlist$ &#x3D; this._playlist.asObservable();
+  
+  private _songs &#x3D; new BehaviorSubject&lt;SongWithArtists[]&gt;([]);
+  songs$ &#x3D; this._songs.asObservable();
+
+  private _currentUser &#x3D; new BehaviorSubject&lt;User | null&gt;(null);
+  currentUser$ &#x3D; this._currentUser.asObservable();
+
+  // ✅ INTEGRACIÓN CON AudioPlayerService
+  playerState$ &#x3D; this.audioPlayerService.playerState$;
+  
+  isOwner &#x3D; false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private playlistsSvc: PlaylistsService,
+    private songsSvc: SongsService,
+    private authSvc: BaseAuthenticationService,
+    private audioPlayerService: AudioPlayerService, // 👈 Tu servicio de audio
+    private modalCtrl: ModalController,
+    private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
+    private translate: TranslateService,
+    private artistsSvc: ArtistsService,
+    private userService: UserService,
+    private shareService: ShareService,
+  ) { }
+
+  async ngOnInit() {    
+    this.authSvc.user$.pipe(
+      takeUntil(this.destroy$),
+      filter(user &#x3D;&gt; user !&#x3D;&#x3D; undefined),
+      switchMap(user &#x3D;&gt; {
+        if (!user) {
+          return of(null);
+        }
+        return this.userService.getById(user.id);
+      })
+    ).subscribe({
+      next: (userData) &#x3D;&gt; {
+        if (userData) {
+          const updatedUser: User &#x3D; {
+            ...userData,
+            image: userData.image || undefined
+          };
+          this._currentUser.next(updatedUser);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;🎵 Error loading user data:&#x27;, error);
+      }
+    });
+
+    // ✅ PASO 2: Cargar playlist desde la URL
+    this.route.params.pipe(
+      takeUntil(this.destroy$),
+      switchMap(params &#x3D;&gt; {
+        
+        if (!params[&#x27;id&#x27;]) {
+          console.error(&#x27;🎵 No playlist ID in route&#x27;);
+          return of(null);
+        }
+        
+        return this.playlistsSvc.getById(params[&#x27;id&#x27;]).pipe(
+          catchError(error &#x3D;&gt; {
+            console.error(&#x27;🎵 Error loading playlist:&#x27;, error);
+            this.showToast(&#x27;PLAYLIST.ERRORS.LOAD&#x27;);
+            return of(null);
+          })
+        );
+      })
+    ).subscribe({
+      next: async (playlist) &#x3D;&gt; {
+        
+        if (playlist) {
+          
+          if (!playlist.name || !playlist.author) {
+            console.error(&#x27;🎵 Playlist has invalid data:&#x27;, playlist);
+            this.showToast(&#x27;PLAYLIST.ERRORS.INVALID_DATA&#x27;);
+            this.router.navigate([&#x27;/home&#x27;]);
+            return;
+          }
+          
+          this._playlist.next(playlist);
+          
+          // ✅ Cargar canciones si existen
+          if (playlist.song_IDS &amp;&amp; playlist.song_IDS.length &gt; 0) {
+            await this.loadSongs(playlist);
+          } else {
+            this._songs.next([]);
+          }
+          
+          // ✅ Verificar ownership
+          try {
+            const currentUser &#x3D; await this.authSvc.getCurrentUser();
+            if (currentUser &amp;&amp; playlist.users_IDS &amp;&amp; playlist.users_IDS.length &gt; 0) {
+              this.isOwner &#x3D; playlist.users_IDS.includes(currentUser.id);
+            }
+          } catch (error) {
+            console.error(&#x27;🎵 Error checking ownership:&#x27;, error);
+          }
+        } else {
+          this.router.navigate([&#x27;/home&#x27;]);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;🎵 Critical error loading playlist:&#x27;, error);
+        this.showToast(&#x27;PLAYLIST.ERRORS.LOAD&#x27;);
+        this.router.navigate([&#x27;/home&#x27;]);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  /**
+   * Toggle play/pause o reproduce toda la playlist si no hay nada reproduciéndose
+   */
+  async onPlay() {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    const songs &#x3D; this._songs.value;
+    const playlist &#x3D; this._playlist.value;
+    
+    if (songs.length &#x3D;&#x3D;&#x3D; 0) return;
+
+    // Si hay una canción actual y está reproduciéndose, pausar
+    if (playerState.currentSong &amp;&amp; playerState.isPlaying) {
+      this.audioPlayerService.pause();
+      return;
+    }
+
+    // Si hay una canción actual pero está pausada, reanudar
+    if (playerState.currentSong &amp;&amp; playerState.isPaused) {
+      this.audioPlayerService.resume();
+      return;
+    }
+
+    // Si no hay canción actual, reproducir toda la playlist desde el inicio
+    
+    if (playlist) {
+      this.audioPlayerService.setPlayingContext({
+        type: &#x27;playlist&#x27;,
+        name: playlist.name,
+        id: playlist.id
+      });
+    }
+    
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    this.audioPlayerService.setQueue(enrichedSongs, 0);
+    await this.audioPlayerService.play(enrichedSongs[0]);
+  }
+
+  /**
+   * Activa shuffle y reproduce la playlist mezclada
+   */
+  async onShuffle() {
+    const songs &#x3D; this._songs.value;
+    const playlist &#x3D; this._playlist.value;
+    if (songs.length &#x3D;&#x3D;&#x3D; 0) return;
+    
+    // ✅ NUEVO: Establecer contexto de reproducción
+    if (playlist) {
+      this.audioPlayerService.setPlayingContext({
+        type: &#x27;playlist&#x27;,
+        name: &#x60;${playlist.name} (Shuffled)&#x60;,
+        id: playlist.id
+      });
+    }
+    
+    // Convertir a EnrichedSong
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    
+    // Mezclar las canciones manualmente
+    const shuffledSongs &#x3D; [...enrichedSongs];
+    for (let i &#x3D; shuffledSongs.length - 1; i &gt; 0; i--) {
+      const j &#x3D; Math.floor(Math.random() * (i + 1));
+      [shuffledSongs[i], shuffledSongs[j]] &#x3D; [shuffledSongs[j], shuffledSongs[i]];
+    }
+    
+    // Configurar la cola con las canciones mezcladas
+    this.audioPlayerService.setQueue(shuffledSongs, 0);
+    
+    // Activar el modo shuffle en el reproductor
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    if (!playerState.isShuffled) {
+      this.audioPlayerService.toggleShuffle();
+    }
+    
+    // Reproducir la primera canción de la lista mezclada
+    await this.audioPlayerService.play(shuffledSongs[0]);
+  }
+
+  /**
+   * Reproduce una canción específica (reemplaza tu método playSong)
+   */
+  async playSong(song: SongWithArtists, index: number) {    
+    const songs &#x3D; this._songs.value;
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    
+    // Configurar la cola desde la canción seleccionada
+    this.audioPlayerService.setQueue(enrichedSongs, index);
+    
+    // Reproducir la canción seleccionada
+    await this.audioPlayerService.play(enrichedSongs[index]);
+  }
+
+  /**
+   * Verifica si una canción está reproduciéndose actualmente
+   */
+  isCurrentlyPlaying(song: Song): boolean {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    return playerState.currentSong?.id &#x3D;&#x3D;&#x3D; song.id &amp;&amp; playerState.isPlaying;
+  }
+
+  /**
+   * Verifica si una canción es la actual (reproduciendo o pausada)
+   */
+  isCurrentSong(song: Song): boolean {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    return playerState.currentSong?.id &#x3D;&#x3D;&#x3D; song.id;
+  }
+
+  /**
+   * Convierte SongWithArtists[] a EnrichedSong[]
+   */
+  private convertToEnrichedSongs(songs: SongWithArtists[]): EnrichedSong[] {
+    return songs.map(song &#x3D;&gt; ({
+      ...song,
+      audioUrl: song.audioUrl || &#x60;assets/audio/sample-${song.id}.mp3&#x60;, // URL de ejemplo si no existe
+      artistNames: song.artistNames || [&#x27;Unknown Artist&#x27;]
+    } as EnrichedSong));
+  }
+
+  // ✅ GETTERS PARA EL TEMPLATE (para compatibilidad)
+  
+  get isPlaying$() {
+    return this.playerState$.pipe(map(state &#x3D;&gt; state.isPlaying));
+  }
+
+  get currentSong() {
+    return this.audioPlayerService.getPlayerState().currentSong;
+  }
+
+  /**
+   * Verifica si el botón debe mostrar &quot;pause&quot; (hay música reproduciéndose)
+   */
+  get shouldShowPause$() {
+    return this.playerState$.pipe(
+      map(state &#x3D;&gt; state.isPlaying &amp;&amp; state.currentSong !&#x3D;&#x3D; null)
+    );
+  }
+
+  /**
+   * Verifica si el shuffle está activo
+   */
+  get isShuffleActive$() {
+    return this.playerState$.pipe(
+      map(state &#x3D;&gt; state.isShuffled)
+    );
+  }
+
+  // ✅ MÉTODOS EXISTENTES (mantener todos los que ya tienes)
+
+  private async loadSongs(playlist: Playlist) {
+    
+    if (!playlist.song_IDS?.length) {
+      this._songs.next([]);
+      return;
+    }
+
+    const songRequests &#x3D; playlist.song_IDS.map(id &#x3D;&gt; {
+      return this.songsSvc.getById(id).pipe(
+        catchError(err &#x3D;&gt; {
+          console.error(&#x60;🎵 Error loading song ${id}:&#x60;, err);
+          return of(null);
+        })
+      );
+    });
+
+    forkJoin(songRequests)
+      .pipe(
+        map(songs &#x3D;&gt; {
+          const validSongs &#x3D; songs.filter((song): song is Song &#x3D;&gt; song !&#x3D;&#x3D; null);
+          return validSongs;
+        }),
+        switchMap(async (songs) &#x3D;&gt; {
+          const enrichedSongs &#x3D; await this.enrichSongWithArtists(songs);
+          return enrichedSongs;
+        })
+      )
+      .subscribe({
+        next: (songs) &#x3D;&gt; {
+          this._songs.next(songs);
+        },
+        error: (error) &#x3D;&gt; {
+          console.error(&#x27;🎵 Error in loadSongs:&#x27;, error);
+          this._songs.next([]);
+        }
+      });
+  }
+
+  private async enrichSongWithArtists(songs: Song[]): Promise&lt;SongWithArtists[]&gt; {
+    const enrichedSongs: SongWithArtists[] &#x3D; [];
+    
+    for (const song of songs) {
+      
+      if (!song) {
+        continue;
+      }
+      
+      if (song.artists_IDS &amp;&amp; song.artists_IDS.length &gt; 0) {
+        try {
+          const artists &#x3D; await this.artistsSvc.getByIds(song.artists_IDS).toPromise();
+          if (artists) {
+            const enrichedSong: SongWithArtists &#x3D; {
+              ...song,
+              artistNames: artists.map(artist &#x3D;&gt; artist.name)
+            };
+            enrichedSongs.push(enrichedSong);
+          } else {
+            enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+          }
+        } catch (error) {
+          console.error(&#x27;🎵 Error loading artists for song:&#x27;, song.id, error);
+          enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+        }
+      } else {
+        enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+      }
+    }
+    
+    return enrichedSongs;
+  }
+
+  // ✅ Resto de métodos permanecen iguales...
+  async addSong() {
+    const modal &#x3D; await this.modalCtrl.create({
+      component: SongDetailModalComponent,
+      componentProps: {
+        excludeSongIds: this._songs.value.map(s &#x3D;&gt; s.id)
+      }
+    });
+  
+    modal.onDidDismiss().then(async (result) &#x3D;&gt; {
+      if (result.role &#x3D;&#x3D;&#x3D; &#x27;select&#x27; &amp;&amp; result.data) {
+        const playlist &#x3D; this._playlist.value;
+        if (!playlist) return;
+
+        const updatedPlaylist: Playlist &#x3D; {
+          ...playlist,
+          song_IDS: [...playlist.song_IDS, result.data.id]
+        };
+
+        this.playlistsSvc.update(playlist.id, updatedPlaylist).subscribe({
+          next: () &#x3D;&gt; {
+            this._playlist.next(updatedPlaylist);
+            
+            this.songsSvc.getById(result.data.id).subscribe(async newSong &#x3D;&gt; {
+              if (newSong) {
+                const enrichedNewSong &#x3D; await this.enrichSongWithArtists([newSong]);
+                this._songs.next([...this._songs.value, ...enrichedNewSong]);
+              }
+            });
+            
+            this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_ADDED&#x27;);
+          },
+          error: () &#x3D;&gt; this.showToast(&#x27;PLAYLIST.ERRORS.SONG_ADD&#x27;)
+        });
+      }
+    });
+  
+    await modal.present();
+  }
+
+  async editSong(song: Song, event: Event) {
+    event.stopPropagation();
+    const modal &#x3D; await this.modalCtrl.create({
+      component: SongDetailModalComponent,
+      componentProps: {
+        song: song,
+        mode: &#x27;edit&#x27;
+      }
+    });
+
+    modal.onDidDismiss().then((result) &#x3D;&gt; {
+      if (result.role &#x3D;&#x3D;&#x3D; &#x27;saved&#x27; &amp;&amp; this._playlist.value) {
+        this.loadSongs(this._playlist.value);
+        this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_UPDATED&#x27;);
+      }
+    });
+
+    await modal.present();
+  }
+
+  private async showConfirmRemoveDialog(): Promise&lt;boolean&gt; {
+    const alert &#x3D; await this.alertCtrl.create({
+      header: await this.translate.get(&#x27;PLAYLIST.REMOVE_SONG.HEADER&#x27;).toPromise(),
+      message: await this.translate.get(&#x27;PLAYLIST.REMOVE_SONG.MESSAGE&#x27;).toPromise(),
+      buttons: [
+        {
+          text: await this.translate.get(&#x27;COMMON.CANCEL&#x27;).toPromise(),
+          role: &#x27;cancel&#x27;
+        },
+        {
+          text: await this.translate.get(&#x27;COMMON.DELETE&#x27;).toPromise(),
+          role: &#x27;confirm&#x27;
+        }
+      ]
+    });
+
+    await alert.present();
+    const { role } &#x3D; await alert.onDidDismiss();
+    return role &#x3D;&#x3D;&#x3D; &#x27;confirm&#x27;;
+  }
+
+  async removeSong(song: Song, event: Event) {
+    event.stopPropagation();
+    
+    const confirmed &#x3D; await this.showConfirmRemoveDialog();
+    if (!confirmed) return;
+
+    const playlist &#x3D; this._playlist.value;
+    if (!playlist) return;
+
+    const updatedPlaylist &#x3D; {
+      ...playlist,
+      song_IDS: playlist.song_IDS.filter(id &#x3D;&gt; id !&#x3D;&#x3D; song.id)
+    };
+
+    this.playlistsSvc.update(playlist.id, updatedPlaylist).subscribe({
+      next: () &#x3D;&gt; {
+        this._playlist.next(updatedPlaylist);
+        this._songs.next(this._songs.value.filter(s &#x3D;&gt; s.id !&#x3D;&#x3D; song.id));
+        this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_REMOVED&#x27;);
+      },
+      error: () &#x3D;&gt; this.showToast(&#x27;PLAYLIST.ERRORS.SONG_REMOVE&#x27;)
+    });
+  }
+
+  onBack() {
+    this.router.navigate([&#x27;/home&#x27;]);
+  }
+
+  private async showToast(translationKey: string) {
+    try {
+      const message &#x3D; await this.translate.get(translationKey).toPromise();
+      const toast &#x3D; await this.toastCtrl.create({
+        message,
+        duration: 2000,
+        position: &#x27;bottom&#x27;
+      });
+      await toast.present();
+    } catch (error) {
+      console.error(&#x27;Error showing toast:&#x27;, error);
+    }
+  }
+
+  async sharePlaylist() {
+    const playlist &#x3D; this._playlist.value;
+    
+    if (!playlist) return;
+    
+    const title &#x3D; playlist.name;
+    const text &#x3D; &#x60;Check out this playlist: ${playlist.name} by ${playlist.author}&#x60;;
+    const url &#x3D; window.location.href;
+    
+    try {
+      await this.shareService.shareItem({
+        title: title,
+        text: text,
+        url: url,
+        dialogTitle: &#x27;Share Playlist&#x27;
+      });
+    } catch (error) {
+      console.error(&#x27;Error sharing playlist:&#x27;, error);
+      const toast &#x3D; await this.toastCtrl.create({
+        message: &#x27;Could not share playlist&#x27;,
+        duration: 2000,
+        position: &#x27;bottom&#x27;
+      });
+      await toast.present();
+    }
+  }
+
+  formatDuration(seconds: number): string {
+    if (!seconds) return &#x27;00:00&#x27;;
+    
+    const minutes &#x3D; Math.floor(seconds / 60);
+    const remainingSeconds &#x3D; seconds % 60;
+    
+    const formattedMinutes &#x3D; minutes.toString().padStart(2, &#x27;0&#x27;);
+    const formattedSeconds &#x3D; remainingSeconds.toString().padStart(2, &#x27;0&#x27;);
+    
+    return &#x60;${formattedMinutes}:${formattedSeconds}&#x60;;
+  }
+
+  onImageError(event: Event): void {
+    const img &#x3D; event.target as HTMLImageElement;
+    if (img) {
+      img.src &#x3D; &#x27;assets/default-avatar.png&#x27;;
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- src/app/pages/playlist-detail/playlist-detail.page.html --&gt;
+&lt;ion-header class&#x3D;&quot;ion-no-border transparent-header&quot;&gt;
+  &lt;ion-toolbar&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-button (click)&#x3D;&quot;onBack()&quot;&gt;
+        &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;arrow-back&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+    &lt;ion-title class&#x3D;&quot;ion-text-center&quot;&gt;{{ (playlist$ | async)?.name }}&lt;/ion-title&gt;
+    &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
+      &lt;ion-button (click)&#x3D;&quot;sharePlaylist()&quot;&gt;
+        &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;share-outline&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content [fullscreen]&#x3D;&quot;true&quot; class&#x3D;&quot;spotify-theme&quot;&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;playlist$ | async as playlist&quot;&gt;
+    &lt;div class&#x3D;&quot;playlist-header&quot;&gt;
+      &lt;div class&#x3D;&quot;header-bg&quot;&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;header-content&quot;&gt;
+        &lt;div class&#x3D;&quot;cover-art&quot;&gt;
+          &lt;img [src]&#x3D;&quot;playlist.image?.url || &#x27;assets/default-playlist.png&#x27;&quot; [alt]&#x3D;&quot;playlist.name&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;playlist-info&quot;&gt;
+          &lt;div class&#x3D;&quot;playlist-type&quot;&gt;{{ &#x27;PLAYLIST.PUBLIC_LIST&#x27; | translate }}&lt;/div&gt;
+          &lt;h1&gt;{{playlist.name}}&lt;/h1&gt;
+          &lt;div class&#x3D;&quot;playlist-meta&quot;&gt;
+            &lt;ng-container *ngIf&#x3D;&quot;currentUser$ | async as currentUser&quot;&gt;
+              &lt;img [src]&#x3D;&quot;currentUser?.image?.url || &#x27;assets/default-avatar.png&#x27;&quot;
+                   class&#x3D;&quot;user-avatar&quot; 
+                   [alt]&#x3D;&quot;currentUser?.username || &#x27;user avatar&#x27;&quot;
+                   (error)&#x3D;&quot;onImageError($event)&quot;&gt;
+            &lt;/ng-container&gt;
+            &lt;span class&#x3D;&quot;creator-name&quot;&gt;{{playlist.author}}&lt;/span&gt;
+            &lt;ng-container *ngIf&#x3D;&quot;songs$ | async as songs&quot;&gt;
+              &lt;div class&#x3D;&quot;meta-details&quot;&gt;
+                &lt;span class&#x3D;&quot;bullet&quot; *ngIf&#x3D;&quot;songs.length &gt; 0&quot;&gt;•&lt;/span&gt;
+                &lt;span class&#x3D;&quot;song-count&quot;&gt;{{ songs.length }} {{ &#x27;PLAYLIST.SONGS&#x27; | translate }}&lt;/span&gt;
+                &lt;span class&#x3D;&quot;duration&quot;&gt;{{ songs | playlistDuration:&#x27;long&#x27; }}&lt;/span&gt;
+                &lt;span class&#x3D;&quot;bullet&quot; *ngIf&#x3D;&quot;playlist.likes_count &gt; 0&quot;&gt;•&lt;/span&gt;
+                &lt;span class&#x3D;&quot;likes-count&quot; *ngIf&#x3D;&quot;playlist.likes_count &gt; 0&quot;&gt;
+                  &lt;ion-icon name&#x3D;&quot;heart&quot; color&#x3D;&quot;danger&quot;&gt;&lt;/ion-icon&gt;
+                  {{ playlist.likes_count }}
+                &lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/ng-container&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Barra de acciones --&gt;
+    &lt;div class&#x3D;&quot;actions-bar&quot;&gt;
+      &lt;div class&#x3D;&quot;primary-actions&quot;&gt;
+        &lt;ion-button class&#x3D;&quot;play-button&quot; (click)&#x3D;&quot;onPlay()&quot;&gt;
+          &lt;ion-icon [name]&#x3D;&quot;(shouldShowPause$ | async) &#x3D;&#x3D;&#x3D; true ? &#x27;pause&#x27; : &#x27;play&#x27;&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+        
+        &lt;ion-button 
+          class&#x3D;&quot;shuffle-button&quot; 
+          [class.active]&#x3D;&quot;(isShuffleActive$ | async) &#x3D;&#x3D;&#x3D; true&quot;
+          (click)&#x3D;&quot;onShuffle()&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;shuffle&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-button&gt;
+
+        &lt;app-playlist-like-button 
+          *ngIf&#x3D;&quot;!isOwner&quot;
+          [playlistId]&#x3D;&quot;playlist.id&quot;
+          class&#x3D;&quot;playlist-like-btn&quot;&gt;
+        &lt;/app-playlist-like-button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;secondary-actions&quot; *ngIf&#x3D;&quot;isOwner&quot;&gt;
+        &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;addSong()&quot;&gt;
+          &lt;ion-icon slot&#x3D;&quot;start&quot; name&#x3D;&quot;add-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+          &lt;span class&#x3D;&quot;hide-on-mobile&quot;&gt;{{ &#x27;PLAYLIST.ADD_SONGS&#x27; | translate }}&lt;/span&gt;
+        &lt;/ion-button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;songs-container&quot;&gt;
+      &lt;ng-container *ngIf&#x3D;&quot;songs$ | async as songs&quot;&gt;
+        &lt;div class&#x3D;&quot;empty-playlist&quot; *ngIf&#x3D;&quot;songs.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+          &lt;p&gt;{{ &#x27;PLAYLIST.EMPTY&#x27; | translate }}&lt;/p&gt;
+          &lt;ion-button *ngIf&#x3D;&quot;isOwner&quot; color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;addSong()&quot;&gt;
+            &lt;ion-icon slot&#x3D;&quot;start&quot; name&#x3D;&quot;add-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+            {{ &#x27;PLAYLIST.ADD_SONGS&#x27; | translate }}
+          &lt;/ion-button&gt;
+        &lt;/div&gt;
+
+        &lt;!-- ✅ Filas de canciones actualizadas con artistas clicables --&gt;
+        &lt;div class&#x3D;&quot;song-row&quot; 
+             *ngFor&#x3D;&quot;let song of songs; let i &#x3D; index&quot;
+             [class.current-song]&#x3D;&quot;isCurrentSong(song)&quot;
+             [class.playing]&#x3D;&quot;isCurrentlyPlaying(song)&quot;&gt;
+          
+          &lt;div class&#x3D;&quot;track-number hide-on-mobile&quot; (click)&#x3D;&quot;playSong(song, i)&quot;&gt;
+            &lt;ion-icon 
+              *ngIf&#x3D;&quot;isCurrentlyPlaying(song)&quot; 
+              name&#x3D;&quot;volume-high&quot; 
+              color&#x3D;&quot;primary&quot;&gt;
+            &lt;/ion-icon&gt;
+            &lt;ion-icon 
+              *ngIf&#x3D;&quot;isCurrentSong(song) &amp;&amp; (playerState$ | async)?.isPlaying &#x3D;&#x3D;&#x3D; false&quot; 
+              name&#x3D;&quot;pause&quot; 
+              color&#x3D;&quot;primary&quot;&gt;
+            &lt;/ion-icon&gt;
+            &lt;span *ngIf&#x3D;&quot;!isCurrentSong(song)&quot;&gt;{{i + 1}}&lt;/span&gt;
+          &lt;/div&gt;
+          
+          &lt;div class&#x3D;&quot;track-info&quot; (click)&#x3D;&quot;playSong(song, i)&quot;&gt;
+            &lt;img [src]&#x3D;&quot;song.image?.thumbnail || &#x27;assets/default-song.png&#x27;&quot; [alt]&#x3D;&quot;song.name&quot;&gt;
+            &lt;div class&#x3D;&quot;track-text&quot;&gt;
+              &lt;div class&#x3D;&quot;track-name&quot; [class.playing-text]&#x3D;&quot;isCurrentlyPlaying(song)&quot;&gt;
+                {{song.name}}
+              &lt;/div&gt;
+              &lt;!-- ✅ ACTUALIZADO: Usar artistas clicables --&gt;
+              &lt;div class&#x3D;&quot;track-artist&quot;&gt;
+                &lt;app-clickable-artist-names 
+                  [artistNames]&#x3D;&quot;song.artistNames || []&quot;
+                  *ngIf&#x3D;&quot;song.artistNames &amp;&amp; song.artistNames.length &gt; 0; else unknownArtist&quot;&gt;
+                &lt;/app-clickable-artist-names&gt;
+                &lt;ng-template #unknownArtist&gt;Unknown Artist&lt;/ng-template&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;mobile-meta hide-on-desktop&quot;&gt;
+                &lt;span class&#x3D;&quot;track-album&quot;&gt;{{song.album || &#x27;-&#x27;}}&lt;/span&gt;
+                &lt;span class&#x3D;&quot;bullet&quot;&gt;•&lt;/span&gt;
+                &lt;span class&#x3D;&quot;track-duration&quot;&gt;{{song.duration | duration}}&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div class&#x3D;&quot;track-album hide-on-mobile&quot; (click)&#x3D;&quot;playSong(song, i)&quot;&gt;{{song.album || &#x27;-&#x27;}}&lt;/div&gt;
+          &lt;div class&#x3D;&quot;track-duration hide-on-mobile&quot; (click)&#x3D;&quot;playSong(song, i)&quot;&gt;{{song.duration | duration}}&lt;/div&gt;
+          
+          &lt;div class&#x3D;&quot;track-actions&quot;&gt;
+            &lt;app-like-button 
+              [songId]&#x3D;&quot;song.id&quot; 
+              size&#x3D;&quot;small&quot;&gt;
+            &lt;/app-like-button&gt;
+            
+            &lt;ion-button *ngIf&#x3D;&quot;isOwner&quot; fill&#x3D;&quot;clear&quot; color&#x3D;&quot;danger&quot; (click)&#x3D;&quot;removeSong(song, $event)&quot;&gt;
+              &lt;ion-icon slot&#x3D;&quot;icon-only&quot; name&#x3D;&quot;trash-outline&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;div class&#x3D;&quot;loading-state&quot; *ngIf&#x3D;&quot;(playlist$ | async) &#x3D;&#x3D;&#x3D; null&quot; style&#x3D;&quot;display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; color: #b3b3b3;&quot;&gt;
+    &lt;ion-spinner name&#x3D;&quot;circular&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/ion-spinner&gt;
+    &lt;p style&#x3D;&quot;margin-top: 1rem;&quot;&gt;{{ &#x27;PLAYLIST.LOADING&#x27; | translate }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./playlist-detail.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.spotify-theme {
+  --background: #121212;
+  background: linear-gradient(180deg, rgba(83,83,83,0.7) 0%, #121212 25%);
+}
+
+.transparent-header {
+  position: absolute;
+}
+
+.transparent-header ion-toolbar {
+  --background: transparent;
+  --color: white;
+}
+
+.playlist-header {
+  padding: 80px 16px 16px;
+  position: relative;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+}
+
+.cover-art {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+}
+
+.cover-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playlist-info {
+  text-align: center;
+}
+
+.playlist-type {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.playlist-info h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+  padding: 0.08em 0 0.12em;
+}
+
+.playlist-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #b3b3b3;
+  margin-top: 8px;
+}
+
+.user-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.creator-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.meta-details {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.actions-bar {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.primary-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.play-button {
+  --background: #1ed760;
+  --background-hover: #1fdf64;
+  --border-radius: 32px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  height: 48px;
+}
+
+.play-button ion-icon {
+  font-size: 24px;
+}
+
+.shuffle-button {
+  --color: #a7a7a7;
+  font-size: 24px;
+}
+
+.songs-container {
+  padding: 0 16px;
+}
+
+.song-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 12px;
+  color: #fff;
+  border-radius: 4px;
+  gap: 12px;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.track-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.track-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.track-name {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: #b3b3b3;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-meta {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.track-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.track-actions ion-button {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  height: 32px;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Queries para Desktop */
+@media (min-width: 768px) {
+  .playlist-header {
+    padding: 80px 32px 32px;
+  }
+
+  .header-content {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 32px;
+    text-align: left;
+  }
+
+  .cover-art {
+    width: 280px;
+    height: 280px;
+  }
+
+  .playlist-info {
+    text-align: left;
+  }
+
+  .playlist-info h1 {
+    font-size: 72px;
+    line-height: 1;
+  }
+
+  .playlist-meta {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .songs-container {
+    padding: 0 32px;
+  }
+
+  .song-row {
+    grid-template-columns: 64px 5fr 3fr 1fr auto;
+    padding: 16px 24px;
+  }
+
+  .hide-on-mobile {
+    display: revert;
+  }
+
+  .hide-on-desktop {
+    display: none;
+  }
+
+  .actions-bar {
+    padding: 32px;
+    gap: 40px;
+  }
+
+  .play-button {
+    height: 64px;
+  }
+
+  .play-button ion-icon {
+    font-size: 32px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- src/app/pages/playlist-detail/playlist-detail.page.html --><ion-header class="ion-no-border transparent-header">  <ion-toolbar>    <ion-buttons slot="start">      <ion-button (click)="onBack()">        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>      </ion-button>    </ion-buttons>    <ion-title class="ion-text-center">{{ (playlist$ | async)?.name }}</ion-title>    <ion-buttons slot="end">      <ion-button (click)="sharePlaylist()">        <ion-icon slot="icon-only" name="share-outline"></ion-icon>      </ion-button>    </ion-buttons>  </ion-toolbar></ion-header><ion-content [fullscreen]="true" class="spotify-theme">  <ng-container *ngIf="playlist$ | async as playlist">    <div class="playlist-header">      <div class="header-bg"></div>      <div class="header-content">        <div class="cover-art">          <img [src]="playlist.image?.url || \'assets/default-playlist.png\'" [alt]="playlist.name">        </div>        <div class="playlist-info">          <div class="playlist-type">{{ \'PLAYLIST.PUBLIC_LIST\' | translate }}</div>          <h1>{{playlist.name}}</h1>          <div class="playlist-meta">            <ng-container *ngIf="currentUser$ | async as currentUser">              <img [src]="currentUser?.image?.url || \'assets/default-avatar.png\'"                   class="user-avatar"                    [alt]="currentUser?.username || \'user avatar\'"                   (error)="onImageError($event)">            </ng-container>            <span class="creator-name">{{playlist.author}}</span>            <ng-container *ngIf="songs$ | async as songs">              <div class="meta-details">                <span class="bullet" *ngIf="songs.length > 0">•</span>                <span class="song-count">{{ songs.length }} {{ \'PLAYLIST.SONGS\' | translate }}</span>                <span class="duration">{{ songs | playlistDuration:\'long\' }}</span>                <span class="bullet" *ngIf="playlist.likes_count > 0">•</span>                <span class="likes-count" *ngIf="playlist.likes_count > 0">                  <ion-icon name="heart" color="danger"></ion-icon>                  {{ playlist.likes_count }}                </span>              </div>            </ng-container>          </div>        </div>      </div>    </div>    <!-- Barra de acciones -->    <div class="actions-bar">      <div class="primary-actions">        <ion-button class="play-button" (click)="onPlay()">          <ion-icon [name]="(shouldShowPause$ | async) === true ? \'pause\' : \'play\'"></ion-icon>        </ion-button>                <ion-button           class="shuffle-button"           [class.active]="(isShuffleActive$ | async) === true"          (click)="onShuffle()">          <ion-icon name="shuffle"></ion-icon>        </ion-button>        <app-playlist-like-button           *ngIf="!isOwner"          [playlistId]="playlist.id"          class="playlist-like-btn">        </app-playlist-like-button>      </div>      <div class="secondary-actions" *ngIf="isOwner">        <ion-button fill="clear" (click)="addSong()">          <ion-icon slot="start" name="add-circle-outline"></ion-icon>          <span class="hide-on-mobile">{{ \'PLAYLIST.ADD_SONGS\' | translate }}</span>        </ion-button>      </div>    </div>    <div class="songs-container">      <ng-container *ngIf="songs$ | async as songs">        <div class="empty-playlist" *ngIf="songs.length === 0">          <p>{{ \'PLAYLIST.EMPTY\' | translate }}</p>          <ion-button *ngIf="isOwner" color="primary" (click)="addSong()">            <ion-icon slot="start" name="add-circle-outline"></ion-icon>            {{ \'PLAYLIST.ADD_SONGS\' | translate }}          </ion-button>        </div>        <!-- ✅ Filas de canciones actualizadas con artistas clicables -->        <div class="song-row"              *ngFor="let song of songs; let i = index"             [class.current-song]="isCurrentSong(song)"             [class.playing]="isCurrentlyPlaying(song)">                    <div class="track-number hide-on-mobile" (click)="playSong(song, i)">            <ion-icon               *ngIf="isCurrentlyPlaying(song)"               name="volume-high"               color="primary">            </ion-icon>            <ion-icon               *ngIf="isCurrentSong(song) && (playerState$ | async)?.isPlaying === false"               name="pause"               color="primary">            </ion-icon>            <span *ngIf="!isCurrentSong(song)">{{i + 1}}</span>          </div>                    <div class="track-info" (click)="playSong(song, i)">            <img [src]="song.image?.thumbnail || \'assets/default-song.png\'" [alt]="song.name">            <div class="track-text">              <div class="track-name" [class.playing-text]="isCurrentlyPlaying(song)">                {{song.name}}              </div>              <!-- ✅ ACTUALIZADO: Usar artistas clicables -->              <div class="track-artist">                <app-clickable-artist-names                   [artistNames]="song.artistNames || []"                  *ngIf="song.artistNames && song.artistNames.length > 0; else unknownArtist">                </app-clickable-artist-names>                <ng-template #unknownArtist>Unknown Artist</ng-template>              </div>              <div class="mobile-meta hide-on-desktop">                <span class="track-album">{{song.album || \'-\'}}</span>                <span class="bullet">•</span>                <span class="track-duration">{{song.duration | duration}}</span>              </div>            </div>          </div>                    <div class="track-album hide-on-mobile" (click)="playSong(song, i)">{{song.album || \'-\'}}</div>          <div class="track-duration hide-on-mobile" (click)="playSong(song, i)">{{song.duration | duration}}</div>                    <div class="track-actions">            <app-like-button               [songId]="song.id"               size="small">            </app-like-button>                        <ion-button *ngIf="isOwner" fill="clear" color="danger" (click)="removeSong(song, $event)">              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>            </ion-button>          </div>        </div>      </ng-container>    </div>  </ng-container>  <div class="loading-state" *ngIf="(playlist$ | async) === null" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh; color: #b3b3b3;">    <ion-spinner name="circular" color="primary"></ion-spinner>    <p style="margin-top: 1rem;">{{ \'PLAYLIST.LOADING\' | translate }}</p>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistGridCardComponent', 'selector': 'app-artist-grid-card'},{'name': 'ArtistModalComponent', 'selector': 'app-artist-modal'},{'name': 'ArtistProfilePage', 'selector': 'app-artist-profile'},{'name': 'ArtistsPage', 'selector': 'app-artists'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'ChangePasswordModalComponent', 'selector': 'app-change-password-modal'},{'name': 'ClickableArtistNamesComponent', 'selector': 'app-clickable-artist-names'},{'name': 'EditProfileModalComponent', 'selector': 'app-edit-profile-modal'},{'name': 'FollowArtistButtonComponent', 'selector': 'app-follow-artist-button'},{'name': 'GlobalSearchComponent', 'selector': 'app-global-search'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LikeButtonComponent', 'selector': 'app-like-button'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayButtonComponent', 'selector': 'app-play-button'},{'name': 'PlaylistDetailPage', 'selector': 'app-playlist-detail'},{'name': 'PlaylistLikeButtonComponent', 'selector': 'app-playlist-like-button'},{'name': 'PlaylistModalComponent', 'selector': 'app-playlist-modal'},{'name': 'PlaylistsPage', 'selector': 'app-playlists'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SongDetailModalComponent', 'selector': 'app-song-detail-modal'},{'name': 'SongGridCardComponent', 'selector': 'app-song-grid-card'},{'name': 'SongModalComponent', 'selector': 'app-song-modal'},{'name': 'SongsPage', 'selector': 'app-songs'},{'name': 'SplashPage', 'selector': 'app-splash'}];
+    var DIRECTIVES = [{'name': 'DragDropDirective', 'selector': '[appDragDrop]'}];
+    var ACTUAL_COMPONENT = {'name': 'PlaylistDetailPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlaylistDetailPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

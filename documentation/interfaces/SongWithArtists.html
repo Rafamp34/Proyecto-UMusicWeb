@@ -1,0 +1,831 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  SongWithArtists</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/pages/playlist-detail/playlist-detail.page.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+            </p>
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#artistNames" 
+>
+                                            artistNames
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="artistNames"></a>
+                                        <span class="name "><b>artistNames</b>
+                                            <a href="#artistNames">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>artistNames:     <code>string[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string[]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { BehaviorSubject, catchError, of, switchMap, Subject } from &#x27;rxjs&#x27;;
+import { AlertController, ModalController, ToastController } from &#x27;@ionic/angular&#x27;;
+import { Playlist } from &#x27;src/app/core/models/playlist.model&#x27;;
+import { Song } from &#x27;src/app/core/models/song.model&#x27;;
+import { EnrichedSong } from &#x27;src/app/core/models/enriched-song.interface&#x27;;
+import { PlaylistsService } from &#x27;src/app/core/services/impl/playlists.service&#x27;;
+import { SongsService } from &#x27;src/app/core/services/impl/songs.service&#x27;;
+import { BaseAuthenticationService } from &#x27;src/app/core/services/impl/base-authentication.service&#x27;;
+import { AudioPlayerService } from &#x27;src/app/core/services/impl/audio-player.service&#x27;;
+import { SongModalComponent } from &#x27;src/app/shared/components/song-modal/song-modal.component&#x27;;
+import { filter, map, tap, takeUntil } from &#x27;rxjs/operators&#x27;;
+import { forkJoin } from &#x27;rxjs&#x27;;
+import { SongDetailModalComponent } from &#x27;src/app/shared/components/song-detail-modal/song-detail-modal.component&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { ArtistsService } from &#x27;src/app/core/services/impl/artists.service&#x27;;
+import { User } from &#x27;src/app/core/models/user.model&#x27;;
+import { UserService } from &#x27;src/app/core/services/impl/user.service&#x27;;
+import { ShareService } from &#x27;src/app/core/services/impl/share.service&#x27;;
+
+interface SongWithArtists extends Song {
+  artistNames?: string[];
+}
+
+@Component({
+  selector: &#x27;app-playlist-detail&#x27;,
+  templateUrl: &#x27;./playlist-detail.page.html&#x27;,
+  styleUrls: [&#x27;./playlist-detail.page.scss&#x27;],
+})
+export class PlaylistDetailPage implements OnInit, OnDestroy {
+  private destroy$ &#x3D; new Subject&lt;void&gt;();
+  
+  private _playlist &#x3D; new BehaviorSubject&lt;Playlist | null&gt;(null);
+  playlist$ &#x3D; this._playlist.asObservable();
+  
+  private _songs &#x3D; new BehaviorSubject&lt;SongWithArtists[]&gt;([]);
+  songs$ &#x3D; this._songs.asObservable();
+
+  private _currentUser &#x3D; new BehaviorSubject&lt;User | null&gt;(null);
+  currentUser$ &#x3D; this._currentUser.asObservable();
+
+  // ✅ INTEGRACIÓN CON AudioPlayerService
+  playerState$ &#x3D; this.audioPlayerService.playerState$;
+  
+  isOwner &#x3D; false;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private playlistsSvc: PlaylistsService,
+    private songsSvc: SongsService,
+    private authSvc: BaseAuthenticationService,
+    private audioPlayerService: AudioPlayerService, // 👈 Tu servicio de audio
+    private modalCtrl: ModalController,
+    private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
+    private translate: TranslateService,
+    private artistsSvc: ArtistsService,
+    private userService: UserService,
+    private shareService: ShareService,
+  ) { }
+
+  async ngOnInit() {    
+    this.authSvc.user$.pipe(
+      takeUntil(this.destroy$),
+      filter(user &#x3D;&gt; user !&#x3D;&#x3D; undefined),
+      switchMap(user &#x3D;&gt; {
+        if (!user) {
+          return of(null);
+        }
+        return this.userService.getById(user.id);
+      })
+    ).subscribe({
+      next: (userData) &#x3D;&gt; {
+        if (userData) {
+          const updatedUser: User &#x3D; {
+            ...userData,
+            image: userData.image || undefined
+          };
+          this._currentUser.next(updatedUser);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;🎵 Error loading user data:&#x27;, error);
+      }
+    });
+
+    // ✅ PASO 2: Cargar playlist desde la URL
+    this.route.params.pipe(
+      takeUntil(this.destroy$),
+      switchMap(params &#x3D;&gt; {
+        
+        if (!params[&#x27;id&#x27;]) {
+          console.error(&#x27;🎵 No playlist ID in route&#x27;);
+          return of(null);
+        }
+        
+        return this.playlistsSvc.getById(params[&#x27;id&#x27;]).pipe(
+          catchError(error &#x3D;&gt; {
+            console.error(&#x27;🎵 Error loading playlist:&#x27;, error);
+            this.showToast(&#x27;PLAYLIST.ERRORS.LOAD&#x27;);
+            return of(null);
+          })
+        );
+      })
+    ).subscribe({
+      next: async (playlist) &#x3D;&gt; {
+        
+        if (playlist) {
+          
+          if (!playlist.name || !playlist.author) {
+            console.error(&#x27;🎵 Playlist has invalid data:&#x27;, playlist);
+            this.showToast(&#x27;PLAYLIST.ERRORS.INVALID_DATA&#x27;);
+            this.router.navigate([&#x27;/home&#x27;]);
+            return;
+          }
+          
+          this._playlist.next(playlist);
+          
+          // ✅ Cargar canciones si existen
+          if (playlist.song_IDS &amp;&amp; playlist.song_IDS.length &gt; 0) {
+            await this.loadSongs(playlist);
+          } else {
+            this._songs.next([]);
+          }
+          
+          // ✅ Verificar ownership
+          try {
+            const currentUser &#x3D; await this.authSvc.getCurrentUser();
+            if (currentUser &amp;&amp; playlist.users_IDS &amp;&amp; playlist.users_IDS.length &gt; 0) {
+              this.isOwner &#x3D; playlist.users_IDS.includes(currentUser.id);
+            }
+          } catch (error) {
+            console.error(&#x27;🎵 Error checking ownership:&#x27;, error);
+          }
+        } else {
+          this.router.navigate([&#x27;/home&#x27;]);
+        }
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;🎵 Critical error loading playlist:&#x27;, error);
+        this.showToast(&#x27;PLAYLIST.ERRORS.LOAD&#x27;);
+        this.router.navigate([&#x27;/home&#x27;]);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  /**
+   * Toggle play/pause o reproduce toda la playlist si no hay nada reproduciéndose
+   */
+  async onPlay() {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    const songs &#x3D; this._songs.value;
+    const playlist &#x3D; this._playlist.value;
+    
+    if (songs.length &#x3D;&#x3D;&#x3D; 0) return;
+
+    // Si hay una canción actual y está reproduciéndose, pausar
+    if (playerState.currentSong &amp;&amp; playerState.isPlaying) {
+      this.audioPlayerService.pause();
+      return;
+    }
+
+    // Si hay una canción actual pero está pausada, reanudar
+    if (playerState.currentSong &amp;&amp; playerState.isPaused) {
+      this.audioPlayerService.resume();
+      return;
+    }
+
+    // Si no hay canción actual, reproducir toda la playlist desde el inicio
+    
+    if (playlist) {
+      this.audioPlayerService.setPlayingContext({
+        type: &#x27;playlist&#x27;,
+        name: playlist.name,
+        id: playlist.id
+      });
+    }
+    
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    this.audioPlayerService.setQueue(enrichedSongs, 0);
+    await this.audioPlayerService.play(enrichedSongs[0]);
+  }
+
+  /**
+   * Activa shuffle y reproduce la playlist mezclada
+   */
+  async onShuffle() {
+    const songs &#x3D; this._songs.value;
+    const playlist &#x3D; this._playlist.value;
+    if (songs.length &#x3D;&#x3D;&#x3D; 0) return;
+    
+    // ✅ NUEVO: Establecer contexto de reproducción
+    if (playlist) {
+      this.audioPlayerService.setPlayingContext({
+        type: &#x27;playlist&#x27;,
+        name: &#x60;${playlist.name} (Shuffled)&#x60;,
+        id: playlist.id
+      });
+    }
+    
+    // Convertir a EnrichedSong
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    
+    // Mezclar las canciones manualmente
+    const shuffledSongs &#x3D; [...enrichedSongs];
+    for (let i &#x3D; shuffledSongs.length - 1; i &gt; 0; i--) {
+      const j &#x3D; Math.floor(Math.random() * (i + 1));
+      [shuffledSongs[i], shuffledSongs[j]] &#x3D; [shuffledSongs[j], shuffledSongs[i]];
+    }
+    
+    // Configurar la cola con las canciones mezcladas
+    this.audioPlayerService.setQueue(shuffledSongs, 0);
+    
+    // Activar el modo shuffle en el reproductor
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    if (!playerState.isShuffled) {
+      this.audioPlayerService.toggleShuffle();
+    }
+    
+    // Reproducir la primera canción de la lista mezclada
+    await this.audioPlayerService.play(shuffledSongs[0]);
+  }
+
+  /**
+   * Reproduce una canción específica (reemplaza tu método playSong)
+   */
+  async playSong(song: SongWithArtists, index: number) {    
+    const songs &#x3D; this._songs.value;
+    const enrichedSongs &#x3D; this.convertToEnrichedSongs(songs);
+    
+    // Configurar la cola desde la canción seleccionada
+    this.audioPlayerService.setQueue(enrichedSongs, index);
+    
+    // Reproducir la canción seleccionada
+    await this.audioPlayerService.play(enrichedSongs[index]);
+  }
+
+  /**
+   * Verifica si una canción está reproduciéndose actualmente
+   */
+  isCurrentlyPlaying(song: Song): boolean {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    return playerState.currentSong?.id &#x3D;&#x3D;&#x3D; song.id &amp;&amp; playerState.isPlaying;
+  }
+
+  /**
+   * Verifica si una canción es la actual (reproduciendo o pausada)
+   */
+  isCurrentSong(song: Song): boolean {
+    const playerState &#x3D; this.audioPlayerService.getPlayerState();
+    return playerState.currentSong?.id &#x3D;&#x3D;&#x3D; song.id;
+  }
+
+  /**
+   * Convierte SongWithArtists[] a EnrichedSong[]
+   */
+  private convertToEnrichedSongs(songs: SongWithArtists[]): EnrichedSong[] {
+    return songs.map(song &#x3D;&gt; ({
+      ...song,
+      audioUrl: song.audioUrl || &#x60;assets/audio/sample-${song.id}.mp3&#x60;, // URL de ejemplo si no existe
+      artistNames: song.artistNames || [&#x27;Unknown Artist&#x27;]
+    } as EnrichedSong));
+  }
+
+  // ✅ GETTERS PARA EL TEMPLATE (para compatibilidad)
+  
+  get isPlaying$() {
+    return this.playerState$.pipe(map(state &#x3D;&gt; state.isPlaying));
+  }
+
+  get currentSong() {
+    return this.audioPlayerService.getPlayerState().currentSong;
+  }
+
+  /**
+   * Verifica si el botón debe mostrar &quot;pause&quot; (hay música reproduciéndose)
+   */
+  get shouldShowPause$() {
+    return this.playerState$.pipe(
+      map(state &#x3D;&gt; state.isPlaying &amp;&amp; state.currentSong !&#x3D;&#x3D; null)
+    );
+  }
+
+  /**
+   * Verifica si el shuffle está activo
+   */
+  get isShuffleActive$() {
+    return this.playerState$.pipe(
+      map(state &#x3D;&gt; state.isShuffled)
+    );
+  }
+
+  // ✅ MÉTODOS EXISTENTES (mantener todos los que ya tienes)
+
+  private async loadSongs(playlist: Playlist) {
+    
+    if (!playlist.song_IDS?.length) {
+      this._songs.next([]);
+      return;
+    }
+
+    const songRequests &#x3D; playlist.song_IDS.map(id &#x3D;&gt; {
+      return this.songsSvc.getById(id).pipe(
+        catchError(err &#x3D;&gt; {
+          console.error(&#x60;🎵 Error loading song ${id}:&#x60;, err);
+          return of(null);
+        })
+      );
+    });
+
+    forkJoin(songRequests)
+      .pipe(
+        map(songs &#x3D;&gt; {
+          const validSongs &#x3D; songs.filter((song): song is Song &#x3D;&gt; song !&#x3D;&#x3D; null);
+          return validSongs;
+        }),
+        switchMap(async (songs) &#x3D;&gt; {
+          const enrichedSongs &#x3D; await this.enrichSongWithArtists(songs);
+          return enrichedSongs;
+        })
+      )
+      .subscribe({
+        next: (songs) &#x3D;&gt; {
+          this._songs.next(songs);
+        },
+        error: (error) &#x3D;&gt; {
+          console.error(&#x27;🎵 Error in loadSongs:&#x27;, error);
+          this._songs.next([]);
+        }
+      });
+  }
+
+  private async enrichSongWithArtists(songs: Song[]): Promise&lt;SongWithArtists[]&gt; {
+    const enrichedSongs: SongWithArtists[] &#x3D; [];
+    
+    for (const song of songs) {
+      
+      if (!song) {
+        continue;
+      }
+      
+      if (song.artists_IDS &amp;&amp; song.artists_IDS.length &gt; 0) {
+        try {
+          const artists &#x3D; await this.artistsSvc.getByIds(song.artists_IDS).toPromise();
+          if (artists) {
+            const enrichedSong: SongWithArtists &#x3D; {
+              ...song,
+              artistNames: artists.map(artist &#x3D;&gt; artist.name)
+            };
+            enrichedSongs.push(enrichedSong);
+          } else {
+            enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+          }
+        } catch (error) {
+          console.error(&#x27;🎵 Error loading artists for song:&#x27;, song.id, error);
+          enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+        }
+      } else {
+        enrichedSongs.push({ ...song, artistNames: [&#x27;Unknown Artist&#x27;] });
+      }
+    }
+    
+    return enrichedSongs;
+  }
+
+  // ✅ Resto de métodos permanecen iguales...
+  async addSong() {
+    const modal &#x3D; await this.modalCtrl.create({
+      component: SongDetailModalComponent,
+      componentProps: {
+        excludeSongIds: this._songs.value.map(s &#x3D;&gt; s.id)
+      }
+    });
+  
+    modal.onDidDismiss().then(async (result) &#x3D;&gt; {
+      if (result.role &#x3D;&#x3D;&#x3D; &#x27;select&#x27; &amp;&amp; result.data) {
+        const playlist &#x3D; this._playlist.value;
+        if (!playlist) return;
+
+        const updatedPlaylist: Playlist &#x3D; {
+          ...playlist,
+          song_IDS: [...playlist.song_IDS, result.data.id]
+        };
+
+        this.playlistsSvc.update(playlist.id, updatedPlaylist).subscribe({
+          next: () &#x3D;&gt; {
+            this._playlist.next(updatedPlaylist);
+            
+            this.songsSvc.getById(result.data.id).subscribe(async newSong &#x3D;&gt; {
+              if (newSong) {
+                const enrichedNewSong &#x3D; await this.enrichSongWithArtists([newSong]);
+                this._songs.next([...this._songs.value, ...enrichedNewSong]);
+              }
+            });
+            
+            this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_ADDED&#x27;);
+          },
+          error: () &#x3D;&gt; this.showToast(&#x27;PLAYLIST.ERRORS.SONG_ADD&#x27;)
+        });
+      }
+    });
+  
+    await modal.present();
+  }
+
+  async editSong(song: Song, event: Event) {
+    event.stopPropagation();
+    const modal &#x3D; await this.modalCtrl.create({
+      component: SongDetailModalComponent,
+      componentProps: {
+        song: song,
+        mode: &#x27;edit&#x27;
+      }
+    });
+
+    modal.onDidDismiss().then((result) &#x3D;&gt; {
+      if (result.role &#x3D;&#x3D;&#x3D; &#x27;saved&#x27; &amp;&amp; this._playlist.value) {
+        this.loadSongs(this._playlist.value);
+        this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_UPDATED&#x27;);
+      }
+    });
+
+    await modal.present();
+  }
+
+  private async showConfirmRemoveDialog(): Promise&lt;boolean&gt; {
+    const alert &#x3D; await this.alertCtrl.create({
+      header: await this.translate.get(&#x27;PLAYLIST.REMOVE_SONG.HEADER&#x27;).toPromise(),
+      message: await this.translate.get(&#x27;PLAYLIST.REMOVE_SONG.MESSAGE&#x27;).toPromise(),
+      buttons: [
+        {
+          text: await this.translate.get(&#x27;COMMON.CANCEL&#x27;).toPromise(),
+          role: &#x27;cancel&#x27;
+        },
+        {
+          text: await this.translate.get(&#x27;COMMON.DELETE&#x27;).toPromise(),
+          role: &#x27;confirm&#x27;
+        }
+      ]
+    });
+
+    await alert.present();
+    const { role } &#x3D; await alert.onDidDismiss();
+    return role &#x3D;&#x3D;&#x3D; &#x27;confirm&#x27;;
+  }
+
+  async removeSong(song: Song, event: Event) {
+    event.stopPropagation();
+    
+    const confirmed &#x3D; await this.showConfirmRemoveDialog();
+    if (!confirmed) return;
+
+    const playlist &#x3D; this._playlist.value;
+    if (!playlist) return;
+
+    const updatedPlaylist &#x3D; {
+      ...playlist,
+      song_IDS: playlist.song_IDS.filter(id &#x3D;&gt; id !&#x3D;&#x3D; song.id)
+    };
+
+    this.playlistsSvc.update(playlist.id, updatedPlaylist).subscribe({
+      next: () &#x3D;&gt; {
+        this._playlist.next(updatedPlaylist);
+        this._songs.next(this._songs.value.filter(s &#x3D;&gt; s.id !&#x3D;&#x3D; song.id));
+        this.showToast(&#x27;PLAYLIST.SUCCESS.SONG_REMOVED&#x27;);
+      },
+      error: () &#x3D;&gt; this.showToast(&#x27;PLAYLIST.ERRORS.SONG_REMOVE&#x27;)
+    });
+  }
+
+  onBack() {
+    this.router.navigate([&#x27;/home&#x27;]);
+  }
+
+  private async showToast(translationKey: string) {
+    try {
+      const message &#x3D; await this.translate.get(translationKey).toPromise();
+      const toast &#x3D; await this.toastCtrl.create({
+        message,
+        duration: 2000,
+        position: &#x27;bottom&#x27;
+      });
+      await toast.present();
+    } catch (error) {
+      console.error(&#x27;Error showing toast:&#x27;, error);
+    }
+  }
+
+  async sharePlaylist() {
+    const playlist &#x3D; this._playlist.value;
+    
+    if (!playlist) return;
+    
+    const title &#x3D; playlist.name;
+    const text &#x3D; &#x60;Check out this playlist: ${playlist.name} by ${playlist.author}&#x60;;
+    const url &#x3D; window.location.href;
+    
+    try {
+      await this.shareService.shareItem({
+        title: title,
+        text: text,
+        url: url,
+        dialogTitle: &#x27;Share Playlist&#x27;
+      });
+    } catch (error) {
+      console.error(&#x27;Error sharing playlist:&#x27;, error);
+      const toast &#x3D; await this.toastCtrl.create({
+        message: &#x27;Could not share playlist&#x27;,
+        duration: 2000,
+        position: &#x27;bottom&#x27;
+      });
+      await toast.present();
+    }
+  }
+
+  formatDuration(seconds: number): string {
+    if (!seconds) return &#x27;00:00&#x27;;
+    
+    const minutes &#x3D; Math.floor(seconds / 60);
+    const remainingSeconds &#x3D; seconds % 60;
+    
+    const formattedMinutes &#x3D; minutes.toString().padStart(2, &#x27;0&#x27;);
+    const formattedSeconds &#x3D; remainingSeconds.toString().padStart(2, &#x27;0&#x27;);
+    
+    return &#x60;${formattedMinutes}:${formattedSeconds}&#x60;;
+  }
+
+  onImageError(event: Event): void {
+    const img &#x3D; event.target as HTMLImageElement;
+    if (img) {
+      img.src &#x3D; &#x27;assets/default-avatar.png&#x27;;
+    }
+  }
+}</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'SongWithArtists.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

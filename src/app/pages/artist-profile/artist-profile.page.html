@@ -1,0 +1,170 @@
+<!-- src/app/pages/artist-profile/artist-profile.page.html - CORREGIDO -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" fill="clear">
+        <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ artist?.name || 'Artista' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Loading State -->
+  <div class="loading-container" *ngIf="isLoading">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>{{ 'COMMON.LOADING' | translate }}</p>
+  </div>
+
+  <!-- Contenido del artista -->
+  <div *ngIf="!isLoading && artist" class="artist-profile">
+    
+    <!-- Header del artista -->
+    <div class="artist-header">
+      <div class="artist-background">
+        <img [src]="artist.image?.url || 'assets/default-artist.png'" 
+             [alt]="artist.name" 
+             class="background-image">
+        <div class="gradient-overlay"></div>
+      </div>
+
+      <div class="artist-content">
+        <div class="artist-image-container">
+          <img [src]="artist.image?.url || 'assets/default-artist.png'" 
+               [alt]="artist.name" 
+               class="artist-image">
+          <!-- ✅ CORREGIDO: Hacer la verificación opcional -->
+          <ion-icon name="checkmark-circle" 
+                    class="verified-badge" 
+                    *ngIf="artist.verified === true"></ion-icon>
+        </div>
+
+        <div class="artist-info">
+          <h1 class="artist-name">{{ artist.name }}</h1>
+          <div class="artist-stats">
+            <p class="stat">{{ formatNumber(artist.listeners || 0) }} oyentes mensuales</p>
+            <p class="stat">{{ formatNumber(artistSongs.length) }} canciones</p>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <ion-button (click)="onPlayAll()" 
+                      class="play-button" 
+                      shape="round" 
+                      fill="solid"
+                      [disabled]="artistSongs.length === 0">
+            <ion-icon name="play" slot="start"></ion-icon>
+            {{ 'Reproducir' }}
+          </ion-button>
+          
+          <ion-button (click)="toggleFollow()" 
+                      [fill]="isFollowing ? 'solid' : 'outline'"
+                      [color]="isFollowing ? 'success' : 'primary'"
+                      shape="round" 
+                      class="follow-button">
+            <ion-icon [name]="isFollowing ? 'checkmark' : 'add'" slot="start"></ion-icon>
+            {{ isFollowing ? 'Siguiendo' : 'Seguir' }}
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+      
+      <!-- Tabs de navegación -->
+      <ion-segment [(ngModel)]="selectedTab" class="content-tabs">
+        <ion-segment-button value="songs">
+          <ion-label>Canciones</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="related" *ngIf="relatedArtists.length > 0">
+          <ion-label>Relacionados</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <!-- Contenido de tabs -->
+      <div [ngSwitch]="selectedTab" class="tab-content">
+        
+        <!-- Tab: Canciones -->
+        <div *ngSwitchCase="'songs'" class="songs-section">
+          <div class="section-header">
+            <h3>Canciones populares</h3>
+            <span class="song-count">{{ artistSongs.length }} canciones</span>
+          </div>
+
+          <div class="songs-list" *ngIf="artistSongs.length > 0">
+            <div class="song-item" 
+                 *ngFor="let song of artistSongs; let i = index"
+                 (click)="onPlaySong(song, i)">
+              <div class="song-number">{{ i + 1 }}</div>
+              
+              <div class="song-thumbnail">
+                <img [src]="song.image?.url || 'assets/default-song.png'" 
+                     [alt]="song.name">
+                <div class="play-overlay">
+                  <ion-icon name="play"></ion-icon>
+                </div>
+              </div>
+              
+              <div class="song-info">
+                <div class="song-name">{{ song.name }}</div>
+                <div class="song-artists">
+                  <!-- ✅ CORREGIDO: Ahora funciona con SharedModule importado -->
+                  <app-clickable-artist-names [artistNames]="song.artistNames || []">
+                  </app-clickable-artist-names>
+                </div>
+              </div>
+              
+              <div class="song-album" *ngIf="song.album">{{ song.album }}</div>
+              <div class="song-duration">{{ song.duration | duration }}</div>
+              
+              <ion-button fill="clear" class="more-options" (click)="$event.stopPropagation()">
+                <ion-icon name="ellipsis-horizontal" slot="icon-only"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+
+          <!-- No hay canciones -->
+          <div class="empty-state" *ngIf="artistSongs.length === 0">
+            <ion-icon name="musical-notes-outline" class="empty-icon"></ion-icon>
+            <h3>No hay canciones disponibles</h3>
+            <p>Este artista aún no tiene canciones en la plataforma.</p>
+          </div>
+        </div>
+
+        <!-- Tab: Artistas relacionados -->
+        <div *ngSwitchCase="'related'" class="related-section">
+          <div class="section-header">
+            <h3>Artistas relacionados</h3>
+          </div>
+
+          <div class="related-artists-grid">
+            <div class="related-artist-card" 
+                 *ngFor="let relatedArtist of relatedArtists"
+                 (click)="onRelatedArtistClick(relatedArtist)">
+              <div class="related-artist-image">
+                <img [src]="relatedArtist.image?.url || 'assets/default-artist.png'" 
+                     [alt]="relatedArtist.name">
+              </div>
+              <div class="related-artist-info">
+                <h4>{{ relatedArtist.name }}</h4>
+                <p>{{ formatNumber(relatedArtist.listeners || 0) }} oyentes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estado de error -->
+  <div class="error-state" *ngIf="!isLoading && !artist">
+    <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+    <h3>No se pudo cargar el artista</h3>
+    <p>Por favor, inténtalo de nuevo más tarde.</p>
+    <ion-button (click)="goBack()" fill="outline">
+      Volver
+    </ion-button>
+  </div>
+</ion-content>

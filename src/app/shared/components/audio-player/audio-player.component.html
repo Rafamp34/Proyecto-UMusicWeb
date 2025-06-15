@@ -1,0 +1,226 @@
+<div class="audio-player-container" *ngIf="showPlayer">
+    <div class="player-header" *ngIf="!isExpanded">
+    </div>
+
+    <div class="mini-player" *ngIf="!isExpanded">
+        <div class="song-info" (click)="toggleExpanded()">
+            <ion-thumbnail>
+                <img [src]="currentSong?.image?.thumbnail || 'assets/default-song.png'" 
+                    [alt]="currentSong?.name">
+            </ion-thumbnail>
+            <div class="track-details">
+                <div class="track-name">{{ currentSong?.name }}</div>
+                <div class="track-artist">{{ currentSong?.artistNames?.join(', ') || 'Unknown Artist' }}</div>
+            </div>
+        </div>
+
+        <div class="mini-controls">
+            <ion-button fill="clear" size="small" (click)="previous()">
+                <ion-icon name="play-skip-back"></ion-icon>
+            </ion-button>
+            
+            <ion-button 
+                fill="clear" 
+                size="small" 
+                class="play-pause-btn"
+                (click)="togglePlayPause()">
+                <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+            </ion-button>
+            
+            <ion-button fill="clear" size="small" (click)="next()">
+                <ion-icon name="play-skip-forward"></ion-icon>
+            </ion-button>
+        </div>
+
+        <!-- Control de volumen en mini player -->
+        <div class="mini-volume ion-hide-md-down">
+            <ion-button fill="clear" size="small" (click)="toggleMute()">
+                <ion-icon [name]="getVolumeIcon()"></ion-icon>
+            </ion-button>
+            <ion-range 
+                [value]="volume" 
+                (ionInput)="onVolumeChange($event)"
+                [pin]="true"
+                [snaps]="true"
+                [step]="5"
+                class="volume-range-mini">
+            </ion-range>
+        </div>
+
+        <!-- Progress Bar solo en mini player -->
+        <div class="progress-container">
+            <ion-range 
+                [value]="progress" 
+                (ionInput)="onProgressChange($event)"
+                class="progress-range">
+            </ion-range>
+        </div>
+    </div>
+
+    <!-- Full Player (Expanded State) -->
+    <div class="full-player" *ngIf="isExpanded">
+        <!-- Header Expanded -->
+        <div class="expanded-header" (click)="$event.stopPropagation()">
+            <div class="playing-from-expanded">
+                <ion-icon name="musical-notes-outline" color="primary"></ion-icon>
+                <div>
+                    <div class="context-type">{{ getPlayingFromText() }}</div>
+                    <div class="context-name" *ngIf="playerState?.playingFrom?.name">
+                        {{ playerState?.playingFrom?.name }}
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <ion-button fill="clear" (click)="toggleQueue(); $event.stopPropagation()">
+                    <ion-icon name="list"></ion-icon>
+                </ion-button>
+                <ion-button fill="clear" (click)="toggleExpanded(); $event.stopPropagation()">
+                    <ion-icon name="chevron-down"></ion-icon>
+                </ion-button>
+            </div>
+        </div>
+
+        <!-- Album Art & Info -->
+        <div class="track-display">
+            <div class="album-art">
+                <img [src]="currentSong?.image?.url || currentSong?.image?.large || 'assets/default-song.png'" 
+                    [alt]="currentSong?.name">
+            </div>
+            <div class="track-info-expanded">
+                <h2>{{ currentSong?.name }}</h2>
+                <h3>{{ currentSong?.artistNames?.join(', ') || 'Unknown Artist' }}</h3>
+                <p *ngIf="currentSong?.album">{{ currentSong?.album }}</p>
+            </div>
+        </div>
+
+        <!-- Progress with Time (solo en expanded) -->
+        <div class="progress-section">
+            <div class="time-display">
+                <span class="current-time">{{ currentTime }}</span>
+                <span class="duration">{{ duration }}</span>
+            </div>
+            <ion-range 
+                [value]="progress" 
+                (ionInput)="onProgressChange($event)"
+                class="progress-range-expanded">
+            </ion-range>
+        </div>
+
+        <!-- Main Controls -->
+        <div class="main-controls">
+            <ion-button 
+                fill="clear" 
+                [color]="isShuffled ? 'primary' : 'medium'"
+                (click)="toggleShuffle()">
+                <ion-icon name="shuffle"></ion-icon>
+            </ion-button>
+            
+            <ion-button fill="clear" size="large" (click)="previous()">
+                <ion-icon name="play-skip-back"></ion-icon>
+            </ion-button>
+            
+            <ion-button 
+                fill="solid" 
+                shape="round" 
+                size="large" 
+                class="main-play-btn"
+                (click)="togglePlayPause()">
+                <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+            </ion-button>
+            
+            <ion-button fill="clear" size="large" (click)="next()">
+                <ion-icon name="play-skip-forward"></ion-icon>
+            </ion-button>
+            
+            <ion-button 
+                fill="clear" 
+                [color]="getRepeatColor()"
+                (click)="toggleRepeat()">
+                <ion-icon [name]="getRepeatIcon()"></ion-icon>
+            </ion-button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-control">
+            <ion-button fill="clear" (click)="toggleMute()">
+                <ion-icon [name]="getVolumeIcon()"></ion-icon>
+            </ion-button>
+            <ion-range 
+                [value]="volume" 
+                (ionInput)="onVolumeChange($event)"
+                [pin]="true"
+                [snaps]="true"
+                [step]="1"
+                class="volume-range">
+                <ion-label slot="start">0</ion-label>
+                <ion-label slot="end">100</ion-label>
+            </ion-range>
+            <div class="volume-percentage">{{ Math.round(volume) }}%</div>
+        </div>
+    </div>
+
+    <!-- Queue Modal -->
+    <ion-modal [isOpen]="showQueue" (ionModalDidDismiss)="showQueue = false">
+        <ng-template>
+        <ion-header>
+            <ion-toolbar>
+            <ion-title>Cola de reproducción</ion-title>
+            <ion-buttons slot="end">
+                <ion-button (click)="toggleQueue()">
+                <ion-icon name="close"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        
+        <ion-content>
+            <div class="queue-container">
+            <div class="queue-header">
+                <h3>Reproduciendo ahora</h3>
+            </div>
+            
+            <div class="queue-item current-item" *ngIf="currentSong">
+                <ion-thumbnail>
+                <img [src]="currentSong.image?.thumbnail || 'assets/default-song.png'" 
+                    [alt]="currentSong.name">
+                </ion-thumbnail>
+                <div class="item-info">
+                <div class="item-title">{{ currentSong.name }}</div>
+                <div class="item-artist">{{ currentSong.artistNames?.join(', ') || 'Unknown Artist' }}</div>
+                </div>
+                <div class="playing-indicator">
+                <ion-icon name="musical-notes" color="primary"></ion-icon>
+                </div>
+            </div>
+
+            <div class="queue-header" *ngIf="queue.length > 1">
+                <h3>Próximo en la cola</h3>
+            </div>
+
+            <div class="queue-list">
+                <div 
+                class="queue-item" 
+                *ngFor="let song of queue; let i = index"
+                [class.current]="i === currentIndex"
+                (click)="playSongFromQueue(song, i)">
+                <ion-thumbnail>
+                    <img [src]="song.image?.thumbnail || 'assets/default-song.png'" 
+                        [alt]="song.name">
+                </ion-thumbnail>
+                <div class="item-info">
+                    <div class="item-title">{{ song.name }}</div>
+                    <div class="item-artist">{{ song.artistNames?.join(', ') || 'Unknown Artist' }}</div>
+                </div>
+                <ion-button 
+                    fill="clear" 
+                    size="small" 
+                    (click)="removeFromQueue(i); $event.stopPropagation()">
+                    <ion-icon name="close"></ion-icon>
+                </ion-button>   
+                </div>
+            </div>
+            </div>
+        </ion-content>
+        </ng-template>
+    </ion-modal>
+</div>

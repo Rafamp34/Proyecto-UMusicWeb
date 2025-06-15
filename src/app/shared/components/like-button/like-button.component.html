@@ -1,0 +1,21 @@
+<!-- src/app/shared/components/like-button/like-button.component.html -->
+<ion-button 
+    fill="clear" 
+    [size]="size"
+    (click)="toggleLike()"
+    [disabled]="loading"
+    class="like-button"
+    [class.liked]="isLiked">
+    
+    <ion-icon 
+        [name]="isLiked ? 'heart' : 'heart-outline'" 
+        [color]="isLiked ? 'danger' : 'medium'"
+        slot="icon-only">
+    </ion-icon>
+    
+    <ion-spinner 
+        *ngIf="loading" 
+        name="crescent" 
+        size="small">
+    </ion-spinner>
+</ion-button>

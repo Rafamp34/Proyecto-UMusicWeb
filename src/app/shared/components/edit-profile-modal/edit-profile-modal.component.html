@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="header-content">
+      <h1>{{ 'PROFILE.DETAILS_TITLE' | translate }}</h1>
+      <div class="header-buttons">
+        <!-- ✅ NUEVO BOTÓN DE EXPORTAR CSV -->
+        <ion-button fill="clear" (click)="exportUserDataToCSV()" class="export-button">
+          <ion-icon name="download-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="dismiss()">
+          <ion-icon name="close"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <!-- Columna para la imagen -->
+        <ion-col size="5" class="profile-avatar">
+          <app-picture-selectable formControlName="image"></app-picture-selectable>
+        </ion-col>
+
+        <!-- Columna para los campos de usuario -->
+        <ion-col size="7">
+          <div class="profile-fields">
+            <ion-list>
+              <!-- ✅ CORREGIDO: Usar 'username' en lugar de 'displayName' -->
+              <ion-item>
+                <ion-input [label]="'PROFILE.USERNAME' | translate"
+                           label-placement="stacked"
+                           formControlName="username"
+                           [class.ion-invalid]="username.invalid && username.touched"
+                           [class.ion-touched]="username.touched">
+                </ion-input>
+                <!-- ✅ VALIDACIÓN VISUAL -->
+                <div *ngIf="username.invalid && username.touched" class="error-message">
+                  <ion-note color="danger">{{ 'USER.ERRORS.USERNAME_REQUIRED' | translate }}</ion-note>
+                </div>
+              </ion-item>
+              
+              <ion-item>
+                <ion-input [label]="'PROFILE.EMAIL' | translate"
+                           label-placement="stacked"
+                           formControlName="email"
+                           type="email"
+                           [class.ion-invalid]="email.invalid && email.touched"
+                           [class.ion-touched]="email.touched">
+                </ion-input>
+                <!-- ✅ VALIDACIÓN VISUAL PARA EMAIL -->
+                <div *ngIf="email.invalid && email.touched" class="error-message">
+                  <ion-note color="danger" *ngIf="email.errors?.['required']">
+                    {{ 'USER.ERRORS.EMAIL_REQUIRED' | translate }}
+                  </ion-note>
+                  <ion-note color="danger" *ngIf="email.errors?.['email']">
+                    {{ 'USER.ERRORS.EMAIL_INVALID' | translate }}
+                  </ion-note>
+                </div>
+              </ion-item>
+
+              <!-- ✅ BOTÓN PARA CAMBIAR CONTRASEÑA -->
+              <ion-item button (click)="openChangePasswordModal()" lines="none">
+                <ion-icon slot="start" name="key-outline"></ion-icon>
+                <ion-label>{{ 'PROFILE.CHANGE_PASSWORD' | translate }}</ion-label>
+                <ion-icon slot="end" name="chevron-forward"></ion-icon>
+              </ion-item>
+
+
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- ✅ BOTÓN DE GUARDAR MEJORADO -->
+    <div class="save-button-container">
+      <ion-button 
+        [disabled]="!formGroup.valid" 
+        type="submit"
+        expand="block"
+        class="save-button">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        {{ 'PROFILE.SAVE' | translate }}
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

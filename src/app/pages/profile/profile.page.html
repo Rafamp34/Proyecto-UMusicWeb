@@ -1,0 +1,79 @@
+<!-- src/app/pages/profile/profile.page.html - CON SEGUIMIENTO REAL -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ 'PROFILE.TITLE' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="profile-container">
+    <div class="profile-header">
+      <div class="profile-avatar">
+        <img 
+          [src]="(currentUser$ | async)?.image?.url ? (currentUser$ | async)?.image?.url : 'assets/default-avatar.png'" 
+          alt="{{ (currentUser$ | async)?.username }}'s profile picture"
+          (click)="onPhotoClick()"
+        >
+      </div>
+      <div class="profile-info">
+        <div class="profile-type">{{ 'PROFILE.TITLES' | translate }}</div>
+        <h1>{{ user?.username }}</h1>  
+        <div class="profile-stats">
+          <!-- ✅ CONTEO DE PLAYLISTS REACTIVO -->
+          <span class="stat-item">
+            <strong>{{ (playlists$ | async)?.length ? (playlists$ | async)?.length : 0 }}</strong> {{ 'PROFILE.TEXT' | translate }}
+          </span>
+          <span class="stat-separator">•</span>
+          <!-- ✅ CONTEO DE SEGUIMIENTO REACTIVO -->
+          <span class="stat-item">
+            {{ 'PROFILE.FOLLOWING' | translate }} <strong>{{ (followingCount$ | async) ? (followingCount$ | async) : 0 }}</strong> {{ 'PROFILE.USER' | translate }}
+          </span>
+        </div>
+      </div>
+      <div class="logout-button" (click)="logout()">
+        <ion-icon name="power-outline"></ion-icon>
+      </div>
+    </div>
+    
+    <div class="menu-dots">
+      <ion-button fill="clear" (click)="openEditProfileModal()">
+        <ion-icon slot="start" name="pencil-outline"></ion-icon>
+        {{ 'PROFILE.EDIT' | translate }}
+      </ion-button>
+    </div>
+  </div>
+  <div class="playlist-list">
+    <div class="section-header">
+      <h2>{{ 'PROFILE.PLAYLISTS' | translate }}</h2>
+    </div>
+    <div class="playlist-grid">
+      <!-- Botón para crear una nueva playlist -->
+      <div class="playlist-item create-playlist" (click)="openPlaylistModal()">
+        <div class="playlist-thumbnail">
+          <ion-icon name="add-outline" class="add-icon"></ion-icon>
+        </div>
+        <div class="playlist-info">
+          <h3>{{ 'PROFILE.CREATE_PLAYLIST' | translate }}</h3>
+        </div>
+      </div>
+    
+      <!-- Lista de playlists del usuario con botón de eliminación centrado -->
+      <div *ngFor="let playlist of playlists$ | async" class="playlist-item">
+        <div class="playlist-thumbnail">
+          <img [src]="playlist.image?.url ? playlist.image?.url : 'assets/default-playlist.png'" />
+          <div class="playlist-actions">
+            <ion-button fill="clear" class="delete-button" (click)="deletePlaylist(playlist, $event)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+        <div class="playlist-info">
+          <h3>{{ playlist.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

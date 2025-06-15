@@ -1,0 +1,971 @@
+// src/app/pages/home/home.page.scss - Actualizado con footer compacto
+
+:host {
+  --umusic-black: #121212;
+  --umusic-dark-gray: #282828;
+  --umusic-light-gray: #b3b3b3;
+  --umusic-green: #09ff22;
+}
+
+ion-content.umusic-theme {
+  --background: linear-gradient(180deg, #262626 0%, #121212 100%);
+}
+
+// ✅ HEADER MEJORADO - FLEXBOX CENTRADO
+ion-toolbar {
+  --min-height: 80px !important;
+  --background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.1rem 0;
+  
+  // ✅ FLEXBOX LAYOUT PARA CENTRAR BÚSQUEDA
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  // ✅ LOGO CON ANCHO FIJO
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px; // Ancho fijo
+    flex-shrink: 0;
+    padding-left: 1rem;
+  }
+
+  // ✅ BÚSQUEDA CENTRADA CON FLEX GROW
+  app-global-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0.5; // Toma todo el espacio disponible
+    max-width: 1000px;
+    margin: auto auto;
+  }
+
+  // ✅ BOTONES Y PERFIL CON ANCHO FIJO
+  ion-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100px; // Ancho fijo
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding-right: 1rem;
+
+    ion-fab {
+      position: relative;
+      
+      ion-fab-button {
+        --background: var(--umusic-black);
+        --color: white;
+        --box-shadow: none;
+        margin: 0;
+      }
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 20px;
+      transition: background-color 0.2s ease;
+      min-width: 120px; // ✅ ANCHO MÍNIMO RESERVADO
+      max-width: 150px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .profile-avatar {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .username {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 60px; // ✅ ESPACIO MÍNIMO RESERVADO
+        text-align: left;
+
+        // ✅ EVITAR QUE EL TEXTO SE MUEVA AL CARGAR
+        &:empty::before {
+          content: "\00a0"; // Espacio no rompible
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Navigation Tabs
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  padding-left: 8%;
+  background: #282828;
+
+  .tab-button {
+    background: transparent;
+    border: none;
+    color: var(--umusic-light-gray);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.active {
+      background: white;
+      color: black;
+    }
+
+    &:not(.active):hover {
+      color: white;
+    }
+  }
+}
+
+// Playlist Grid
+.playlist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .playlist-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 12px;
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      ion-thumbnail {
+        --size: 48px;
+        min-width: 48px;
+        margin-right: 8px;
+
+        img {
+          border-radius: 4px;
+        }
+      }
+
+      .playlist-info {
+        h2 {
+          color: white;
+          font-size: 16px;
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        p {
+          color: var(--umusic-light-gray);
+          font-size: 14px;
+          margin: 4px 0 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .play-button {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      ion-icon {
+        font-size: 40px;
+        color: var(--umusic-green);
+        background: #000;
+        border-radius: 50%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      }
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+
+      .play-button {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Releases Section
+.releases-section {
+  padding: 24px 16px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h2 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .show-all {
+      background: none;
+      border: none;
+      color: var(--umusic-light-gray);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .releases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+
+    .release-card {
+      background: var(--umusic-dark-gray);
+      padding: 16px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+
+      .image-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        margin-bottom: 16px;
+        overflow: hidden;
+        border-radius: 4px;
+        
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 4px;
+        }
+
+        .play-button {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          opacity: 0;
+          transform: translateY(8px);
+          transition: all 0.3s ease;
+          z-index: 9;
+
+          ion-icon {
+            font-size: 48px;
+            color: var(--umusic-green);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+          }
+        }
+
+        .like-overlay {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          z-index: 11;
+          opacity: 0.9;
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .song-info {
+        h3 {
+          color: white;
+          font-size: 16px;
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        p {
+          color: var(--umusic-light-gray);
+          font-size: 14px;
+          margin: 4px 0 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+
+        .play-button {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+// Song stats styles
+.song-stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8px;
+
+  .likes-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: var(--umusic-light-gray);
+    transition: color 0.2s ease;
+
+    ion-icon {
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    span {
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &.liked {
+        color: var(--ion-color-danger);
+        font-weight: 600;
+      }
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+// Playlist stats styles
+.playlist-stats {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--umusic-light-gray);
+
+  ion-icon {
+    font-size: 14px;
+  }
+}
+
+// Animation for like state changes
+@keyframes likeHeartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.likes-info ion-icon[color="danger"] {
+  animation: likeHeartBeat 0.3s ease-in-out;
+}
+
+// ✅ FOOTER COMPACTO - Reemplaza el .app-footer anterior
+.app-footer-compact {
+  background: linear-gradient(135deg, #1e1e1e 0%, #121212 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 16px 16px; // Mucho menos padding
+  margin-top: 40px;
+
+  .footer-content-compact {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    // En móvil se apila verticalmente
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .footer-brand-compact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .footer-logo-small {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+      }
+
+      .brand-name-small {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+        background: linear-gradient(45deg, #1DB954, #09ff22);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    .footer-info-compact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+
+      @media (max-width: 768px) {
+        order: 4; // Se mueve al final en móvil
+      }
+
+      .footer-text-small {
+        color: var(--umusic-light-gray);
+        font-size: 0.8rem;
+        line-height: 1.2;
+      }
+
+      .footer-version-small {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+    }
+
+    .footer-actions-compact {
+      display: flex;
+      gap: 8px;
+
+      .about-btn-compact,
+      .github-btn-compact {
+        --color: var(--umusic-light-gray);
+        --background-hover: rgba(255, 255, 255, 0.1);
+        --border-radius: 16px;
+        --padding-start: 8px;
+        --padding-end: 8px;
+        height: 32px;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+        text-transform: none;
+        font-weight: 500;
+
+        &:hover {
+          --color: white;
+          transform: translateY(-1px);
+        }
+
+        ion-icon {
+          font-size: 0.9rem;
+        }
+      }
+
+      .about-btn-compact:hover {
+        --color: #1DB954;
+      }
+
+      .github-btn-compact:hover {
+        --color: #ffffff;
+      }
+    }
+
+    .footer-copyright-compact {
+      flex-basis: 100%;
+      text-align: center;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      span {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.7rem;
+        line-height: 1.2;
+      }
+
+      @media (max-width: 768px) {
+        margin-top: 12px;
+        padding-top: 12px;
+      }
+    }
+  }
+}
+
+// ✅ RESPONSIVO - AJUSTAR PARA MÓVILES
+@media (max-width: 768px) {
+  ion-toolbar {
+    .logo-container {
+      width: 80px; // Más pequeño en móvil
+      padding-left: 0.5rem;
+    }
+
+    ion-buttons {
+      width: 100px; // Más pequeño en móvil
+      padding-right: 0.5rem;
+
+      .user-profile {
+        min-width: auto;
+        .username {
+          display: none; // Ocultar nombre en móvil
+        }
+      }
+    }
+  }
+
+  .playlist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  // Footer compacto responsive
+  .app-footer-compact {
+    padding: 16px 12px 12px;
+
+    .footer-content-compact {
+      .footer-actions-compact {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  ion-toolbar {
+    --min-height: 60px !important;
+    
+    .logo-container {
+      width: 60px;
+    }
+    
+    ion-buttons {
+      width: 80px;
+    }
+  }
+  
+  .playlist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  // Footer más compacto en móvil
+  .app-footer-compact {
+    padding: 14px 10px 10px;
+
+    .footer-content-compact {
+      .footer-brand-compact {
+        .footer-logo-small {
+          width: 28px;
+          height: 28px;
+        }
+
+        .brand-name-small {
+          font-size: 1.1rem;
+        }
+      }
+
+      .footer-actions-compact {
+        .about-btn-compact,
+        .github-btn-compact {
+          height: 28px;
+          font-size: 0.75rem;
+          
+          ion-icon {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .footer-copyright-compact {
+        span {
+          font-size: 0.65rem;
+        }
+      }
+    }
+  }
+}
+
+// Para ocultar el nombre solo en pantallas muy pequeñas
+@media (max-width: 380px) {
+  .user-profile .username {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  ion-toolbar {
+    --min-height: 60px !important;
+    
+    .logo-container {
+      width: 50px !important;
+      padding-left: 0;
+      
+      img {
+        height: 40px;
+        width: 40px;
+      }
+    }
+    
+    ion-buttons {
+      width: auto !important;
+      min-width: 80px;
+      
+      .language-btn {
+        --size: 36px;
+      }
+      
+      .user-profile {
+        padding: 0;
+        
+        .username {
+          display: none;
+        }
+        
+        .profile-avatar {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .playlist-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+    padding: 12px;
+    
+    .playlist-card {
+      padding: 8px;
+      
+      .card-content {
+        gap: 8px;
+        
+        ion-thumbnail {
+          --size: 40px !important;
+          min-width: 40px;
+        }
+        
+        .playlist-info {
+          h2 {
+            font-size: 14px;
+          }
+          
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+      
+      .play-button ion-icon {
+        font-size: 32px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .releases-section {
+    padding: 16px 12px;
+    
+    .releases-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px;
+      
+      .release-card {
+        padding: 12px;
+        
+        .image-container {
+          margin-bottom: 12px;
+          
+          .play-button ion-icon {
+            font-size: 36px !important;
+          }
+        }
+        
+        .song-info {
+          h3 {
+            font-size: 14px;
+          }
+          
+          p {
+            font-size: 12px;
+          }
+        }
+        
+        .song-stats {
+          .likes-info {
+            font-size: 12px;
+            
+            ion-icon {
+              font-size: 14px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-footer-compact {
+    padding: 12px 8px;
+    
+    .footer-content-compact {
+      gap: 8px;
+      
+      .footer-brand-compact {
+        .footer-logo-small {
+          width: 28px;
+          height: 28px;
+        }
+        
+        .brand-name-small {
+          font-size: 1rem;
+        }
+      }
+      
+      .footer-info-compact {
+        .footer-text-small {
+          font-size: 0.7rem;
+        }
+      }
+      
+      .footer-actions-compact {
+        ion-button {
+          height: 28px;
+          font-size: 0.7rem;
+          
+          ion-icon {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-tabs {
+    padding: 12px 8px;
+    padding-left: 5%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: block;
+    
+    .tab-button {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      margin-right: 4px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  /* Releases Sections - SOLO MÓVIL */
+  .releases-section {
+    padding: 24px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      h2 {
+        color: white;
+        font-size: 20px; /* Tamaño más pequeño para móviles */
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .show-all {
+        background: none;
+        border: none;
+        color: var(--umusic-light-gray);
+        font-size: 12px; /* Texto más pequeño */
+        font-weight: 700;
+        cursor: pointer;
+        padding: 4px 8px; /* Más compacto */
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .releases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+      gap: 16px;
+
+      @media (max-width: 480px) {
+        gap: 12px; /* Aún más compacto en pantallas pequeñas */
+      }
+
+      .release-card {
+        background: var(--umusic-dark-gray);
+        border-radius: 6px; /* Bordes ligeramente más pequeños */
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        .image-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 100%;
+          margin-bottom: 0;
+          overflow: hidden;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+          }
+
+          .play-button {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+            z-index: 9;
+
+            ion-icon {
+              font-size: 36px !important; /* Botón más pequeño */
+            }
+          }
+
+          .like-overlay {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            z-index: 11;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+
+        .song-info {
+          padding: 12px; /* Menos padding */
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          h3 {
+            color: white;
+            font-size: 14px;
+            margin: 0 0 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          p {
+            color: var(--umusic-light-gray);
+            font-size: 12px;
+            margin: 0 0 8px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+
+          .play-button {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .image-container img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  ion-toolbar {
+    ion-buttons {
+      .user-profile {
+        .profile-avatar {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}

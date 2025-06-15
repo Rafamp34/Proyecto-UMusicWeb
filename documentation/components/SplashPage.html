@@ -1,0 +1,1557 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SplashPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/splash/splash.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-splash</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>IonicModule</code>
+                            <code>CommonModule</code>
+                            <code>LottieComponent</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./splash.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./splash.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#animationItem" >animationItem</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isNavigating" >isNavigating</a>
+                            </li>
+                            <li>
+                                <a href="#lottieOptions" >lottieOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#navigationSubscription" >navigationSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#animationCreated" >animationCreated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initSplashTimer" >initSplashTimer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#navigateToHome" >navigateToHome</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#performNavigation" >performNavigation</a>
+                            </li>
+                            <li>
+                                <a href="#skipSplash" >skipSplash</a>
+                            </li>
+                            <li>
+                                <a href="#toggleAnimation" >toggleAnimation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, authSvc: <a href="../injectables/BaseAuthenticationService.html" target="_self">BaseAuthenticationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/splash/splash.page.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authSvc</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BaseAuthenticationService.html" target="_self" >BaseAuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="animationCreated"></a>
+                    <span class="name">
+                        <span ><b>animationCreated</b></span>
+                        <a href="#animationCreated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>animationCreated(animationItem: AnimationItem)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Callback cuando se crea la animación Lottie</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>animationItem</td>
+                                            <td>
+                                                        <code>AnimationItem</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initSplashTimer"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>initSplashTimer</b></span>
+                        <a href="#initSplashTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initSplashTimer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Inicializa el timer del splash screen</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateToHome"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>navigateToHome</b></span>
+                        <a href="#navigateToHome"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>navigateToHome()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navega a la página principal</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="performNavigation"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>performNavigation</b></span>
+                        <a href="#performNavigation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>performNavigation()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Realiza la navegación basada en el estado de autenticación</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="skipSplash"></a>
+                    <span class="name">
+                        <span ><b>skipSplash</b></span>
+                        <a href="#skipSplash"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>skipSplash()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="148"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:148</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método para saltar el splash (opcional)
+Se puede llamar desde el template si se quiere permitir skip</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleAnimation"></a>
+                    <span class="name">
+                        <span ><b>toggleAnimation</b></span>
+                        <a href="#toggleAnimation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleAnimation()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/pages/splash/splash.page.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Pausa/resume la animación Lottie</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="animationItem"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>animationItem</b></span>
+                        <a href="#animationItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AnimationItem</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/splash/splash.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isNavigating"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>isNavigating</b></span>
+                        <a href="#isNavigating"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/splash/splash.page.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lottieOptions"></a>
+                    <span class="name">
+                        <span ><b>lottieOptions</b></span>
+                        <a href="#lottieOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>AnimationOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    path: &#x27;/assets/lotties/splash.json&#x27;,
+    autoplay: true,
+    loop: true,
+    renderer: &#x27;svg&#x27; as const, // Mejor rendimiento para móviles
+    rendererSettings: {
+      progressiveLoad: true,
+      preserveAspectRatio: &#x27;xMidYMid meet&#x27;, // Mantener proporción
+      hideOnTransparent: true,
+      className: &#x27;lottie-animation&#x27;
+    }
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/splash/splash.page.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigationSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>navigationSubscription</b></span>
+                        <a href="#navigationSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/pages/splash/splash.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { timer, Subscription } from &#x27;rxjs&#x27;;
+import { BaseAuthenticationService } from &#x27;src/app/core/services/impl/base-authentication.service&#x27;;
+import { IonicModule } from &#x27;@ionic/angular&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { LottieComponent, AnimationOptions } from &#x27;ngx-lottie&#x27;;
+import type { AnimationItem } from &#x27;lottie-web&#x27;;
+
+@Component({
+  selector: &#x27;app-splash&#x27;,
+  templateUrl: &#x27;./splash.page.html&#x27;,
+  styleUrls: [&#x27;./splash.page.scss&#x27;],
+  standalone: true,
+  imports: [IonicModule, CommonModule, LottieComponent]
+})
+export class SplashPage implements OnInit, OnDestroy {
+  
+  // Configuración de Lottie
+  lottieOptions: AnimationOptions &#x3D; {
+    path: &#x27;/assets/lotties/splash.json&#x27;,
+    autoplay: true,
+    loop: true,
+    renderer: &#x27;svg&#x27; as const, // Mejor rendimiento para móviles
+    rendererSettings: {
+      progressiveLoad: true,
+      preserveAspectRatio: &#x27;xMidYMid meet&#x27;, // Mantener proporción
+      hideOnTransparent: true,
+      className: &#x27;lottie-animation&#x27;
+    }
+  };
+
+  private animationItem?: AnimationItem;
+  private navigationSubscription?: Subscription;
+  private isNavigating &#x3D; false;
+
+  constructor(
+    private router: Router,
+    private authSvc: BaseAuthenticationService
+  ) {}
+
+  ngOnInit() {
+    this.initSplashTimer();
+  }
+
+  ngOnDestroy() {
+    // Limpiar subscripciones
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
+    
+    // Limpiar animación Lottie
+    if (this.animationItem) {
+      this.animationItem.destroy();
+    }
+  }
+
+  /**
+   * Callback cuando se crea la animación Lottie
+   */
+  animationCreated(animationItem: AnimationItem): void {
+    this.animationItem &#x3D; animationItem;
+    console.log(&#x27;UMusic splash animation created&#x27;);
+    
+    // Opcional: Ajustar velocidad de la animación
+    this.animationItem.setSpeed(1.2);
+    
+    // Opcional: Configurar eventos de la animación
+    this.animationItem.addEventListener(&#x27;complete&#x27;, () &#x3D;&gt; {
+      console.log(&#x27;Splash animation completed&#x27;);
+    });
+
+    this.animationItem.addEventListener(&#x27;loopComplete&#x27;, () &#x3D;&gt; {
+      console.log(&#x27;Splash animation loop completed&#x27;);
+    });
+  }
+
+  /**
+   * Inicializa el timer del splash screen
+   */
+  private initSplashTimer(): void {
+    // Duración del splash (3 segundos)
+    const splashDuration &#x3D; 3000;
+    
+    this.navigationSubscription &#x3D; timer(splashDuration).subscribe(() &#x3D;&gt; {
+      this.navigateToHome();
+    });
+  }
+
+  /**
+   * Navega a la página principal
+   */
+  private navigateToHome(): void {
+    if (this.isNavigating) {
+      return;
+    }
+    
+    this.isNavigating &#x3D; true;
+    
+    // Opcional: Añadir efecto de fade out antes de navegar
+    const splashContainer &#x3D; document.querySelector(&#x27;.splash-container&#x27;) as HTMLElement;
+    if (splashContainer) {
+      splashContainer.style.transition &#x3D; &#x27;opacity 0.5s ease-out&#x27;;
+      splashContainer.style.opacity &#x3D; &#x27;0&#x27;;
+      
+      // Navegar después del fade out
+      setTimeout(() &#x3D;&gt; {
+        this.performNavigation();
+      }, 500);
+    } else {
+      this.performNavigation();
+    }
+  }
+
+  /**
+   * Realiza la navegación basada en el estado de autenticación
+   */
+  private performNavigation(): void {
+    // Verificar si el usuario está autenticado usando authenticated$
+    this.authSvc.authenticated$.subscribe({
+      next: (isAuthenticated: boolean) &#x3D;&gt; {
+        if (isAuthenticated) {
+          // Usuario autenticado, ir al home
+          this.router.navigate([&#x27;/home&#x27;], { 
+            replaceUrl: true
+          });
+        } else {
+          // Usuario no autenticado, ir al login
+          this.router.navigate([&#x27;/login&#x27;], { 
+            replaceUrl: true
+          });
+        }
+      },
+      error: (error: any) &#x3D;&gt; {
+        console.error(&#x27;Error checking authentication status:&#x27;, error);
+        // En caso de error, ir al home por defecto
+        this.router.navigate([&#x27;/home&#x27;], { 
+          replaceUrl: true
+        });
+      }
+    });
+  }
+
+  /**
+   * Método para saltar el splash (opcional)
+   * Se puede llamar desde el template si se quiere permitir skip
+   */
+  skipSplash(): void {
+    if (this.navigationSubscription) {
+      this.navigationSubscription.unsubscribe();
+    }
+    
+    this.navigateToHome();
+  }
+
+  /**
+   * Pausa/resume la animación Lottie
+   */
+  toggleAnimation(): void {
+    if (this.animationItem) {
+      if (this.animationItem.isPaused) {
+        this.animationItem.play();
+      } else {
+        this.animationItem.pause();
+      }
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;splash-container&quot;&gt;
+    
+    &lt;!-- Logo/Animación Lottie --&gt;
+    &lt;div class&#x3D;&quot;lottie-container&quot;&gt;
+      &lt;ng-lottie 
+        [options]&#x3D;&quot;lottieOptions&quot; 
+        (animationCreated)&#x3D;&quot;animationCreated($event)&quot;&gt;
+      &lt;/ng-lottie&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Título y subtítulo --&gt;
+    &lt;h1 class&#x3D;&quot;app-title&quot;&gt;UMusic&lt;/h1&gt;
+    &lt;p class&#x3D;&quot;app-subtitle&quot;&gt;Tu música, tu mundo&lt;/p&gt;
+    
+    &lt;!-- Indicador de carga --&gt;
+    &lt;div class&#x3D;&quot;loading-indicator&quot;&gt;
+      &lt;span class&#x3D;&quot;loading-text&quot;&gt;Cargando...&lt;/span&gt;
+      
+      &lt;!-- Opción 1: Barra de progreso --&gt;
+      &lt;div class&#x3D;&quot;progress-bar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Versión de la app --&gt;
+    &lt;div class&#x3D;&quot;app-version&quot;&gt;v1.0.0&lt;/div&gt;
+    
+  &lt;/div&gt;
+&lt;/ion-content&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./splash.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">// splash.page.scss - Estilo UMusic con diseño moderno tipo Spotify
+
+// Variables del tema UMusic
+:root {
+  --umusic-dark: #121212;
+  --umusic-dark-elevated: #1e1e1e;
+  --umusic-dark-card: #282828;
+  --umusic-green: #1DB954;
+  --umusic-green-hover: #1ed760;
+  --umusic-white: #ffffff;
+  --umusic-text-primary: #ffffff;
+  --umusic-text-secondary: #b3b3b3;
+  --umusic-gradient: linear-gradient(135deg, #1DB954, #191414);
+  --umusic-accent: #ff6b35;
+}
+
+// Fondo principal con gradiente animado
+ion-content {
+  --background: var(--umusic-dark);
+  position: relative;
+  overflow: hidden;
+  
+  &amp;::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--umusic-gradient);
+    opacity: 0.9;
+    z-index: 1;
+  }
+  
+  // Efecto de partículas de fondo
+  &amp;::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 2deg,
+      rgba(255, 255, 255, 0.03) 2deg 4deg
+    );
+    animation: rotateBackground 30s linear infinite;
+    z-index: 1;
+  }
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  
+  // Animación de contenedor
+  animation: fadeInUp 1s ease-out;
+  
+  // Logo/Lottie container con efectos
+  .lottie-container {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    ng-lottie {
+      width: 180px;
+      height: 180px;
+      max-width: 180px;
+      max-height: 180px;
+      filter: drop-shadow(0 15px 30px rgba(29, 185, 84, 0.3));
+      transition: all 0.3s ease;
+      
+      // Efecto hover (opcional)
+      &amp;:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 20px 35px rgba(29, 185, 84, 0.4));
+      }
+    }
+    
+    // Anillo brillante alrededor del logo
+    &amp;::before {
+      content: &#x27;&#x27;;
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--umusic-green), transparent, var(--umusic-green));
+      animation: rotateBorder 3s linear infinite;
+      opacity: 0.5;
+      z-index: -1;
+    }
+    
+    // Resplandor interno
+    &amp;::after {
+      content: &#x27;&#x27;;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(29, 185, 84, 0.15) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+  }
+  
+  // Título de la app
+  .app-title {
+    color: var(--umusic-white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, var(--umusic-white), var(--umusic-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: slideInFromLeft 1s ease-out 0.3s both;
+  }
+  
+  // Subtítulo
+  .app-subtitle {
+    color: var(--umusic-text-secondary);
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    animation: slideInFromRight 1s ease-out 0.6s both;
+  }
+  
+  // Indicador de carga
+  .loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeIn 1s ease-out 0.9s both;
+    
+    .loading-text {
+      color: var(--umusic-text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    // Barra de progreso personalizada
+    .progress-bar {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+      
+      &amp;::after {
+        content: &#x27;&#x27;;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--umusic-green), var(--umusic-green-hover));
+        animation: loadingProgress 2s ease-in-out infinite;
+        border-radius: 2px;
+      }
+    }
+    
+    // Puntos de carga alternativos
+    .loading-dots {
+      display: flex;
+      gap: 0.5rem;
+      
+      .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--umusic-green);
+        border-radius: 50%;
+        animation: bounce 1.4s ease-in-out infinite both;
+        
+        &amp;:nth-child(1) { animation-delay: -0.32s; }
+        &amp;:nth-child(2) { animation-delay: -0.16s; }
+        &amp;:nth-child(3) { animation-delay: 0s; }
+      }
+    }
+  }
+  
+  // Versión de la app
+  .app-version {
+    position: absolute;
+    bottom: 2rem;
+    color: var(--umusic-text-secondary);
+    font-size: 0.8rem;
+    opacity: 0.6;
+    animation: fadeIn 1s ease-out 1.2s both;
+  }
+}
+
+// Animaciones
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateBackground {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+@keyframes loadingProgress {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .splash-container {
+    padding: 1rem;
+    
+    .lottie-container ng-lottie {
+      width: 150px;
+      height: 150px;
+      max-width: 150px;
+      max-height: 150px;
+    }
+    
+    .app-title {
+      font-size: 2rem;
+    }
+    
+    .app-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .loading-indicator .progress-bar {
+      width: 150px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .splash-container {
+    padding: 0.5rem;
+    
+    .lottie-container {
+      margin-bottom: 1.5rem;
+      
+      ng-lottie {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+        max-height: 120px;
+      }
+      
+      &amp;::after {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    
+    .app-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .app-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .loading-indicator {
+      gap: 0.8rem;
+      
+      .progress-bar {
+        width: 120px;
+      }
+    }
+  }
+}
+
+// Modo de alto contraste
+@media (prefers-contrast: high) {
+  .splash-container {
+    .app-title {
+      -webkit-text-fill-color: var(--umusic-white);
+    }
+    
+    .loading-indicator .progress-bar::after {
+      background: var(--umusic-white);
+    }
+  }
+}
+
+// Reduce motion para usuarios sensibles
+@media (prefers-reduced-motion: reduce) {
+  ion-content::after,
+  .lottie-container::before,
+  .lottie-container::after {
+    animation: none;
+  }
+  
+  .splash-container {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .app-title,
+  .app-subtitle,
+  .loading-indicator,
+  .app-version {
+    animation: fadeIn 0.5s ease-out;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content [fullscreen]="true">  <div class="splash-container">        <!-- Logo/Animación Lottie -->    <div class="lottie-container">      <ng-lottie         [options]="lottieOptions"         (animationCreated)="animationCreated($event)">      </ng-lottie>    </div>        <!-- Título y subtítulo -->    <h1 class="app-title">UMusic</h1>    <p class="app-subtitle">Tu música, tu mundo</p>        <!-- Indicador de carga -->    <div class="loading-indicator">      <span class="loading-text">Cargando...</span>            <!-- Opción 1: Barra de progreso -->      <div class="progress-bar"></div>    </div>        <!-- Versión de la app -->    <div class="app-version">v1.0.0</div>      </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ArtistGridCardComponent', 'selector': 'app-artist-grid-card'},{'name': 'ArtistModalComponent', 'selector': 'app-artist-modal'},{'name': 'ArtistProfilePage', 'selector': 'app-artist-profile'},{'name': 'ArtistsPage', 'selector': 'app-artists'},{'name': 'AudioPlayerComponent', 'selector': 'app-audio-player'},{'name': 'ChangePasswordModalComponent', 'selector': 'app-change-password-modal'},{'name': 'ClickableArtistNamesComponent', 'selector': 'app-clickable-artist-names'},{'name': 'EditProfileModalComponent', 'selector': 'app-edit-profile-modal'},{'name': 'FollowArtistButtonComponent', 'selector': 'app-follow-artist-button'},{'name': 'GlobalSearchComponent', 'selector': 'app-global-search'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LikeButtonComponent', 'selector': 'app-like-button'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'PictureSelectableComponent', 'selector': 'app-picture-selectable'},{'name': 'PlayButtonComponent', 'selector': 'app-play-button'},{'name': 'PlaylistDetailPage', 'selector': 'app-playlist-detail'},{'name': 'PlaylistLikeButtonComponent', 'selector': 'app-playlist-like-button'},{'name': 'PlaylistModalComponent', 'selector': 'app-playlist-modal'},{'name': 'PlaylistsPage', 'selector': 'app-playlists'},{'name': 'ProfilePage', 'selector': 'app-profile'},{'name': 'RegisterPage', 'selector': 'app-register'},{'name': 'SongDetailModalComponent', 'selector': 'app-song-detail-modal'},{'name': 'SongGridCardComponent', 'selector': 'app-song-grid-card'},{'name': 'SongModalComponent', 'selector': 'app-song-modal'},{'name': 'SongsPage', 'selector': 'app-songs'},{'name': 'SplashPage', 'selector': 'app-splash'}];
+    var DIRECTIVES = [{'name': 'DragDropDirective', 'selector': '[appDragDrop]'}];
+    var ACTUAL_COMPONENT = {'name': 'SplashPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SplashPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

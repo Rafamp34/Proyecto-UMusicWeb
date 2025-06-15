@@ -1,0 +1,17 @@
+<!-- src/app/shared/components/clickable-artist/clickable-artist-names.component.html -->
+<span class="artists-container">
+  <ng-container *ngFor="let artist of displayArtists; let isLast = last">
+    <span class="clickable-artist" 
+          (click)="onArtistClick(artist)"
+          [title]="'Ver perfil de ' + artist.name">
+      {{ artist.name }}
+    </span>
+    <span *ngIf="!isLast || remainingCount > 0" class="separator">, </span>
+  </ng-container>
+  
+  <span *ngIf="remainingCount > 0 && showCount" 
+        class="remaining-count"
+        [title]="remainingCount + ' artistas más'">
+    +{{ remainingCount }} más
+  </span>
+</span>

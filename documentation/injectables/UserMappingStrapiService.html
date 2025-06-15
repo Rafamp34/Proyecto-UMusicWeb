@@ -1,0 +1,2052 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >UserMappingStrapiService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/repositories/impl/users-mapping-strapi.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio de mapeo para usuarios específico para Strapi
+Maneja la transformación entre el modelo User y la estructura de datos de Strapi
+Incluye soporte para estructura plana y anidada de respuestas</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createFallbackUser" >createFallbackUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractFollowersCount" >extractFollowersCount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractFollowingCount" >extractFollowingCount</a>
+                            </li>
+                            <li>
+                                <a href="#getAdded" >getAdded</a>
+                            </li>
+                            <li>
+                                <a href="#getDeleted" >getDeleted</a>
+                            </li>
+                            <li>
+                                <a href="#getOne" >getOne</a>
+                            </li>
+                            <li>
+                                <a href="#getPaginated" >getPaginated</a>
+                            </li>
+                            <li>
+                                <a href="#getUpdated" >getUpdated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapFollowers" >mapFollowers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapFollowing" >mapFollowing</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapFollowingArtists" >mapFollowingArtists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapImage" >mapImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapLikedSongs" >mapLikedSongs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mapPlaylists" >mapPlaylists</a>
+                            </li>
+                            <li>
+                                <a href="#setAdd" >setAdd</a>
+                            </li>
+                            <li>
+                                <a href="#setUpdate" >setUpdate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createFallbackUser"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>createFallbackUser</b></span>
+                        <a href="#createFallbackUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createFallbackUser(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="121"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Crea un usuario de respaldo cuando los datos son inválidos</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos originales para extraer ID si es posible</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Usuario con valores por defecto</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractFollowersCount"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>extractFollowersCount</b></span>
+                        <a href="#extractFollowersCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractFollowersCount(followers: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, followers_FK: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae el número de seguidores, manejando tanto contadores como arrays</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>followers</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de seguidores</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>followers_FK</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Campo alternativo de seguidores</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Número de seguidores</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractFollowingCount"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>extractFollowingCount</b></span>
+                        <a href="#extractFollowingCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractFollowingCount(following: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, following_fks: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extrae el número de usuarios seguidos, manejando tanto contadores como arrays</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>following</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de usuarios seguidos</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>following_fks</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Campo alternativo de usuarios seguidos</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Número de usuarios seguidos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdded"></a>
+                    <span class="name">
+                        <span ><b>getAdded</b></span>
+                        <a href="#getAdded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAdded(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="386"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:386</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de creación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras POST</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo User mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDeleted"></a>
+                    <span class="name">
+                        <span ><b>getDeleted</b></span>
+                        <a href="#getDeleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDeleted(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="404"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:404</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de eliminación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras DELETE</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo User mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOne"></a>
+                    <span class="name">
+                        <span ><b>getOne</b></span>
+                        <a href="#getOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOne(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto de respuesta de Strapi en un modelo User
+Maneja múltiples estructuras de respuesta de Strapi (v4, plana, anidada)</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos sin procesar de Strapi</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo User mapeado con valores por defecto si faltan datos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaginated"></a>
+                    <span class="name">
+                        <span ><b>getPaginated</b></span>
+                        <a href="#getPaginated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPaginated(page: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageSize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pages: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, data: any[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Crea un objeto paginado con usuarios mapeados</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>page</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Número de página actual</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>pageSize</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Tamaño de página</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>pages</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Número total de páginas</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Array de datos sin procesar de Strapi</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Paginated&lt;User&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto Paginated con usuarios mapeados</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUpdated"></a>
+                    <span class="name">
+                        <span ><b>getUpdated</b></span>
+                        <a href="#getUpdated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUpdated(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="395"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:395</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de actualización</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras PUT/PATCH</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo User mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapFollowers"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapFollowers</b></span>
+                        <a href="#mapFollowers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapFollowers(followers: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, followers_FK: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea datos de seguidores desde diferentes estructuras de Strapi</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>followers</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de seguidores</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>followers_FK</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Campo alternativo de seguidores</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Array de IDs de seguidores como strings</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapFollowing"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapFollowing</b></span>
+                        <a href="#mapFollowing"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapFollowing(following: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, following_fks: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea datos de usuarios seguidos desde diferentes estructuras de Strapi</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>following</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de usuarios seguidos</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>following_fks</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Campo alternativo de usuarios seguidos</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Array de IDs de usuarios seguidos como strings</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapFollowingArtists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapFollowingArtists</b></span>
+                        <a href="#mapFollowingArtists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapFollowingArtists(followingArtists: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea IDs de artistas que sigue el usuario</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>followingArtists</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de artistas seguidos</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Array de IDs de artistas como strings</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapImage"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapImage</b></span>
+                        <a href="#mapImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapImage(imageData: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="248"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:248</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea datos de imagen desde diferentes estructuras de Strapi
+Maneja estructura plana y estructura Strapi v4</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>imageData</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de imagen desde Strapi</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code> | undefined</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto de imagen con diferentes tamaños o undefined</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapLikedSongs"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapLikedSongs</b></span>
+                        <a href="#mapLikedSongs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapLikedSongs(likedSongs: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="190"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:190</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea IDs de canciones que le gustan al usuario</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>likedSongs</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de canciones que le gustan</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Array de IDs de canciones como strings</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapPlaylists"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mapPlaylists</b></span>
+                        <a href="#mapPlaylists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapPlaylists(playlists: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea IDs de playlists del usuario</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>playlists</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos de playlists</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Array de IDs de playlists como strings</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAdd"></a>
+                    <span class="name">
+                        <span ><b>setAdd</b></span>
+                        <a href="#setAdd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setAdd(data: <a href="../interfaces/User.html" target="_self">User</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="306"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:306</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Prepara los datos del usuario para ser enviados a Strapi en una operación de creación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Modelo User a convertir</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto con estructura compatible con Strapi para POST</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUpdate"></a>
+                    <span class="name">
+                        <span ><b>setUpdate</b></span>
+                        <a href="#setUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUpdate(data: <a href="../interfaces/User.html" target="_self">Partial&lt;User&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="343"
+                                    class="link-to-prism">src/app/core/repositories/impl/users-mapping-strapi.service.ts:343</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Prepara los datos parciales del usuario para actualización en Strapi</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../interfaces/User.html" target="_self" >Partial&lt;User&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos parciales del User a actualizar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto con estructura compatible con Strapi para PUT/PATCH</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { IUserMapping } from &quot;../intefaces/user-mapping.interface&quot;;
+import { User } from &quot;../../models/user.model&quot;;
+import { Paginated } from &quot;../../models/paginated.model&quot;;
+
+/**
+ * Servicio de mapeo para usuarios específico para Strapi
+ * Maneja la transformación entre el modelo User y la estructura de datos de Strapi
+ * Incluye soporte para estructura plana y anidada de respuestas
+ */
+@Injectable({
+    providedIn: &#x27;root&#x27;
+})
+export class UserMappingStrapiService implements IUserMapping {
+    
+    /**
+     * Crea un objeto paginado con usuarios mapeados
+     * @param page Número de página actual
+     * @param pageSize Tamaño de página
+     * @param pages Número total de páginas
+     * @param data Array de datos sin procesar de Strapi
+     * @returns Objeto Paginated con usuarios mapeados
+     */
+    getPaginated(page: number, pageSize: number, pages: number, data: any[]): Paginated&lt;User&gt; {
+        return {
+            page,
+            pageSize,
+            pages,
+            data: data.map(item &#x3D;&gt; this.getOne(item))
+        };
+    }
+
+    /**
+     * Convierte un objeto de respuesta de Strapi en un modelo User
+     * Maneja múltiples estructuras de respuesta de Strapi (v4, plana, anidada)
+     * @param data Datos sin procesar de Strapi
+     * @returns Modelo User mapeado con valores por defecto si faltan datos
+     */
+    getOne(data: any): User {        
+        let userData: any;
+        
+        // Manejar diferentes estructuras de respuesta de Strapi
+        if (data?.data?.attributes) {
+            // Estructura Strapi v4: {data: {id: X, attributes: {...}}}
+            userData &#x3D; {
+                id: data.data.id,
+                ...data.data.attributes
+            };
+        } else if (data?.data &amp;&amp; typeof data.data &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; data.data.id) {
+            // Estructura: {data: {id: X, field1: Y, ...}}
+            userData &#x3D; data.data;
+        } else if (data?.id &amp;&amp; (data?.username || data?.email)) {
+            // Estructura plana: {id: X, username: Y, image: {...}, ...}
+            userData &#x3D; data;
+        } else {
+            return this.createFallbackUser(data);
+        }
+
+        if (!userData || !userData.id || (!userData.username &amp;&amp; !userData.email)) {
+            return this.createFallbackUser(data);
+        }
+
+        const mappedUser: User &#x3D; {
+            id: userData.id?.toString() || &#x27;unknown&#x27;,
+            username: userData.username || userData.email?.split(&#x27;@&#x27;)[0] || &#x27;unknown&#x27;,
+            email: userData.email || &#x27;unknown@example.com&#x27;,
+            provider: userData.provider || &#x27;local&#x27;,
+            confirmed: userData.confirmed ?? false,
+            blocked: userData.blocked ?? false,
+            
+            followers: this.extractFollowersCount(userData.followers, userData.followers_FK),
+            following: this.extractFollowingCount(userData.following, userData.following_fks),
+            following_ids: this.mapFollowing(userData.following, userData.following_fks),
+            followers_FK: this.mapFollowers(userData.followers, userData.followers_FK),
+            liked_songs: this.mapLikedSongs(userData.liked_songs),
+            following_artists: this.mapFollowingArtists(userData.following_artists),
+            playlists_IDS: this.mapPlaylists(userData.playlists_IDS),
+            
+            image: this.mapImage(userData.image)
+        };
+
+        return mappedUser;
+    }
+
+    /**
+     * Extrae el número de seguidores, manejando tanto contadores como arrays
+     * @param followers Datos de seguidores
+     * @param followers_FK Campo alternativo de seguidores
+     * @returns Número de seguidores
+     */
+    private extractFollowersCount(followers: any, followers_FK: any): number {
+        if (typeof followers &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+            return followers;
+        }
+        
+        const followersArray &#x3D; this.mapFollowers(followers, followers_FK);
+        return followersArray.length;
+    }
+
+    /**
+     * Extrae el número de usuarios seguidos, manejando tanto contadores como arrays
+     * @param following Datos de usuarios seguidos
+     * @param following_fks Campo alternativo de usuarios seguidos
+     * @returns Número de usuarios seguidos
+     */
+    private extractFollowingCount(following: any, following_fks: any): number {
+        if (typeof following &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+            return following;
+        }
+        
+        const followingArray &#x3D; this.mapFollowing(following, following_fks);
+        return followingArray.length;
+    }
+
+    /**
+     * Crea un usuario de respaldo cuando los datos son inválidos
+     * @param data Datos originales para extraer ID si es posible
+     * @returns Usuario con valores por defecto
+     */
+    private createFallbackUser(data: any): User {
+        const fallbackId &#x3D; data?.data?.id?.toString() || data?.id?.toString() || &#x27;unknown&#x27;;
+        return {
+            id: fallbackId,
+            username: &#x27;unknown&#x27;,
+            email: &#x27;unknown@example.com&#x27;,
+            provider: &#x27;unknown&#x27;,
+            confirmed: false,
+            blocked: false,
+            followers: 0,
+            following: 0,
+            following_ids: [],
+            followers_FK: [],
+            liked_songs: [],
+            following_artists: [],
+            playlists_IDS: [],
+            image: undefined
+        };
+    }
+
+    /**
+     * Mapea datos de seguidores desde diferentes estructuras de Strapi
+     * @param followers Datos de seguidores
+     * @param followers_FK Campo alternativo de seguidores
+     * @returns Array de IDs de seguidores como strings
+     */
+    private mapFollowers(followers: any, followers_FK: any): string[] {
+        if (followers_FK &amp;&amp; Array.isArray(followers_FK)) {
+            return followers_FK.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (Array.isArray(followers)) {
+            return followers.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (followers?.data &amp;&amp; Array.isArray(followers.data)) {
+            return followers.data.map((item: any) &#x3D;&gt; item?.id?.toString()).filter(Boolean);
+        }
+        
+        return [];
+    }
+
+    /**
+     * Mapea datos de usuarios seguidos desde diferentes estructuras de Strapi
+     * @param following Datos de usuarios seguidos
+     * @param following_fks Campo alternativo de usuarios seguidos
+     * @returns Array de IDs de usuarios seguidos como strings
+     */
+    private mapFollowing(following: any, following_fks: any): string[] {
+        if (following_fks &amp;&amp; Array.isArray(following_fks)) {
+            return following_fks.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (Array.isArray(following)) {
+            return following.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (following?.data &amp;&amp; Array.isArray(following.data)) {
+            return following.data.map((item: any) &#x3D;&gt; item?.id?.toString()).filter(Boolean);
+        }
+        
+        return [];
+    }
+
+    /**
+     * Mapea IDs de canciones que le gustan al usuario
+     * @param likedSongs Datos de canciones que le gustan
+     * @returns Array de IDs de canciones como strings
+     */
+    private mapLikedSongs(likedSongs: any): string[] {
+        if (!likedSongs) return [];
+        
+        if (Array.isArray(likedSongs)) {
+            return likedSongs.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (likedSongs.data &amp;&amp; Array.isArray(likedSongs.data)) {
+            return likedSongs.data.map((item: any) &#x3D;&gt; item?.id?.toString()).filter(Boolean);
+        }
+        
+        return [];
+    }
+
+    /**
+     * Mapea IDs de artistas que sigue el usuario
+     * @param followingArtists Datos de artistas seguidos
+     * @returns Array de IDs de artistas como strings
+     */
+    private mapFollowingArtists(followingArtists: any): string[] {
+        if (!followingArtists) return [];
+        
+        if (Array.isArray(followingArtists)) {
+            return followingArtists.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (followingArtists.data &amp;&amp; Array.isArray(followingArtists.data)) {
+            return followingArtists.data.map((item: any) &#x3D;&gt; item?.id?.toString()).filter(Boolean);
+        }
+        
+        return [];
+    }
+
+    /**
+     * Mapea IDs de playlists del usuario
+     * @param playlists Datos de playlists
+     * @returns Array de IDs de playlists como strings
+     */
+    private mapPlaylists(playlists: any): string[] {
+        if (!playlists) return [];
+        
+        if (Array.isArray(playlists)) {
+            return playlists.map(item &#x3D;&gt; item?.id?.toString() || item?.toString()).filter(Boolean);
+        }
+        
+        if (playlists.data &amp;&amp; Array.isArray(playlists.data)) {
+            return playlists.data.map((item: any) &#x3D;&gt; item?.id?.toString()).filter(Boolean);
+        }
+        
+        return [];
+    }
+
+    /**
+     * Mapea datos de imagen desde diferentes estructuras de Strapi
+     * Maneja estructura plana y estructura Strapi v4
+     * @param imageData Datos de imagen desde Strapi
+     * @returns Objeto de imagen con diferentes tamaños o undefined
+     */
+    private mapImage(imageData: any): User[&#x27;image&#x27;] | undefined {
+        if (!imageData) {
+            return undefined;
+        }
+
+        // Estructura plana: imagen directa con url, formats, etc.
+        if (imageData.url &amp;&amp; typeof imageData.url &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+            return {
+                url: imageData.url,
+                large: imageData.formats?.large?.url || imageData.url,
+                medium: imageData.formats?.medium?.url || imageData.url,
+                small: imageData.formats?.small?.url || imageData.url,
+                thumbnail: imageData.formats?.thumbnail?.url || imageData.url
+            };
+        }
+
+        // Si es solo un string (URL directa)
+        if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+            return {
+                url: imageData,
+                large: imageData,
+                medium: imageData,
+                small: imageData,
+                thumbnail: imageData
+            };
+        }
+
+        // Estructura Strapi v4: {data: {attributes: {...}}}
+        if (imageData.data?.attributes) {
+            const attrs &#x3D; imageData.data.attributes;
+            return {
+                url: attrs.url,
+                large: attrs.formats?.large?.url || attrs.url,
+                medium: attrs.formats?.medium?.url || attrs.url,
+                small: attrs.formats?.small?.url || attrs.url,
+                thumbnail: attrs.formats?.thumbnail?.url || attrs.url
+            };
+        }
+
+        // Si tiene estructura con .url pero no formats
+        if (imageData.url) {
+            return {
+                url: imageData.url,
+                large: imageData.formats?.large?.url || imageData.url,
+                medium: imageData.formats?.medium?.url || imageData.url,
+                small: imageData.formats?.small?.url || imageData.url,
+                thumbnail: imageData.formats?.thumbnail?.url || imageData.url
+            };
+        }
+
+        return undefined;
+    }
+
+    /**
+     * Prepara los datos del usuario para ser enviados a Strapi en una operación de creación
+     * @param data Modelo User a convertir
+     * @returns Objeto con estructura compatible con Strapi para POST
+     */
+    setAdd(data: User): any {
+        const mappedData: any &#x3D; {
+            username: data.username,
+            email: data.email,
+            followers: data.followers || 0,
+            following: data.following || 0,
+            liked_songs: data.liked_songs || [],
+            following_artists: data.following_artists || []
+        };
+
+        // Manejar imagen en creación - convertir diferentes formatos a ID numérico
+        if (data.image !&#x3D;&#x3D; undefined) {
+            const imageData: any &#x3D; data.image;
+            
+            if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                mappedData.image &#x3D; imageData;
+            } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; imageData !&#x3D;&#x3D; null) {
+                if (imageData.data &amp;&amp; imageData.data.id) {
+                    mappedData.image &#x3D; Number(imageData.data.id);
+                } else if (imageData.id) {
+                    mappedData.image &#x3D; Number(imageData.id);
+                } else if (imageData.url &amp;&amp; !isNaN(Number(imageData.url))) {
+                    mappedData.image &#x3D; Number(imageData.url);
+                }
+            } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; !isNaN(Number(imageData))) {
+                mappedData.image &#x3D; Number(imageData);
+            }
+        }
+
+        return { data: mappedData };
+    }
+
+    /**
+     * Prepara los datos parciales del usuario para actualización en Strapi
+     * @param data Datos parciales del User a actualizar
+     * @returns Objeto con estructura compatible con Strapi para PUT/PATCH
+     */
+    setUpdate(data: Partial&lt;User&gt;): any {
+        const mappedData: any &#x3D; {};
+        
+        if (data.username !&#x3D;&#x3D; undefined) mappedData.username &#x3D; data.username;
+        if (data.email !&#x3D;&#x3D; undefined) mappedData.email &#x3D; data.email;
+        if (data.followers !&#x3D;&#x3D; undefined) mappedData.followers &#x3D; data.followers;
+        if (data.following !&#x3D;&#x3D; undefined) mappedData.following &#x3D; data.following;
+        if (data.following_ids !&#x3D;&#x3D; undefined) mappedData.following_ids &#x3D; data.following_ids;
+        if (data.followers_FK !&#x3D;&#x3D; undefined) mappedData.followers_FK &#x3D; data.followers_FK;
+        if (data.liked_songs !&#x3D;&#x3D; undefined) mappedData.liked_songs &#x3D; data.liked_songs;
+        if (data.following_artists !&#x3D;&#x3D; undefined) mappedData.following_artists &#x3D; data.following_artists;
+        
+        // Manejar imagen - convertir diferentes formatos a ID numérico
+        if (data.image !&#x3D;&#x3D; undefined) {
+            if (data.image &#x3D;&#x3D;&#x3D; null) {
+                mappedData.image &#x3D; null; // Para remover imagen
+            } else if (data.image) {
+                const imageData: any &#x3D; data.image;
+                
+                if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                    mappedData.image &#x3D; imageData;
+                } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; imageData !&#x3D;&#x3D; null) {
+                    if (imageData.data &amp;&amp; imageData.data.id) {
+                        mappedData.image &#x3D; Number(imageData.data.id);
+                    } else if (imageData.id) {
+                        mappedData.image &#x3D; Number(imageData.id);
+                    } else if (imageData.url &amp;&amp; !isNaN(Number(imageData.url))) {
+                        mappedData.image &#x3D; Number(imageData.url);
+                    }
+                } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; !isNaN(Number(imageData))) {
+                    mappedData.image &#x3D; Number(imageData);
+                }
+            }
+        }
+        
+        return { data: mappedData };
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de creación
+     * @param data Respuesta de Strapi tras POST
+     * @returns Modelo User mapeado
+     */
+    getAdded(data: any): User {
+        return this.getOne(data);
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de actualización
+     * @param data Respuesta de Strapi tras PUT/PATCH
+     * @returns Modelo User mapeado
+     */
+    getUpdated(data: any): User {
+        return this.getOne(data);
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de eliminación
+     * @param data Respuesta de Strapi tras DELETE
+     * @returns Modelo User mapeado
+     */
+    getDeleted(data: any): User {
+        return this.getOne(data);
+    }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserMappingStrapiService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

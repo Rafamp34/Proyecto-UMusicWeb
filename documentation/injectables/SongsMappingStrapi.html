@@ -1,0 +1,1167 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>repositorios documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">repositorios documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SongsMappingStrapi</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/repositories/impl/songs-mapping-strapi.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio de mapeo para canciones específico para Strapi
+Maneja la transformación entre el modelo Song y la estructura de datos de Strapi</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getAdded" >getAdded</a>
+                            </li>
+                            <li>
+                                <a href="#getDeleted" >getDeleted</a>
+                            </li>
+                            <li>
+                                <a href="#getOne" >getOne</a>
+                            </li>
+                            <li>
+                                <a href="#getPaginated" >getPaginated</a>
+                            </li>
+                            <li>
+                                <a href="#getUpdated" >getUpdated</a>
+                            </li>
+                            <li>
+                                <a href="#setAdd" >setAdd</a>
+                            </li>
+                            <li>
+                                <a href="#setUpdate" >setUpdate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAdded"></a>
+                    <span class="name">
+                        <span ><b>getAdded</b></span>
+                        <a href="#getAdded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAdded(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="297"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:297</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de creación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras POST</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo Song mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDeleted"></a>
+                    <span class="name">
+                        <span ><b>getDeleted</b></span>
+                        <a href="#getDeleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDeleted(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="315"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:315</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de eliminación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras DELETE</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo Song mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOne"></a>
+                    <span class="name">
+                        <span ><b>getOne</b></span>
+                        <a href="#getOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOne(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Convierte un objeto de respuesta de Strapi en un modelo Song</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos sin procesar de Strapi</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo Song mapeado o null si los datos son inválidos</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaginated"></a>
+                    <span class="name">
+                        <span ><b>getPaginated</b></span>
+                        <a href="#getPaginated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPaginated(page: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, pageSize: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, totalItems: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, items: any[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Crea un objeto paginado con canciones mapeadas</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>page</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Número de página actual</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>pageSize</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Tamaño de página</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>totalItems</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Total de elementos disponibles</p>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>items</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Array de datos sin procesar de Strapi</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Paginated&lt;Song&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto Paginated con canciones mapeadas</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUpdated"></a>
+                    <span class="name">
+                        <span ><b>getUpdated</b></span>
+                        <a href="#getUpdated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUpdated(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="306"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:306</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Mapea la respuesta de Strapi después de una operación de actualización</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Respuesta de Strapi tras PUT/PATCH</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Modelo Song mapeado</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAdd"></a>
+                    <span class="name">
+                        <span ><b>setAdd</b></span>
+                        <a href="#setAdd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setAdd(data: <a href="../interfaces/Song.html" target="_self">Song</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="253"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:253</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Prepara los datos de la canción para ser enviados a Strapi en una operación de creación</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Song</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Modelo Song a convertir</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto con estructura compatible con Strapi para POST</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUpdate"></a>
+                    <span class="name">
+                        <span ><b>setUpdate</b></span>
+                        <a href="#setUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setUpdate(data: <a href="../interfaces/Song.html" target="_self">Partial&lt;Song&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/app/core/repositories/impl/songs-mapping-strapi.service.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Prepara los datos parciales de la canción para actualización en Strapi</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Song.html" target="_self" >Partial&lt;Song&gt;</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Datos parciales del Song a actualizar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Objeto con estructura compatible con Strapi para PUT/PATCH</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { IBaseMapping } from &#x27;../intefaces/base-mapping.interface&#x27;;
+import { Song } from &#x27;../../models/song.model&#x27;;
+import { Paginated } from &#x27;../../models/paginated.model&#x27;;
+
+/**
+ * Servicio de mapeo para canciones específico para Strapi
+ * Maneja la transformación entre el modelo Song y la estructura de datos de Strapi
+ */
+@Injectable({
+    providedIn: &#x27;root&#x27;
+})
+export class SongsMappingStrapi implements IBaseMapping&lt;Song&gt; {
+
+    /**
+     * Crea un objeto paginado con canciones mapeadas
+     * @param page Número de página actual
+     * @param pageSize Tamaño de página
+     * @param totalItems Total de elementos disponibles
+     * @param items Array de datos sin procesar de Strapi
+     * @returns Objeto Paginated con canciones mapeadas
+     */
+    getPaginated(page: number, pageSize: number, totalItems: number, items: any[]): Paginated&lt;Song&gt; {
+        return {
+            data: items.map(item &#x3D;&gt; this.getOne({ data: item })),
+            page,
+            pageSize,
+            pages: Math.ceil(totalItems / pageSize)
+        };
+    }
+
+    /**
+     * Convierte un objeto de respuesta de Strapi en un modelo Song
+     * @param data Datos sin procesar de Strapi
+     * @returns Modelo Song mapeado o null si los datos son inválidos
+     */
+    getOne(data: any): Song {
+        if (!data) return null as any;
+
+        const item &#x3D; data.data || data;
+        const id &#x3D; item.id;
+        const attributes &#x3D; item.attributes || item;
+
+        if (!attributes) {
+            return null as any;
+        }
+
+        // Procesar duración - convertir de string MM:SS a segundos o mantener número
+        let durationValue &#x3D; 0;
+        if (attributes.duration !&#x3D;&#x3D; undefined) {
+            if (typeof attributes.duration &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                durationValue &#x3D; attributes.duration;
+            } else if (typeof attributes.duration &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+                if (attributes.duration.includes(&#x27;:&#x27;)) {
+                    const parts &#x3D; attributes.duration.split(&#x27;:&#x27;);
+                    durationValue &#x3D; parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+                } else {
+                    durationValue &#x3D; parseInt(attributes.duration, 10) || 0;
+                }
+            }
+        }
+
+        // Mapear IDs de artistas desde relación de Strapi
+        let artistIds: string[] &#x3D; [];
+        if (attributes.artists_IDS &amp;&amp; attributes.artists_IDS.data &amp;&amp; Array.isArray(attributes.artists_IDS.data)) {
+            artistIds &#x3D; attributes.artists_IDS.data
+                .filter((artist: any) &#x3D;&gt; artist &amp;&amp; artist.id)
+                .map((artist: any) &#x3D;&gt; artist.id.toString());
+        }
+
+        // Mapear IDs de playlists desde relación de Strapi
+        let playlistIds: string[] &#x3D; [];
+        if (attributes.playlistid_IDS &amp;&amp; attributes.playlistid_IDS.data &amp;&amp; Array.isArray(attributes.playlistid_IDS.data)) {
+            playlistIds &#x3D; attributes.playlistid_IDS.data
+                .filter((p: any) &#x3D;&gt; p &amp;&amp; p.id)
+                .map((p: any) &#x3D;&gt; p.id.toString());
+        }
+
+        // Mapear imagen con todos los formatos disponibles
+        let imageData &#x3D; undefined;
+        if (attributes.image &amp;&amp; attributes.image.data &amp;&amp; attributes.image.data.attributes) {
+            const imgAttrs &#x3D; attributes.image.data.attributes;
+            imageData &#x3D; {
+                url: imgAttrs.url,
+                large: imgAttrs.formats?.large?.url || imgAttrs.url,
+                medium: imgAttrs.formats?.medium?.url || imgAttrs.url,
+                small: imgAttrs.formats?.small?.url || imgAttrs.url,
+                thumbnail: imgAttrs.formats?.thumbnail?.url || imgAttrs.url,
+            };
+        }
+
+        // Mapear URL de audio desde archivo relacionado
+        let audioUrl: string | undefined &#x3D; undefined;
+        if (attributes.audioUrl &amp;&amp; attributes.audioUrl.data &amp;&amp; attributes.audioUrl.data.attributes) {
+            audioUrl &#x3D; attributes.audioUrl.data.attributes.url;
+        }
+
+        // Mapear usuarios que han dado like (relación de Strapi)
+        let usersLike: string[] &#x3D; [];
+        if (attributes.users_like &amp;&amp; attributes.users_like.data &amp;&amp; Array.isArray(attributes.users_like.data)) {
+            usersLike &#x3D; attributes.users_like.data
+                .filter((user: any) &#x3D;&gt; user &amp;&amp; user.id)
+                .map((user: any) &#x3D;&gt; user.id.toString());
+        }
+
+        // Procesar contador de likes
+        let likesCount &#x3D; 0;
+        if (attributes.likes_count !&#x3D;&#x3D; undefined) {
+            if (typeof attributes.likes_count &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+                likesCount &#x3D; parseInt(attributes.likes_count, 10) || 0;
+            } else if (typeof attributes.likes_count &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                likesCount &#x3D; attributes.likes_count;
+            }
+        }
+
+        const mappedSong: Song &#x3D; {
+            id: id.toString(),
+            name: attributes.name || &#x27;Unknown Song&#x27;,
+            album: attributes.album || &#x27;Unknown Album&#x27;,
+            duration: durationValue,
+            audioUrl: audioUrl,
+            artists_IDS: artistIds,
+            playlistid_IDS: playlistIds,
+            lyrics: attributes.lyrics || undefined,
+            image: imageData,
+            users_like: usersLike,
+            likes_count: likesCount
+        };
+
+        return mappedSong;
+    }
+
+    /**
+     * Prepara los datos parciales de la canción para actualización en Strapi
+     * @param data Datos parciales del Song a actualizar
+     * @returns Objeto con estructura compatible con Strapi para PUT/PATCH
+     */
+    setUpdate(data: Partial&lt;Song&gt;): any {
+        const mappedData: any &#x3D; {};
+        
+        // Mapear campos simples
+        if (data.name !&#x3D;&#x3D; undefined) mappedData.name &#x3D; data.name;
+        if (data.album !&#x3D;&#x3D; undefined) mappedData.album &#x3D; data.album;
+        if (data.duration !&#x3D;&#x3D; undefined) mappedData.duration &#x3D; data.duration;
+        if (data.lyrics !&#x3D;&#x3D; undefined) mappedData.lyrics &#x3D; data.lyrics;
+        if (data.likes_count !&#x3D;&#x3D; undefined) mappedData.likes_count &#x3D; data.likes_count;
+        
+        // Mapear relaciones - convertir strings a IDs numéricos para Strapi
+        if (data.users_like !&#x3D;&#x3D; undefined) {
+            mappedData.users_like &#x3D; data.users_like
+                .map(id &#x3D;&gt; {
+                    const numId &#x3D; parseInt(id, 10);
+                    return isNaN(numId) ? null : numId;
+                })
+                .filter(id &#x3D;&gt; id !&#x3D;&#x3D; null &amp;&amp; id &gt; 0);
+        }
+        
+        if (data.artists_IDS !&#x3D;&#x3D; undefined) {
+            mappedData.artists_IDS &#x3D; data.artists_IDS
+                .map(id &#x3D;&gt; parseInt(id, 10))
+                .filter(id &#x3D;&gt; !isNaN(id) &amp;&amp; id &gt; 0);
+        }
+        
+        if (data.playlistid_IDS !&#x3D;&#x3D; undefined) {
+            mappedData.playlistid_IDS &#x3D; data.playlistid_IDS
+                .map(id &#x3D;&gt; parseInt(id, 10))
+                .filter(id &#x3D;&gt; !isNaN(id) &amp;&amp; id &gt; 0);
+        }
+        
+        // CORREGIDO: Manejo mejorado de imagen para Strapi
+        if (data.image !&#x3D;&#x3D; undefined) {
+            if (data.image &#x3D;&#x3D;&#x3D; null) {
+                // Para remover imagen
+                mappedData.image &#x3D; null;
+            } else if (data.image) {
+                console.log(&#x27;🖼️ Procesando imagen:&#x27;, data.image);
+                
+                const imageData: any &#x3D; data.image;
+                let imageId: number | null &#x3D; null;
+                
+                // 1. Si es un número directamente (ID del archivo en Strapi)
+                if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;number&#x27; &amp;&amp; imageData &gt; 0) {
+                    imageId &#x3D; imageData;
+                }
+                // 2. Si es un objeto con estructura de Strapi response
+                else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; imageData !&#x3D;&#x3D; null) {
+                    // Formato: { data: { id: 123, attributes: {...} } }
+                    if (imageData.data &amp;&amp; typeof imageData.data.id &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                        imageId &#x3D; imageData.data.id;
+                    }
+                    // Formato: { id: 123, url: &quot;...&quot;, ... }
+                    else if (typeof imageData.id &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                        imageId &#x3D; imageData.id;
+                    }
+                    // Formato: { data: { id: &quot;123&quot; } } (ID como string)
+                    else if (imageData.data &amp;&amp; imageData.data.id) {
+                        const parsedId &#x3D; parseInt(imageData.data.id, 10);
+                        if (!isNaN(parsedId) &amp;&amp; parsedId &gt; 0) {
+                            imageId &#x3D; parsedId;
+                        }
+                    }
+                    // Si viene del form como File o FormData, necesitarías subirla primero
+                    else if (imageData instanceof File || imageData instanceof FormData) {
+                        console.warn(&#x27;⚠️ Se detectó un archivo nuevo. Necesitas subirlo primero usando MediaService&#x27;);
+                        // Aquí deberías manejar la subida del archivo
+                        // return null; // o manejar de otra forma
+                    }
+                }
+                // 3. Si es un string que representa un ID
+                else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+                    const parsedId &#x3D; parseInt(imageData, 10);
+                    if (!isNaN(parsedId) &amp;&amp; parsedId &gt; 0) {
+                        imageId &#x3D; parsedId;
+                    }
+                }
+                
+                if (imageId &amp;&amp; imageId &gt; 0) {
+                    mappedData.image &#x3D; imageId;
+                    console.log(&#x27;✅ Imagen mapeada con ID:&#x27;, imageId);
+                } else {
+                    console.warn(&#x27;⚠️ No se pudo obtener un ID válido de imagen:&#x27;, imageData);
+                    // No incluir imagen en la actualización si no se puede procesar
+                }
+            }
+        }
+        
+        // Mapear URL de audio
+        if (data.audioUrl !&#x3D;&#x3D; undefined) {
+            if (data.audioUrl &#x3D;&#x3D;&#x3D; null || data.audioUrl &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+                mappedData.audioUrl &#x3D; null;
+            } else {
+                // Si audioUrl es un ID de archivo
+                const audioId &#x3D; Number(data.audioUrl);
+                if (!isNaN(audioId) &amp;&amp; audioId &gt; 0) {
+                    mappedData.audioUrl &#x3D; audioId;
+                } else {
+                    // Si es una URL string
+                    mappedData.audioUrl &#x3D; data.audioUrl;
+                }
+            }
+        }
+        
+        console.log(&#x27;📦 Datos finales para Strapi:&#x27;, { data: mappedData });
+        return { data: mappedData };
+    }
+
+    /**
+     * Prepara los datos de la canción para ser enviados a Strapi en una operación de creación
+     * @param data Modelo Song a convertir
+     * @returns Objeto con estructura compatible con Strapi para POST
+     */
+    setAdd(data: Song): any {
+        const mappedData: any &#x3D; {
+            name: data.name,
+            album: data.album || &#x27;&#x27;,
+            duration: data.duration || 0,
+            lyrics: data.lyrics || null,
+            likes_count: data.likes_count || 0,
+            users_like: data.users_like?.map(id &#x3D;&gt; parseInt(id, 10)) || [],
+            artists_IDS: data.artists_IDS?.map(id &#x3D;&gt; parseInt(id, 10)) || [],
+            playlistid_IDS: data.playlistid_IDS?.map(id &#x3D;&gt; parseInt(id, 10)) || []
+        };
+
+        // Manejar imagen en creación - convertir diferentes formatos a ID numérico
+        if (data.image !&#x3D;&#x3D; undefined) {
+            const imageData: any &#x3D; data.image;
+            
+            if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+                mappedData.image &#x3D; imageData;
+            } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; imageData !&#x3D;&#x3D; null) {
+                if (imageData.data &amp;&amp; imageData.data.id) {
+                    mappedData.image &#x3D; Number(imageData.data.id);
+                } else if (imageData.id) {
+                    mappedData.image &#x3D; Number(imageData.id);
+                } else if (imageData.url &amp;&amp; !isNaN(Number(imageData.url))) {
+                    mappedData.image &#x3D; Number(imageData.url);
+                }
+            } else if (typeof imageData &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; !isNaN(Number(imageData))) {
+                mappedData.image &#x3D; Number(imageData);
+            }
+        }
+
+        // Mapear URL de audio
+        if (data.audioUrl !&#x3D;&#x3D; undefined) {
+            mappedData.audioUrl &#x3D; data.audioUrl;
+        }
+
+        return { data: mappedData };
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de creación
+     * @param data Respuesta de Strapi tras POST
+     * @returns Modelo Song mapeado
+     */
+    getAdded(data: any): Song {
+        return this.getOne(data);
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de actualización
+     * @param data Respuesta de Strapi tras PUT/PATCH
+     * @returns Modelo Song mapeado
+     */
+    getUpdated(data: any): Song {
+        return this.getOne(data);
+    }
+
+    /**
+     * Mapea la respuesta de Strapi después de una operación de eliminación
+     * @param data Respuesta de Strapi tras DELETE
+     * @returns Modelo Song mapeado
+     */
+    getDeleted(data: any): Song {
+        return this.getOne(data);
+    }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SongsMappingStrapi.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
